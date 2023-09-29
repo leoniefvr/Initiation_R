@@ -1,0 +1,3 @@
+"0","dataframer <- as.data.frame(mdat) # Passer à un dataframe"
+"2","Error in as.data.frame(mdat) : object 'mdat' not found
+"

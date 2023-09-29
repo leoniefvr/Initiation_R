@@ -1,0 +1,1 @@
+"0","df_sepal_char = df_iris %>% mutate(Sepal.Length = as.character(Sepal.Length)) # Passe la variable Sepal.Length"

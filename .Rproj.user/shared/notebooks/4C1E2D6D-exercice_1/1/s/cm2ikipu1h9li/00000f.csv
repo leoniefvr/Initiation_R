@@ -1,0 +1,2 @@
+"0","df_grande_petale <- df_iris %>% "
+"0","      filter(Petal.Width > 0.2) # Garder uniquement les lignes où Petal.Width > 0.2 "

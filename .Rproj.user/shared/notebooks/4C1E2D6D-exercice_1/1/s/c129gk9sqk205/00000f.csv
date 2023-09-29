@@ -1,0 +1,2 @@
+"0","df_renomme <- df_iris %>% "
+"0","      rename(espece = Species) # Renommer la variable Species par espece"

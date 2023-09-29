@@ -1,0 +1,43 @@
+---
+title: "Ressources"
+
+toc: true
+toc-expand: 2
+toc-depth: 2
+number-sections: true
+
+theme :
+  light: flatly
+  dark: darkly
+---
+
+De nombreuses ressources R sont disponibles en libre accès. Nous vous proposons ci-dessous une liste de ressources utiles (packages, sites, etc). Vous pourrez également trouver de nombreuses informations sur [GitHub](https://github.com/) et [GitLab](https://about.gitlab.com/fr-fr/). 
+
+# Packages thématiques
+
+-   [ggplot](https://ggplot2.tidyverse.org/) concernant la création de graphqiques.
+-   [lubridate](https://lubridate.tidyverse.org/) concernant la gestion des dates.
+-   [Hmisc](https://www.book.utilitr.org/03_fiches_thematiques/fiche_survey) concernant le traitement des données pondérées.
+-   [Arrow](https://arrow.apache.org/docs/r/) concernant le traitement des données volumineuse (fichier `.parquet`).
+-   [Sparlyr](https://spark.rstudio.com/) concernant le calcul distribué.
+-   [RJDemetra](https://github.com/jdemetra/rjdemetra) concernant la désaisonnalisation avec Jdemetra+.
+
+# Sites 💻
+-   [utilitR](https://www.utilitr.org/) : Documentation sur l’usage de R créé par l'INSEE 
+-   [R for Data Science](https://r4ds.had.co.nz/index.html) : Leçon sur la prise en main de R
+-   [r-graph-gallery](https://r-graph-gallery.com/) ou [r-charts](https://r-charts.com/) : Bibliothèques de graphique sous R 
+-   [The Epidemiologist R Handbook](https://epirhandbook.com/en/index.html) : Leçon sur la prise en main de R fait pour des épidémilogistes mais qui reprendre la majorité des outiles utiles.
+
+# Canaux de discussion 💬
+-   [Tchap Dares](https://tchap.gouv.fr/#/room/!hIBkeLAQWwxsKRqjkg:agent.social.tchap.gouv.fr?via=agent.social.tchap.gouv.fr)
+-   [Tchap SSM](https://tchap.gouv.fr/#/room/#RdIezwNF:agent.finances.tchap.gouv.fr)
+
+# Outils 🧰
+-   [ChatGPT](https://chat.openai.com/auth/login) ou [Huggingface](https://huggingface.co/) : Agents conversationnels permettant également de répondre à des problèmes de code.
+
+::: callout-important
+Attention, le secret statistique doit être respecté lorsque vous utilisez un agent conversationnel. Aucune donnée ou information identifiante ne doit être utilisée avec ces outils. 
+:::
+
+
+

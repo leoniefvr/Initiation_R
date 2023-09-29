@@ -1,0 +1,2 @@
+"0","df_1_variable <- df_iris %>% "
+"0","      select(Species)"

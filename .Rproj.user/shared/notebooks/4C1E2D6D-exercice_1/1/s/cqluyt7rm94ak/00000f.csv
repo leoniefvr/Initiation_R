@@ -1,0 +1,17 @@
+"0","    library(""dplyr"") # Chargement du packages
+"
+"2","Avis : le package ‘dplyr’ a été compilé avec la version R 4.2.3"
+"2","
+Attachement du package : ‘dplyr’
+
+"
+"2","Les objets suivants sont masqués depuis ‘package:stats’:
+
+    filter, lag
+
+"
+"2","Les objets suivants sont masqués depuis ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+"

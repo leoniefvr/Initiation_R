@@ -1,0 +1,2 @@
+"0","df_somme_iris <- df_iris %>% "
+"0","      mutate(somme = Sepal.Length + Sepal.Width)"

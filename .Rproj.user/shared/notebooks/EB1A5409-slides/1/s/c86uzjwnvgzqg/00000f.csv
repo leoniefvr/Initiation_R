@@ -1,0 +1,7 @@
+"0","eff_moins_30 <- EEC_2019 %>%
+  filter(AGE3 <= 30) %>%
+  summarise(eff_moins_30 = n())
+"
+"2","Error in EEC_2019 %>% filter(AGE3 <= 30) %>% summarise(eff_moins_30 = n()) : 
+  could not find function ""%>%""
+"
