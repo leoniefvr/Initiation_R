@@ -2,7 +2,6 @@
 title: "Exercice 1 : Débuter avec R"
 
 code-fold: true
-#code-tools: true
 
 toc: true
 toc-expand: 2
@@ -15,7 +14,6 @@ theme :
 ---
 
 ---
-#Tes modif
 
 # Débuter avec R
 
