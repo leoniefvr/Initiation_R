@@ -1,0 +1,106 @@
+---
+title: "Formation R"
+
+#code-fold: true
+#code-tools: true
+
+toc: true
+toc-expand: 2
+toc-depth: 2
+number-sections: true
+
+theme :
+  light: flatly
+  dark: darkly
+---
+
+::: callout-note
+-   R et R studio sont disponibles sur le centre logiciel ainsi que sur [posit](https://posit.co/download/rstudio-desktop/).
+-   Le cahier d'exercice est disponible sur [Gitlab](https://gitlab.intranet.social.gouv.fr/Dares/Interdepartements/Formations_internes_R).
+:::
+
+# Objectifs ✔️
+
+-   Connaitre l'environnement R (packages, objets)
+-   Importer, nettoyer et enrichir ses données
+-   Produire des statisitiques descriptives
+-   Produire un code reproductible suivant les règles de bonne conduite
+
+# Emploi du temps
+
+|   Durée    |                         Programme                                   |
+|:----------:|:-------------------------------------------------------------------:|
+| 4 heures   | [Slides : Formation théorique](slides.qmd)                          |
+| 45 minutes | [Exercice 1 : Débuter avec R](exercice_1.qmd)                       |
+| 45 minutes | [Exercice 2 : Nettoyer et enrichir les données](exercice_2.qmd)     |
+| 45 minutes | [Exercice 3 : Statistiques descriptives](exercice_3.qmd)            |
+| 45 minutes | [Exercice 4 : Pour aller plus loin](exercice_4.qmd)                 |
+
+
+# Des outils utiles à connaitre 🧰
+
+::: {.callout-tip collapse="true"}
+## Les fonctions `help` et `?` permettent d'avoir des informations sur la fonction que l'on utilise
+La fonction `help` est très pratique pour se renseigner sur une fonction. Elle montre tous les arguments de la fonction et propose des exemples.
+```{r, eval=FALSE, echo=TRUE}
+# Permet d'avoir les informations sur la fonction mean 
+help("mean") 
+?mean
+```
+:::
+
+::: {.callout-tip collapse="true"}
+## Les opérateurs R
+
+| Opérateur | Signification        | Exemple                                       |
+|:---------:|:--------------------:|:---------------------------------------------:|
+| `+`       |  `Somme`             | `mutate(variable = variable + 1)`             |
+| `/`       |  `Division`          | `mutate(variable = variable / 100)`           |
+| `* `      |  `Multiplication`    | `mutate(variable = variable * 100)`           |
+| `&`       |  `et`                | `filter(variable > 10 & variable < 20)`       |
+| `|`       |  `ou`                | `filter(variable_1 == 10 | variable_2 == 20)` |
+| `==`      |  `égal`              | `filter(variable == 10)`                      |
+| `!=`      |  `différent`         | `filter(variable != 10)`                      |
+| `<`       |  `inférieur`         | `filter(variable < 10)`                       |
+| `>`       |  `supérieur`         | `filter(variable > 10)`                       |
+| `<=`      | `inférieur ou égal`  | `filter(variable <= 10)`                      |
+| `>=`      | `supérieur ou égal`  | `filter(variable >= 10)`                      |
+| `%in%`    | `appartenant`        | `filter(variable %in% c(10,20,30)`            |
+
+
+:::
+
+
+::: {.callout-tip collapse="true"}
+## Avoir des informations sur sa session avec la fonction `sessionInfo()`
+Ceci permet de connaitre sa version de R, les packages attachés à la session, etc. 
+```{r, eval=FALSE, echo=TRUE}
+sessionInfo() # Permet d'avoir des informations sur la session en cours dont la version de R
+getRversion() # Permet d'identifier la version de R
+version() # Permet d'obtenir différentes informations sur R
+```
+:::
+
+::: {.callout-tip collapse="true"}
+## Connaitre les packages installés sur son environnement avec `library()`
+
+```{r, eval=FALSE, echo=TRUE}
+library() # Permet de connaitre les packages installés
+```
+:::
+
+::: {.callout-tip collapse="true"}
+## Connaitre les packages chargés dans son environnement avec `search()`
+
+```{r, eval=FALSE, echo=TRUE}
+search() # Permet de connaitre les packages chargés 
+```
+:::
+
+::: {.callout-tip collapse="true"}
+## Connaitre la version d'un package avec `packageVersion()`
+
+```{r, eval=FALSE, echo=TRUE}
+packageVersion("dplyr") # Permet de connaitre la version du package dplyr
+```
+:::
