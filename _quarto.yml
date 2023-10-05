@@ -14,21 +14,19 @@ website:
     pinned: true
     align: center
     style: "docked"
-    #search: true
-    #collapse-level: 1
     contents:
       - href: index.qmd
         text: Introduction
       - href: slides.qmd
         text: Slides
       - href: exercice_1.qmd
-        text: Exercice 1
+        text: 'Exercice 1'
       - href: exercice_2.qmd
-        text: Exercice 2
+        text: 'Exercice 2'
       - href: exercice_3.qmd
-        text: Exercice_3
+        text: 'Exercice 3'
       - href: exercice_4.qmd
-        text: Exercice 4
+        text: 'Exercice 4'
       - href: ressources.qmd
         text: Ressources
         

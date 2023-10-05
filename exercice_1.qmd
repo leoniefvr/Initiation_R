@@ -14,7 +14,6 @@ theme :
 ---
 
 ---
-#test modif 2
 
 # Débuter avec R
 
