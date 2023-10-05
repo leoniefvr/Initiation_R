@@ -1,6 +1,0 @@
-"0","    df_pipe <- iris %>% "
-"0","      filter(Species %in% c(""setosa"", ""versicolor"")) %>% "
-"0","      rename(longueur_petale = Petal.Length) %>% "
-"0","      mutate(long_large = Sepal.Length * Sepal.Width) %>% "
-"0","      select(-Petal.Width) %>% "
-"0","      arrange(longueur_petale)"

@@ -1,5 +1,0 @@
-"0","    df_final <- iris %>%"
-"0","      rename_all(tolower) %>% "
-"0","      filter(sepal.length != 5.8) %>% "
-"0","      mutate(oui_non = ifelse(sepal.width == 3.5, 1, 0))"
-"0","      "

@@ -1,4 +1,0 @@
-"0","... %>% mutate(trimestre = paste0(ANNEE,""-T"",TRIM))
-"
-"2","Error: '...' used in an incorrect context
-"

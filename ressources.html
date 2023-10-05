@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,7 +17,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -56,7 +56,8 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
@@ -67,11 +68,16 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Ressources</h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ressources.html">Ressources</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
       </button>
     </div>
   </nav>
@@ -79,70 +85,78 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Formation R</a> 
         <div class="sidebar-tools-main">
-  <a href="" class="quarto-color-scheme-toggle sidebar-tool" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
     </div>
       </div>
-      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
         </div>
-      </div>
+        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">Introduction</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./slides.html" class="sidebar-item-text sidebar-link">Slides</a>
+  <a href="./slides.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Slides</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./exercice_1.html" class="sidebar-item-text sidebar-link">Exercice 1</a>
+  <a href="./exercice_1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercice 1</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./exercice_2.html" class="sidebar-item-text sidebar-link">Exercice 2</a>
+  <a href="./exercice_2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercice 2</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./exercice_3.html" class="sidebar-item-text sidebar-link">Exercice 3</a>
+  <a href="./exercice_3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercice 3</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./exercice_4.html" class="sidebar-item-text sidebar-link">Exercice 4</a>
+  <a href="./exercice_4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercice 4</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ressources.html" class="sidebar-item-text sidebar-link active">Ressources</a>
+  <a href="./ressources.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Ressources</span></a>
   </div>
 </li>
     </ul>
     </div>
 </nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
     <h2 id="toc-title">On this page</h2>
    
   <ul class="collapse">
-  <li><a href="#packages-thématiques" id="toc-packages-thématiques" class="nav-link active" data-scroll-target="#packages-thématiques"><span class="toc-section-number">1</span>  Packages thématiques</a></li>
-  <li><a href="#sites" id="toc-sites" class="nav-link" data-scroll-target="#sites"><span class="toc-section-number">2</span>  Sites 💻</a></li>
-  <li><a href="#canaux-de-discussion" id="toc-canaux-de-discussion" class="nav-link" data-scroll-target="#canaux-de-discussion"><span class="toc-section-number">3</span>  Canaux de discussion 💬</a></li>
-  <li><a href="#outils" id="toc-outils" class="nav-link" data-scroll-target="#outils"><span class="toc-section-number">4</span>  Outils 🧰</a></li>
+  <li><a href="#packages-thématiques" id="toc-packages-thématiques" class="nav-link active" data-scroll-target="#packages-thématiques"><span class="header-section-number">1</span> Packages thématiques</a></li>
+  <li><a href="#sites" id="toc-sites" class="nav-link" data-scroll-target="#sites"><span class="header-section-number">2</span> Sites 💻</a></li>
+  <li><a href="#canaux-de-discussion" id="toc-canaux-de-discussion" class="nav-link" data-scroll-target="#canaux-de-discussion"><span class="header-section-number">3</span> Canaux de discussion 💬</a></li>
+  <li><a href="#outils" id="toc-outils" class="nav-link" data-scroll-target="#outils"><span class="header-section-number">4</span> Outils 🧰</a></li>
   </ul>
 </nav>
     </div>
@@ -151,7 +165,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Ressources</h1>
+<h1 class="title">Ressources</h1>
 </div>
 
 
@@ -173,7 +187,7 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="https://ggplot2.tidyverse.org/">ggplot</a> concernant la création de graphqiques.</li>
 <li><a href="https://lubridate.tidyverse.org/">lubridate</a> concernant la gestion des dates.</li>
 <li><a href="https://www.book.utilitr.org/03_fiches_thematiques/fiche_survey">Hmisc</a> concernant le traitement des données pondérées.</li>
-<li><a href="https://arrow.apache.org/docs/r/">Arrow</a> concernant le traitement des données volumineuse (fichier <code>.parquet</code>).</li>
+<li><a href="https://arrow.apache.org/docs/r/">Arrow</a> concernant le traitement des données volumineuses (fichier <code>.parquet</code>).</li>
 <li><a href="https://spark.rstudio.com/">Sparlyr</a> concernant le calcul distribué.</li>
 <li><a href="https://github.com/jdemetra/rjdemetra">RJDemetra</a> concernant la désaisonnalisation avec Jdemetra+.</li>
 </ul>
@@ -184,7 +198,7 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="https://www.utilitr.org/">utilitR</a> : Documentation sur l’usage de R créé par l’INSEE</li>
 <li><a href="https://r4ds.had.co.nz/index.html">R for Data Science</a> : Leçon sur la prise en main de R</li>
 <li><a href="https://r-graph-gallery.com/">r-graph-gallery</a> ou <a href="https://r-charts.com/">r-charts</a> : Bibliothèques de graphique sous R</li>
-<li><a href="https://epirhandbook.com/en/index.html">The Epidemiologist R Handbook</a> : Leçon sur la prise en main de R fait pour des épidémilogistes mais qui reprendre la majorité des outiles utiles.</li>
+<li><a href="https://epirhandbook.com/en/index.html">The Epidemiologist R Handbook</a> : Leçon sur la prise en main de R fait pour des épidémilogistes mais qui reprend la majorité des outiles utiles.</li>
 </ul>
 </section>
 <section id="canaux-de-discussion" class="level1" data-number="3">
@@ -199,12 +213,12 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><a href="https://chat.openai.com/auth/login">ChatGPT</a> ou <a href="https://huggingface.co/">Huggingface</a> : Agents conversationnels permettant également de répondre à des problèmes de code.</li>
 </ul>
-<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Important
 </div>
 </div>
@@ -359,9 +373,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -426,6 +454,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -468,6 +582,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
     <div class="nav-footer-right">Ce site a été créé avec <a href="https://quarto.org/">Quarto</a></div>
   </div>
 </footer>
