@@ -22,12 +22,12 @@ theme :
 
 2.  Enregistrer ce nouveau fichier dans un dossier puis vérifier que le fichier est bien enregistré.
 
-3.  Fermer R puis rouvrez votre fichier. Un programme R est suffixé par `.R`.
+3.  Fermer R puis ouvrir à nouveau votre fichier. Un programme R est suffixé par `.R`.
 
 4.  Installer et charger le package `dplyr` avec la fonction `library`.
     ```{r, eval=FALSE, echo=TRUE}
-    install.packages("dplyr") # Installation du packages
-    library("dplyr") # Chargement du packages
+    install.packages("dplyr") # Installation du package
+    library("dplyr") # Chargement du package
     ```
 
 5.  Vérifier la bonne installation et le bon chargement du package à l'aide des informations de la console ou des commandes     `library()` et `search()`.
@@ -154,9 +154,9 @@ df_iris <- iris # Assigner iris au nom df_iris
 -   Le nom des variables avec `colnames()`
 -   Le type de variable avec `str()`
     ```{r, eval=FALSE, echo=TRUE}
-typeof(df_iris) # Nombre de colonne
-colnames(df_iris) # Nombre de ligne
-str(df_iris) # Nombre d'observation = nombre de ligne
+typeof(df_iris) # Type de l'objet
+colnames(df_iris) # Nom des variables
+str(df_iris) # Nombre d'observations = nombre de lignes
     ```
 
 3.  Connaitre le nombre de lignes avec `nrow()`, de colonnes avec `ncol()`, d'observations avec `count()`.
@@ -205,7 +205,7 @@ df_renomme <- df_iris %>%
 5.  A l'aide d'un `pipe` (`%>%`) et de la fonction `mutate()`, passer la variable `Sepal.Length` au format caractère.
     ```{r, eval=FALSE, echo=TRUE}
 df_sepal_char <- df_iris %>% 
-      mutate(Sepal.Length = as.character(Sepal.Length)) # Passer la variable Sepal.Length
+      mutate(Sepal.Length = as.character(Sepal.Length)) # Passer la variable Sepal.Length au format caractère
     ```
 
 6.  A l'aide d'un `pipe` (`%>%`) et de la fonction `arrange()`, trier le dataframe en fonction de `Sepal.Length`.
@@ -222,7 +222,7 @@ df_sepal_tri <- df_iris %>%
 
     -   Garder uniquement les observations pour les `Species` `setosa` et `versicolor`
     -   Renommer la variable `Petal.Length` par `longueur_petale`
-    -   créer la variable `long_large` correspondant au produit de `Sepal.Length` et `Sepal.Width`
+    -   Créer la variable `long_large` correspondant au produit de `Sepal.Length` et `Sepal.Width`
     -   Retirer la variable `Petal.Width`
     -   Trier en fonction de `longueur_petale`
 
@@ -249,6 +249,5 @@ df_sepal_tri <- df_iris %>%
       
     ```
 
-6.  Enregister son fichier, nettoyer son environnement et passer à l'exercice 2.
-
+3.  Enregister son fichier, nettoyer son environnement et passer à l'exercice 2.
 

@@ -41,7 +41,7 @@ Nos données sont désormais propres, on peut donc commencer à faire des statis
 
 1.  Connaitre les statistiques descriptives du dataframe avec `summary()`.
     ```{r, eval=FALSE, echo=TRUE}
-summary(df_final) # Permet de connaitre les statistiques descriptive des variables du dataframe
+summary(df_final) # Permet de connaitre les statistiques descriptives des variables du dataframe
     ``` 
 
 :::{.callout-warning}
@@ -68,7 +68,7 @@ nb_individu_mean = df %>%
 
 #   Produire des statistiques descriptives dans un dataframe exhaustif 
 
-Auparavant, nous avons vu comment résumer un dataframe à l'aide de `group_by()` et `summarise()`. On cherche désormais à ajouter des variables aggrégées dans le dataframe sans perdre l'information au niveau individuel. 
+Auparavant, nous avons vu comment résumer un dataframe à l'aide de `group_by()` et `summarise()`. On cherche désormais à ajouter des variables agrégées dans le dataframe sans perdre l'information au niveau individuel. 
 
 1.  A partir du dataframe, ajouter une variable indiquant le nombre d'individus moyen par `trimestre` et `defintion` à l'aide de `mutate()`.
     ```{r, eval=FALSE, echo=TRUE}
@@ -87,11 +87,11 @@ Auparavant, nous avons vu comment résumer un dataframe à l'aide de `group_by()
 
 ---
 
-# Calculer le nombre de chômeur par trimestre
-1.  Créer un dataframe de résultat avec le nombre d'individus par `trimestre` et catégorie (`defintion`) avec la fonction `group_by()`. 
+# Calculer le nombre de chômeurs par trimestre
+1.  Créer un dataframe de résultat avec le nombre d'individus par `trimestre` et catégorie (`defintiion`) avec la fonction `group_by()`. 
     ```{r, eval=FALSE, echo=TRUE}
 chomage <- df_final %>% 
-  group_by(trimestre, defintion) %>% 
+  group_by(trimestre, definition) %>% 
   summarise(effectif_actif_trim = sum(effectif, na.rm = TRUE)) 
     ``` 
     

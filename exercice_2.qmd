@@ -46,7 +46,7 @@ EEC_2019 <- read.csv2("FD_EEC_2019.csv",
       -   Modalités de certaines variables
       -   Type des variables 
     ```{r, eval=FALSE, echo=TRUE}
-nrow(EEC_2019) # Nombre de colonnes
+nrow(EEC_2019) # Nombre de lignes
 colnames(EEC_2019) # Nom des colonnes
 str(EEC_2019) # Informations sur le dataframe et les variables
     ```
@@ -63,7 +63,7 @@ df_final <- EEC_2019 %>%
       select(TRIM, ANNEE, AGE5, SEXE, ACTEU, RABS, CSTOTR, HHC6, EXTRIAN, ACTIF) # Garder uniquement les variables contenues dans liste_variable
     ```
 
-2.  Dans le nouveau dataframe, créer une variable `trimestre` concaténant la variable `TRIM` et `ANNEE` à l'aide de la fonction `paste0()`. Nous souhaitons obtenir une varibale sous la forme "2019-T4".
+2.  Dans le nouveau dataframe, créer une variable `trimestre` concaténant la variable `TRIM` et `ANNEE` à l'aide de la fonction `paste0()`. Nous souhaitons obtenir une variable sous la forme "2019-T4".
     ```{r, eval=FALSE, echo=TRUE}
 ... %>% mutate(trimestre = paste0(ANNEE,"-T",TRIM))
     ```
@@ -111,7 +111,7 @@ unique(EEC_2019$RABS)
 
 | Modalité | Défintion     |
 |:--------:|:-------------:|
-|          | Sans objet    |
+| "0"      | Sans objet    |
 | "1"      | Actif occupé  |
 | "2"      | Chômeur       |
 | "3"      | Inactif       |
