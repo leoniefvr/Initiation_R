@@ -374,9 +374,8 @@ Ces bonnes pratiques sont inspirées de [Chapitre 5 Boite à outils \| Guide des
 
 ```{r import_data, echo=FALSE, warning=FALSE, message=FALSE}
 library("dplyr")
-library("xlsx")
 
-EEC_2019 <- read.csv2("FD_EEC_2019.csv", 
+EEC_2019 <- read.table("FD_EEC_2019.csv", 
                header = TRUE, sep = ";", quote = "\"", dec = ".", fill = TRUE, comment.char = "")
 
 
