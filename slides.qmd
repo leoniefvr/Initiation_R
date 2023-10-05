@@ -375,19 +375,10 @@ Ces bonnes pratiques sont inspirées de [Chapitre 5 Boite à outils \| Guide des
 ```{r import_data, echo=FALSE, warning=FALSE, message=FALSE}
 library("dplyr")
 
-#EEC_2019 <- read.csv2("C:/Users/gaetan.guillermin/Documents/Formation/R/Dares/Data/FD_EEC_2019.csv", 
-               #header = TRUE, sep = ";", quote = "\"", dec = ".", fill = TRUE, comment.char = "")
 
 EEC_2019 <- read.csv2("FD_EEC_2019.csv", 
                header = TRUE, sep = ";", quote = "\"", dec = ".", fill = TRUE, comment.char = "")
-# 
-# library("openxlsx")
-# 
-# EEC_AGE_RGP <- read.xlsx("C:/Users/leonie.fauvre/Documents/6_GITLAB DARES DSIDE/Formations_internes_R/formation_R_site/FD_EEC_AGE_RGP.xlsx")
-# 
-# library("haven")
-# 
-# EEC_2019_SAS <- read_sas("C:/Users/leonie.fauvre/Documents/6_GITLAB DARES DSIDE/Formations_internes_R/formation_R_site/FD_EEC_2019.sas7bdat")
+
 
 ```
 
