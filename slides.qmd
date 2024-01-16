@@ -1415,7 +1415,7 @@ ex_arrange
 
 REMARQUE : Contrairement à SAS où trier est la procédure la plus utilisée, R se charge de lui même de faire les tris dont il pourrait avoir besoin. Trier n'a généralement un sens que pour organiser la présentation de résultats.
 
-### Connaitre le numéro de ligne
+## Connaitre le numéro de ligne {.scrollable .smaller}
 
 La fonction `row_number()` permet de connaître l'ordre de classement de l'observation dans la table.
 
