@@ -188,7 +188,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul class="collapse">
   <li><a href="#créer-un-projet-rstudio" id="toc-créer-un-projet-rstudio" class="nav-link active" data-scroll-target="#créer-un-projet-rstudio"><span class="header-section-number">1</span> Créer un projet RStudio</a></li>
-  <li><a href="#importer-les-données-de-lenqête-emploi-2019" id="toc-importer-les-données-de-lenqête-emploi-2019" class="nav-link" data-scroll-target="#importer-les-données-de-lenqête-emploi-2019"><span class="header-section-number">2</span> Importer les données de l’Enqête emploi 2019</a></li>
+  <li><a href="#importer-les-données-de-lenquête-emploi-2019" id="toc-importer-les-données-de-lenquête-emploi-2019" class="nav-link" data-scroll-target="#importer-les-données-de-lenquête-emploi-2019"><span class="header-section-number">2</span> Importer les données de l’Enquête emploi 2019</a></li>
   <li><a href="#mettre-en-forme-ses-données" id="toc-mettre-en-forme-ses-données" class="nav-link" data-scroll-target="#mettre-en-forme-ses-données"><span class="header-section-number">3</span> Mettre en forme ses données</a></li>
   <li><a href="#créer-des-variables-conditionnelles" id="toc-créer-des-variables-conditionnelles" class="nav-link" data-scroll-target="#créer-des-variables-conditionnelles"><span class="header-section-number">4</span> Créer des variables conditionnelles</a></li>
   <li><a href="#joindre-des-données" id="toc-joindre-des-données" class="nav-link" data-scroll-target="#joindre-des-données"><span class="header-section-number">5</span> Joindre des données</a></li>
@@ -227,22 +227,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>  <span class="co">#install.packages("dplyr") # Permet d'installer le package si besoin</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(<span class="st">"dplyr"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("dplyr") # Installation du package si besoin</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"dplyr"</span>) <span class="co"># Chargement du package : nécessaire à chaque début de session de travail dans R Studio</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div></li>
 </ol>
 <hr>
 </section>
-<section id="importer-les-données-de-lenqête-emploi-2019" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Importer les données de l’Enqête emploi 2019</h1>
+<section id="importer-les-données-de-lenquête-emploi-2019" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Importer les données de l’Enquête emploi 2019</h1>
 <ol type="1">
 <li><p>Importer les données <code>.csv</code> de l’Enquête emploi 2019 avec la fonction <code>read.csv2</code> et lui assigner le nom <code>EEC_2019</code>.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>EEC_2019 <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">"FD_EEC_2019.csv"</span>, </span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">";"</span>, <span class="at">quote =</span> <span class="st">"</span><span class="sc">\"</span><span class="st">"</span>, <span class="at">dec =</span> <span class="st">"."</span>, <span class="at">fill =</span> <span class="cn">TRUE</span>, <span class="at">comment.char =</span> <span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">header =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">sep =</span> <span class="st">";"</span>, </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">quote =</span> <span class="st">"</span><span class="sc">\"</span><span class="st">"</span>, </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>                      <span class="at">dec =</span> <span class="st">"."</span>, </span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>                      <span class="at">fill =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>                      <span class="at">comment.char =</span> <span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div></li>
 <li><p>Obtenir des informations sur le dataframe</p>
@@ -267,15 +272,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1 data-number="3"><span class="header-section-number">3</span> Mettre en forme ses données</h1>
 <p>On va désormais enchaîner les opérations, il faut donc créer un dataframe et enchaîner les pipes pour obtenir notre dataframe final.</p>
 <ol type="1">
-<li><p>Créer un dataframe en gardant uniquement les variables de la liste ci-dessous :</p>
-<ul>
-<li><code>liste_variable &lt;- c("TRIM", "ANNEE", "AGE5", "SEXE", "ACTEU", "RABS", "CSTOTR", "HHC6", "EXTRIAN", "ACTIF")</code></li>
-</ul>
+<li><p>Créer un dataframe en gardant uniquement les variables de la liste suivante : TRIM, ANNEE, AGE5, SEXE, ACTEU, RABS, CSTOTR, HHC6, EXTRIAN, ACTIF, NAFG088UN</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df_final <span class="ot">&lt;-</span> EEC_2019 <span class="sc">%&gt;%</span> </span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(TRIM, ANNEE, AGE5, SEXE, ACTEU, RABS, CSTOTR, HHC6, EXTRIAN, ACTIF) <span class="co"># Garder uniquement les variables contenues dans liste_variable</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(TRIM, </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>         ANNEE, </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>         AGE5, </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>         SEXE, </span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>         ACTEU, </span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>         RABS, </span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>         CSTOTR, </span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>         HHC6, </span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>         EXTRIAN, </span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>         ACTIF, </span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>         NAFG088UN) <span class="co"># Garder uniquement les variables contenues dans liste_variable </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div></li>
 <li><p>Dans le nouveau dataframe, créer une variable <code>trimestre</code> concaténant la variable <code>TRIM</code> et <code>ANNEE</code> à l’aide de la fonction <code>paste0()</code>. Nous souhaitons obtenir une variable sous la forme “2019-T4”.</p>
@@ -309,18 +321,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>... <span class="sc">%&gt;%</span> <span class="fu">mutate_all</span>( <span class="sc">~</span> <span class="fu">replace</span>(., <span class="fu">is.na</span>(.) <span class="sc">==</span> <span class="cn">TRUE</span>, <span class="dv">0</span>)) <span class="co"># Mutate all permet de modifier toutes les variables </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div></li>
-<li><p>Les données de l’enquête emploi sont des données pondérées, créer une variable d’effectif à l’aide de la variable <code>EXTRIAN</code> qui est la variable de pondération.</p>
+<li><p>Les données de l’enquête emploi sont des données pondérées, renommer la variable <code>EXTRIAN</code> par <code>POIDS</code>.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>... <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">effectif =</span> <span class="dv">1</span> <span class="sc">*</span> EXTRIAN)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>... <span class="sc">%&gt;%</span> <span class="fu">rename</span>(<span class="at">POIDS =</span> EXTRIAN)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div></li>
 <li><p>Trier les données par trimestre dans l’ordre croissant à l’aide de la fonction <code>arrange()</code>.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>... <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(trimestre) <span class="co"># Tri le dataframe en fonction du trimestre</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>... <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(trimestre) <span class="co"># Tri du dataframe en fonction du trimestre</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div></li>
 </ol>
@@ -333,11 +345,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>... <span class="sc">%&gt;%</span> </span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">chomage =</span> <span class="fu">if_else</span>(ACTEU <span class="sc">==</span> <span class="st">"2"</span>, <span class="st">"oui"</span>, <span class="st">"non"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>... <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">chomage =</span> <span class="fu">if_else</span>(ACTEU <span class="sc">==</span> <span class="st">"2"</span>, <span class="st">"oui"</span>, <span class="st">"non"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div></li>
-<li><p>A l’aide de la fonction <code>case_when()</code>, créer une variable <code>definition</code> prenant les modalités ci-dessous :</p></li>
+<li><p>A l’aide de la fonction <code>case_when()</code>, créer une variable <code>statut_activite_libelle</code> prenant les modalités ci-dessous :</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>... <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">statut_activite_libelle =</span> <span class="fu">case_when</span>(ACTEU <span class="sc">==</span> <span class="st">"0"</span> <span class="sc">~</span>  <span class="st">"Sans objet"</span>,</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>                                      ACTEU <span class="sc">==</span> <span class="st">"1"</span> <span class="sc">~</span>  <span class="st">"Actif occupé"</span>,</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>                                      ACTEU <span class="sc">==</span> <span class="st">"2"</span> <span class="sc">~</span>  <span class="st">"Chômeur"</span>,</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>                                      ACTEU <span class="sc">==</span> <span class="st">"3"</span> <span class="sc">~</span>  <span class="st">"Inactif"</span>,</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>                                      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Oubli"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div></li>
 </ol>
 <table class="table">
 <thead>
@@ -365,16 +386,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
-<div class="cell">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>... <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">definition =</span> <span class="fu">case_when</span>(ACTEU <span class="sc">==</span> <span class="st">"0"</span> <span class="sc">~</span>  <span class="st">"Sans objet"</span>,</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>                                      ACTEU <span class="sc">==</span> <span class="st">"1"</span> <span class="sc">~</span>  <span class="st">"Actif occupé"</span>,</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>                                      ACTEU <span class="sc">==</span> <span class="st">"2"</span> <span class="sc">~</span>  <span class="st">"Chômeur"</span>,</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>                                      ACTEU <span class="sc">==</span> <span class="st">"3"</span> <span class="sc">~</span>  <span class="st">"Inactif"</span>,</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>                                      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Oubli"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
 <div class="callout callout-style-default callout-note callout-titled" title="Bonne pratique">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -392,50 +403,77 @@ Bonne pratique
 </section>
 <section id="joindre-des-données" class="level1" data-number="5">
 <h1 data-number="5"><span class="header-section-number">5</span> Joindre des données</h1>
-<p>Nous allons désormais joindre un calendrier trimestriel avec des informations relatives aux dates.</p>
+<p>Nous allons désormais récupérer les intitulés de la NAF en 88 postes (variable <code>NAFG088UN</code>) à l’aide des jointures.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>En copiant le fichier naf2008_liste_n2.xlsx dans le dossier du projet, on utilise les avantages des chemins relatifs et on peut ne spécifier que le nom du fichier dans l’import, sans le chemin absolu sur le disque.</p>
+</div>
+</div>
 <ol type="1">
-<li><p>Importer le calendrier <code>.Rdata</code> via la fonction <code>load()</code>.</p>
+<li><p>Importer le fichier naf2008_liste_n2.xlsx via la fonction <code>read.xlsx()</code> du package <code>openxlsx</code>. Attention, les données à importer commencent à la troisième ligne du document Excel. Trouver l’option de <code>read.xlsx()</code> qui permet de le spécifier</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>calendrier <span class="ot">&lt;-</span> <span class="fu">load</span>(<span class="st">"racine/tronc/branche/calendrier.Rdata"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("openxlsx) # Installation du package si nécessaire</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openxlsx)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>intitule_naf <span class="ot">&lt;-</span> <span class="fu">read.xlsx</span>(<span class="st">"naf2008_liste_n2.xlsx "</span>,</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>                          <span class="at">startRow =</span> <span class="dv">3</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div></li>
-<li><p>Recréer la variable trimestre comme dans le dataframe que l’on utilise précédemment.</p>
+<li><p>Créer un dataframe unique en joignant les libellés NAF via la fonction <code>inner_join()</code>. Pourquoi le nombre d’observations de <code>df_final_inner</code> est inférieur à celui de <code>df_final</code> ?</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>... <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">trimestre =</span> <span class="fu">paste0</span>(an,<span class="st">"-"</span>,trim)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>df_final_inner <span class="ot">&lt;-</span> df_final <span class="sc">%&gt;%</span> </span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">NAFG088UN =</span> <span class="fu">as.character</span>(NAFG088UN)) <span class="sc">%&gt;%</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(intitule_naf, <span class="at">by =</span> <span class="fu">join_by</span>(<span class="st">"NAFG088UN"</span> <span class="sc">==</span> <span class="st">"Code"</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div></li>
-<li><p>Créer un dataframe unique en joignant le calendrier via la fonction <code>inner_join()</code>.</p>
-<div class="cell">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>df_final_inner <span class="ot">&lt;-</span> df_final <span class="sc">%&gt;%</span> </span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(calendrier) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div></li>
-<li><p>Créer un dataframe unique en joignant le calendrier via la fonction <code>left_join()</code>.</p>
-<div class="cell">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>df_final_left <span class="ot">&lt;-</span> df_final <span class="sc">%&gt;%</span> </span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(calendrier) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div></li>
-<li><p>Créer un dataframe unique en joignant le calendrier via la fonction <code>full_join()</code>.</p>
-<div class="cell">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>df_final_full <span class="ot">&lt;-</span> df_final <span class="sc">%&gt;%</span> </span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">full_join</span>(calendrier) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div></li>
-<li><p>Comparer les dataframes des différentes jointures pour comprendre ce que font les différentes fonctions et ne garder que celui où toutes les variables sont remplies.</p></li>
 </ol>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Deux conseils pour réaliser la jointure : Les variables permettant de réaliser la jointure ne portent pas le même nom. Il est toujours utile de regarder les exemples d’utilisation proposés dans l’aide de la fonction <code>?inner_join</code>. Les variables de jointure ne doivent pas obligatoirement porter le même nom, mais elles doivent être de même type pour que la jointure fonctionne. A vous de jouer pour trouver la solution !</p>
+</div>
+</div>
+<ol start="3" type="1">
+<li><p>Comment faire pour conserver toutes les observations de <code>df_final</code> en joingnant les libellés NAF ? Créer un nouveau data.frame qui répond à la question.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>df_final_left <span class="ot">&lt;-</span> df_final <span class="sc">%&gt;%</span> </span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">NAFG088UN =</span> <span class="fu">as.character</span>(NAFG088UN)) <span class="sc">%&gt;%</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(intitule_naf, <span class="at">by =</span> <span class="fu">join_by</span>(<span class="st">"NAFG088UN"</span> <span class="sc">==</span> <span class="st">"Code"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div></li>
+<li><p>Créer un dataframe qui correspond à la jointure de <code>df_final</code> et des libellés NAF via la fonction <code>full_join()</code>. Qu’est ce que cette jointure permet de faire ?</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>df_final_full <span class="ot">&lt;-</span> df_final <span class="sc">%&gt;%</span> </span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">NAFG088UN =</span> <span class="fu">as.character</span>(NAFG088UN)) <span class="sc">%&gt;%</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">full_join</span>(intitule_naf, <span class="at">by =</span> <span class="fu">join_by</span>(<span class="st">"NAFG088UN"</span> <span class="sc">==</span> <span class="st">"Code"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div></li>
+<li><p>Lequel de ces data frames joints avec les libellés conservieriez-vous pour une étude avec les données EEC ?</p></li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -444,7 +482,7 @@ Les principaux types de jointure
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
 <li><code>inner_join()</code> : Retourne les observations lorsque l’identifiant est présent dans les deux tables.</li>
@@ -466,7 +504,7 @@ Les principaux types de jointure
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -475,7 +513,7 @@ Empiler ou coller des données
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Avec R, nous pouvons aussi empiler des données avec <code>bind_cols()</code> ou bien les coller entre elles avec <code>bind_rows()</code>. Cependant, nous vous conseillons d’utiliser les jointures classiques (inner_join, left_join, …) qui permettent toutes les possibilités avec des identifiants de jointure.</p>
 <ul>
@@ -493,20 +531,20 @@ Empiler ou coller des données
 </section>
 <section id="enregistrer-ses-données" class="level1" data-number="6">
 <h1 data-number="6"><span class="header-section-number">6</span> Enregistrer ses données</h1>
-<p>Nous avons désormais un dataframe propre et utilisable pour créer des statistiques descriptives.</p>
+<p>Nous avons désormais un dataframe propre et utilisable pour créer des statistiques descriptives : le <code>df_final_left</code>.</p>
 <ol type="1">
-<li><p>Sauvegarder dans un dossier son dataframe propre au format <code>.Rdata</code> à l’aide de la fonction <code>save()</code>. vérifier que le fichier est bien enregistré à l’endroit renseigné.</p>
+<li><p>Sauvegarder dans un dossier son dataframe propre au format <code>.xlsx</code> à l’aide de la fonction <code>write.xlsx()</code>. vérifier que le fichier est bien enregistré à l’endroit renseigné.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(df_final_left, <span class="st">"racine/tronc/branche/df.Rdata"</span>) <span class="co"># Enregistrement du dataframe</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.xlsx</span>(df_final_left, <span class="at">file =</span> <span class="st">"df.xlsx"</span>) <span class="co"># Enregistrement du dataframe</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div></li>
-<li><p>Charger son dataframe à l’aide de la fonction <code>load()</code> pour vérifier que la sauvegarde est correcte.</p>
+<li><p>Charger son dataframe à l’aide de la fonction <code>read.xlsx()</code> pour vérifier que la sauvegarde est correcte.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">"racine/tronc/branche/df.Rdata"</span>) <span class="co"># Chargement du dataframe</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>df_charge <span class="ot">&lt;-</span> <span class="fu">read.xlsx</span>(<span class="st">"df.xlsx"</span>) <span class="co"># Chargement du dataframe</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div></li>
 <li><p>Enregister son fichier et passer à l’exercice 3.</p></li>
