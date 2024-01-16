@@ -13,7 +13,7 @@ theme :
   dark: darkly
 ---
 
----
+------------------------------------------------------------------------
 
 # Débuter avec R
 
@@ -24,196 +24,249 @@ theme :
 3.  Fermer R puis ouvrir à nouveau votre fichier. Un programme R est suffixé par `.R`.
 
 4.  Installer et charger le package `dplyr` avec la fonction `library`.
+
     ```{r, eval=FALSE, echo=TRUE}
     install.packages("dplyr") # Installation du package
     library("dplyr") # Chargement du package
     ```
 
-5.  Vérifier la bonne installation et le bon chargement du package à l'aide des informations de la console ou des commandes     `library()` et `search()`.
+5.  Vérifier la bonne installation et le bon chargement du package à l'aide des informations de la console ou des commandes `library()` et `search()`.
+
     ```{r, eval=FALSE, echo=TRUE}
     library() # Permet de connaitre les packages installés
-    search() # Permet de connaitre  les packages chargés
+    search() # Permet de connaitre  les packages chargés pour la session de travail
     ```
 
----
+------------------------------------------------------------------------
 
 # Créer des objets
 
 1.  Assigner à `x` la valeur `5`, vérifier que ceci a bien été fait à l'aide de la console ou de l'environnement.
+
     ```{r, eval=FALSE, echo=TRUE}
-    x <- 5 # assigne à x la valeur 5
-    x # Affiche la valeur de x 
+    x <- 5 # Assignation à x la valeur 5
+    print(x) # Affichage de la valeur de x 
+    x # Affichage de la valeur de x 
     ```
 
-Lorsque l'on créé des objets, on va toujours leur assigner un nom, ceci permet de les garder en mémoire. On peut ensuite retrouver ses objets dans l'environnement. Pour tous les nouveaux que nous allons créer, vous devrez leur assigner un nom. 
+Lorsque l'on créé des objets, on va toujours leur assigner un nom, ceci permet de les garder en mémoire vive et d'y avoir accès pendant la session de travail. On peut ensuite retrouver ses objets dans l'environnement. Pour tous les nouveaux objets que nous allons créer, vous devrez leur assigner un nom.
+
+::: callout-caution
+Ces objets sont stockés en mémoire vive pour la durée de la session de travail R. Cela signifie qu'ils sont définitivement perdus lorsque RStudio est fermé. Pour conserver des objets en dur sur le disque, il faut utiliser des fonctions d'export.
+:::
 
 2.  Créer un vecteur de 5 prénoms nommé `vec_prenom` avec `c()`.
+
     ```{r, eval=FALSE, echo=TRUE}
-    vec_prenom <- c("prenom_1", "prenom_2", "prenom_3", "prenom_4", "prenom_5") # Création d'un vecteur 
+    vec_prenom <- c("prenom_1", "prenom_2", "prenom_3", "prenom_4", "prenom_5") # Création        d'un vecteur 
     ```
 
-3.  Créer une liste de 5 prénoms nommée `liste_prenom` avec `list()`.
+3.  Afficher le type du vecteur `vec_prenom` avec la fonction `class()`.
+
     ```{r, eval=FALSE, echo=TRUE}
-    liste_prenom <- list("prenom_1", "prenom_2", "prenom_3", "prenom_4", "prenom_5") # Création d'une liste 
+    class(vec_prenom) # Affichage du type de l'objet vec_prenom
     ```
 
-4.  Créer une matrice avec 2 ligne et 3 colonne rempli de nombre avec `matrix`.
+    Aurait-il été possible d'ajouter un élément numérique dans ce vecteur ?
+
+4.  Créer une liste de 5 prénoms nommée `liste_prenom` avec `list()`.
+
     ```{r, eval=FALSE, echo=TRUE}
-matrice <- matrix(c(1,2,3, 11,12,13), nrow = 2, ncol = 3)
+    liste_prenom <- list("prenom_1", "prenom_2", "prenom_3", "prenom_4", "prenom_5") #     v      Création d'une liste 
     ```
 
-5.  Créer un vecteur de nombre allant de 1 à 20 par pas de 2 à l'aide de la fonction `seq()`.
+5.  Afficher le type de `liste_prenom` :
+
     ```{r, eval=FALSE, echo=TRUE}
-vec_1_20 <- c(seq(from = 1, to = 20, by =2))
+    class(liste_prenom) #Affichage du type de l'objet liste_prenom
     ```
 
----
+    Aurait-il été possible d'ajouter un élément numérique dans ce vecteur ? Et un booléen ?
+
+6.  Créer une matrice avec 2 lignes et 3 colonnes remplie de nombres avec `matrix`.
+
+    ```{r, eval=FALSE, echo=TRUE}
+    matrice <- matrix(c(1, 2, 3, 11, 12, 13), nrow = 2, ncol = 3)
+    ```
+
+7.  Créer un vecteur de nombres allant de 1 à 20 par pas de 2 à l'aide de la fonction `seq()`.
+
+    ```{r, eval=FALSE, echo=TRUE}
+    vec_1_20 <- seq(from = 1, to = 20, by =2)
+    ```
+
+------------------------------------------------------------------------
 
 # Les dataframes
 
 1.  Créer un dataframe nommé `df` avec 3 lignes et 2 colonnes `prenom` et `age` avec la fonction `data.frame()`. Remplir les variables avec les valeurs de votre choix.
+
     ```{r, eval=FALSE, echo=TRUE}
-df <- data.frame(prenom = c("prenom_1","prenom_2","prenom_3"),
-                 age = c(52,25,10))
+    df <- data.frame(prenom = c("prenom_1", "prenom_2", "prenom_3"),
+                     age = c(52, 25, 10))
     ```
 
 2.  Analyser la classe et le type des objets que l'on vient de créer avec la fonction `str()`.
+
     ```{r, eval=FALSE, echo=TRUE}
-str(object = df) # Permet de connaitre la structure d'un objet
-typeof(df) # Permet de connaitre le type d'un objet 
+    str(object = df) # Permet de connaitre la structure d'un objet
+    class(df) # Permet de connaitre le type d'un objet 
     ```
 
-3.  Connaitre le nom des colonnes du dataframe avec `colnames()`, le nombre de ligne avec `nrow()`, de colonne avec `ncol()`. 
+3.  Connaitre le nom des colonnes du dataframe avec `colnames()`, le nombre de lignes avec `nrow()`, de colonnes avec `ncol()`.
+
     ```{r, eval=FALSE, echo=TRUE}
-colnames(df) # Permet de connaitre la structure d'un objet
-nrow(df) # Permet de connaitre le type d'un objet 
-ncol(df)
+    colnames(df) # Permet de connaitre le nom des colonnes d'un data frame
+    nrow(df) # Permet de connaitre le nombre de lignes d'un data frame
+    ncol(df) # Permet de connaitre le nombre de colonnes d'un data frame
     ```
 
-4.  Afficher les valeurs de la variable `prenom` du dataframe créé avec `$`. 
+4.  Afficher les valeurs de la variable `prenom` du dataframe créé avec `$`.
+
     ```{r, eval=FALSE, echo=TRUE}
-df$prenom # Connaitre les valeurs de la variable prenom
+    df$prenom # Affichage (sélection) de la colonne prenom du data frame
     ```
 
-5.  Récupérer le vecteur `prenom` à partir du dataframe. 
+5.  Récupérer le vecteur `prenom` à partir du dataframe et le stocker dans un nouvel objet
+
     ```{r, eval=FALSE, echo=TRUE}
-c(df$prenom) # Récupérer le vecteur prenom à partir du dataframe
+    nouvel_objet <- df$prenom # Récupérer le vecteur prenom à partir du dataframe
     ```
 
----
-    
-# Changer le type d'un objet     
-    
-1.  Passer d'une liste à un vecteur avec `unlist()` et d'un vecteur à une liste avec `as.list()`. 
+    ## De quel type est ce nouvel objet ?
+
+# Changer le type d'un objet
+
+1.  Passer d'une liste à un vecteur avec `unlist()` et d'un vecteur à une liste avec `as.list()`.
+
     ```{r, eval=FALSE, echo=TRUE}
-delister <- unlist(liste_prenom)
-lister <- as.list(vec_prenom) # Passer à un type liste
+    delister <- unlist(liste_prenom)
+    lister <- as.list(vec_prenom) # Passage à un type liste
     ```
 
-2.  Passer d'une matrice à un dataframe avec `as.data.frame()`. 
+2.  Passer d'une matrice à un dataframe avec `as.data.frame()`.
+
     ```{r, eval=FALSE, echo=TRUE}
-dataframer <- as.data.frame(matrice) # Passer à un dataframe
+    dataframer <- as.data.frame(matrice) # Passage à un dataframe
     ```
-    
----
+
+------------------------------------------------------------------------
 
 # Nettoyer son environnement
 
-1.  Supprimer les objets que l'on vient de créer à l'aide de `rm()`. Les objets sont supprimés de l'environnement.
+1.  Supprimer les objets que l'on vient de créer à l'aide de `rm()`. Les objets sont supprimés de l'environnement et ne sont donc plus accessibles du tout.
+
     ```{r, eval=FALSE, echo=TRUE}
-rm(df) # Permet de supprimer de son environnement le dataframe df
-    ```
-    
-2.  Libérer sa mémoire à l'aide de la fonction `gc()`. Ceci permet de libérer de la mémoire lorsque l'on travaille avec des bases volumineuses. 
-    ```{r, eval=FALSE, echo=TRUE}
-gc() # Permet de libérer la mémoire inutilisée
+    rm(df) # suppression de son environnement le dataframe df
     ```
 
----
+2.  Libérer sa mémoire à l'aide de la fonction `gc()`. Ceci permet de libérer de la mémoire lorsque l'on travaille avec des bases volumineuses.
+
+    ```{r, eval=FALSE, echo=TRUE}
+    gc() # Permet de libérer la mémoire inutilisée
+    ```
+
+::: callout-note
+Normalement, la gestion de la mémoire vive en R est automatique : lorsqu'un objet n'est plus accessible car on l'a retiré de l'environnement, R le supprime de la mémoire vive automatiquement. Néanmoins, lorsqu'une base de données très volumineuses est traitée, utiliser gc() permet de forcer la libération de la mémoire vive complète avant de lancer une nouvelle ligne de programmation.
+:::
+
+------------------------------------------------------------------------
 
 # Connaitre son dataframe
 
-On va utiliser ici le dataframe `iris` qui est disponible en libre accès depuis R. Il suffit de taper iris dans R pour le voir apparaitre. On va donc l'assigner à un nom pour le garder en mémoire et pouvoir faire nos manipulations sur celui-ci. 
+On va utiliser ici le dataframe `iris` qui est disponible en libre accès depuis R. Il suffit de taper iris dans R pour le voir apparaitre. On va donc l'assigner à un nom pour le garder en mémoire et pouvoir faire nos manipulations sur celui-ci.
 
 ::: {.callout-tip collapse="true"}
 ## Dataframe iris
+
 ```{r, echo=FALSE}
 head(iris,n=5)
 ```
 :::
 
 1.  Assigner la table `iris` au nom `df_iris`.
+
     ```{r, eval=FALSE, echo=TRUE}
-df_iris <- iris # Assigner iris au nom df_iris
+    df_iris <- iris # Assignation de iris au nom df_iris
     ```
 
 2.  Se renseigner sur l'objet iris :
 
--   Le type de l'objet avec `typeof()`
+-   Le type de l'objet avec `class()`
+
 -   Le nom des variables avec `colnames()`
+
 -   Le type de variable avec `str()`
+
     ```{r, eval=FALSE, echo=TRUE}
-typeof(df_iris) # Type de l'objet
-colnames(df_iris) # Nom des variables
-str(df_iris) # Nombre d'observations = nombre de lignes
+    class(df_iris) # Type de l'objet
+    colnames(df_iris) # Nom des variables
+    str(df_iris) # Types des variables
     ```
 
 3.  Connaitre le nombre de lignes avec `nrow()`, de colonnes avec `ncol()`, d'observations avec `count()`.
+
     ```{r, eval=FALSE, echo=TRUE}
-ncol(df_iris) # Nombre de colonnes
-nrow(df_iris) # Nombre de lignes
-count(df_iris) # Nombre d'observations = nombre de lignes
+    ncol(df_iris) # Nombre de colonnes
+    nrow(df_iris) # Nombre de lignes
+    count(df_iris) # Nombre d'observations = nombre de lignes
     ```
 
 4.  Connaitre les modalités de la variable `Species` à l'aide de la fonction `unique()`. On cherche à avoir les modalités distinctes ici.
+
     ```{r, eval=FALSE, echo=TRUE}
-unique(df_iris$Species) # Permet d'obtenir les modalités distinctes de la variable Species
+    unique(df_iris$Species) # Permet d'obtenir les modalités distinctes de la variable Species
     ```
 
-
----
+------------------------------------------------------------------------
 
 # Manipuler son dataframe
 
-On va désormais utiliser les `pipes` (`%>%``) pour manipuler et transformer ses données. A chaque question, vous devez créer un nouvel objet auquel vous assignez un nom. 
+On va désormais utiliser les `pipes` (\`%\>%\`\`) pour manipuler et transformer ses données. A chaque question, vous devez créer un nouvel objet auquel vous assignez un nom.
 
 1.  A l'aide d'un `pipe` (`%>%`) et de la fonction `select()`, créer un dataframe avec une seule variable du dataframe `iris`.
+
     ```{r, eval=FALSE, echo=TRUE}
-df_1_variable <- df_iris %>% 
+    df_1_variable <- df_iris %>% 
       select(Species)
     ```
 
 2.  A l'aide d'un `pipe` (`%>%`) et de la fonction `mutate()`, créer une variable correspondant à la somme des variables `Sepal.Length` et `Sepal.Width`.
+
     ```{r, eval=FALSE, echo=TRUE}
-df_somme_iris <- df_iris %>% 
+    df_somme_iris <- df_iris %>% 
       mutate(somme = Sepal.Length + Sepal.Width)
     ```
 
 3.  A l'aide d'un `pipe` (`%>%`) et de la fonction `filter()`, garder uniquement les observations pour lesquelles `Petal.Width` est supérieur à `0.2`.
+
     ```{r, eval=FALSE, echo=TRUE}
-df_grande_petale <- df_iris %>% 
-      filter(Petal.Width > 0.2) # Garder uniquement les lignes où Petal.Width > 0.2 
+    df_grande_petale <- df_iris %>% 
+      filter(Petal.Width > 0.2) # Seules les lignes où Petal.Width > 0.2 sont conservées dans df_grande_petale
     ```
 
-4.  A l'aide d'un `pipe` (`%>%`) et de la fonction `rename`()`, renommer la variable `Species` par `espece`.
+4.  A l'aide d'un `pipe` (`%>%`) et de la fonction `rename`()`, renommer la variable`Species`par`espece\`.
+
     ```{r, eval=FALSE, echo=TRUE}
-df_renomme <- df_iris %>% 
-      rename(espece = Species) # Renommer la variable Species par espece
+    df_renomme <- df_iris %>% 
+      rename(espece = Species) # Remplacement du nom de la variable Species par espece
     ```
 
 5.  A l'aide d'un `pipe` (`%>%`) et de la fonction `mutate()`, passer la variable `Sepal.Length` au format caractère.
+
     ```{r, eval=FALSE, echo=TRUE}
-df_sepal_char <- df_iris %>% 
-      mutate(Sepal.Length = as.character(Sepal.Length)) # Passer la variable Sepal.Length au format caractère
+    df_sepal_char <- df_iris %>% 
+      mutate(Sepal.Length = as.character(Sepal.Length)) # Passage de la variable Sepal.Length au format caractère
     ```
 
-6.  A l'aide d'un `pipe` (`%>%`) et de la fonction `arrange()`, trier le dataframe en fonction de `Sepal.Length`.
+6.  A l'aide d'un `pipe` (`%>%`) et de la fonction `arrange()`, trier le dataframe en fonction de `Sepal.Length`, par ordre décroissant.
+
     ```{r, eval=FALSE, echo=TRUE}
-df_sepal_tri <- df_iris %>% 
-      arrange(Sepal.Length) # Trier le dataframe en fonction de la variable Sepal.Length
+    df_sepal_tri <- df_iris %>% 
+      arrange(desc(Sepal.Length)) # Tri du dataframe en fonction de la variable Sepal.Length, par ordre décroissant
     ```
 
----
+------------------------------------------------------------------------
 
 # Enchainer les pipes
 
@@ -249,4 +302,3 @@ df_sepal_tri <- df_iris %>%
     ```
 
 3.  Enregister son fichier, nettoyer son environnement et passer à l'exercice 2.
-

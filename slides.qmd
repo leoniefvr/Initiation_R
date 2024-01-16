@@ -84,6 +84,7 @@ La **console** est un peu comme une calculatrice, elle exécute mais **ne stocke
 
 ```{r, echo=FALSE}
 152/17
+
 ```
 :::
 :::

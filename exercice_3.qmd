@@ -22,15 +22,16 @@ Nous avons précédemment créé une base de travail propre permettant d'en reti
 
 2.  Charger les packages `dplyr`, `lubridate`, `tidyr`. 
     ```{r, eval=FALSE, echo=TRUE}
-#install.packages("ggplot") # Permet d'installer le package si besoin
-library("dplyr")
-library("lubridate") # Package de gestion des dates
-library("tidyr")
+    #install.packages("ggplot") # Permet d'installer le package si besoin
+    library(dplyr)
+    library(lubridate) # Package de gestion des dates
+    library(tidyr)
+    library(Hmisc)
     ```
 
-3.  Importer le dataframe précédemment enregistré au format `.Rdata`.
+3.  Importer le dataframe précédemment enregistré au format `.xlsx`.
     ```{r, eval=FALSE, echo=TRUE}
-load("df.Rdata") # Chargement du dataframe
+    df_final <- read.xlsx("df.xlsx") # Chargement du dataframe
     ```
     
 ---
@@ -41,7 +42,7 @@ Nos données sont désormais propres, on peut donc commencer à faire des statis
 
 1.  Connaitre les statistiques descriptives du dataframe avec `summary()`.
     ```{r, eval=FALSE, echo=TRUE}
-summary(df_final) # Permet de connaitre les statistiques descriptives des variables du dataframe
+    summary(df_final) # Permet de connaitre les statistiques descriptives des variables du dataframe
     ``` 
 
 :::{.callout-warning}
@@ -49,19 +50,25 @@ La fonction `summary()` utilisée ici ne tient pas compte des pondérations. Les
 :::
 
 2.  A l'aide de pipe, faire la somme des effectifs par `trimestre` avec la fonction `summarise()`.
+
     ```{r, eval=FALSE, echo=TRUE}
-nb_individu <- df_final %>% 
+    nb_individu <- df_final %>% 
       group_by(trimestre) %>% 
-      summarise(individu = sum(effectif, na.rm = TRUE)) 
+      summarise(effectifs = sum(POIDS)) 
+    nb_individu
     ``` 
 
-3.  Créer un dataframe avec la moyenne (`mean()`), le premier quartiles (`quantile()`) et la médiane (`median()`) du nombre d'individu en fonction de la variable `SEXE`.
+3.  Faire la somme des effectifs pondérés par `trimestre` avec la fonction `wtd.table()` du package `Hmisc`.
+
+    ```{r, eval = FALSE, echo = TRUE}
+    wtd.table(x = df_final$TRIM, weights = df_final$POIDS)
+    ```
+
+4.  Calculer les effectifs par modalités de la NAF en 88 postes, en utilisant la variable `Libellé` pour que les résultats soient lisibles.
     ```{r, eval=FALSE, echo=TRUE}
-nb_individu_mean = df %>% 
-  group_by(SEXE) %>% 
-  summarise(mean = mean(effectif, na.rm = TRUE),
-            median = median(effectif, na.rm = TRUE),
-            quantile_1 = quantile(effectif, 0.25))
+    nb_individu_NAF = df_final %>% 
+      group_by(Libellé) %>% 
+      summarise(effectifs = sum(POIDS))
     ``` 
 
 ---
@@ -70,36 +77,36 @@ nb_individu_mean = df %>%
 
 Auparavant, nous avons vu comment résumer un dataframe à l'aide de `group_by()` et `summarise()`. On cherche désormais à ajouter des variables agrégées dans le dataframe sans perdre l'information au niveau individuel. 
 
-1.  A partir du dataframe, ajouter une variable indiquant le nombre d'individus moyen par `trimestre` et `defintion` à l'aide de `mutate()`.
+1.  A partir du dataframe, ajouter une variable indiquant le nombre d'individus moyen par `trimestre` et `statut_activite_libelle` à l'aide de `mutate()`.
     ```{r, eval=FALSE, echo=TRUE}
-... %>% 
-  group_by(trimestre, defintion) %>% 
-  mutate(sum_actif = mean(effectif, na.rm = TRUE)) %>% 
-  ungroup()
+   ... %>% 
+      group_by(trimestre, statut_activite_libelle) %>% 
+      mutate(sum_actif = sum(POIDS)) %>% 
+      ungroup()
     ```
 
 2.  Ajouter ensuite une variable du nombre total d'individus sur le trimestre.
     ```{r, eval=FALSE, echo=TRUE}
-... %>% 
-  group_by(trimestre, definition) %>% 
-  mutate(indiv = sum(effectif, na.rm = TRUE)) 
+    ... %>% 
+      group_by(trimestre) %>% 
+      mutate(indiv_trim = sum(POIDS, na.rm = TRUE)) 
     ```
 
 ---
 
 # Calculer le nombre de chômeurs par trimestre
-1.  Créer un dataframe de résultat avec le nombre d'individus par `trimestre` et catégorie (`defintiion`) avec la fonction `group_by()`. 
+1.  Créer un dataframe de résultat avec le nombre d'individus par `trimestre` et catégorie (`statut_activite_libelle`) avec la fonction `group_by()`. 
     ```{r, eval=FALSE, echo=TRUE}
 chomage <- df_final %>% 
-  group_by(trimestre, definition) %>% 
-  summarise(effectif_actif_trim = sum(effectif, na.rm = TRUE)) 
+  group_by(trimestre, statut_activite_libelle) %>% 
+  summarise(effectif_actif_trim = sum(POIDS, na.rm = TRUE)) 
     ``` 
     
-2.  Calculer la part de chaque modalité par trimestre dans le nombre d'individus total. 
+2.  Calculer la part de chaque modalité par trimestre dans le nombre d'individus total du trimestre. 
     ```{r, eval=FALSE, echo=TRUE}
 taux_chomage <- chomage %>% 
   group_by(trimestre) %>% 
-  mutate(effectif_total = sum(effectif, na.rm = TRUE)) %>% 
+  mutate(effectif_total = sum(effectif_actif_trim, na.rm = TRUE)) %>% 
   ungroup() %>% 
   mutate(taux = (effectif_actif_trim / effectif_total)*100)
     ``` 
@@ -108,23 +115,27 @@ taux_chomage <- chomage %>%
 
 # Mettre en forme ses résultats 
 
-1.  Créer un dataframe avec le nombre d'individus en ayant une colonne par définition à l'aide de la fonction `pivot_wider()`. 
+1.  Créer un dataframe avec les effectifs pondérés par statut d'activité et par trimestre avec en colonne le statut d'activité et en ligne le trimestre à l'aide de la fonction `pivot_wider()` (2 étapes). 
     ```{r, eval=FALSE, echo=TRUE}
-df_pivot <- nb_individu_trim_definition %>% 
-      pivot_wider(names_from = c(ACTEU,definition), values_from = c(effectif,taux))
+df_eff_trim_activite <- df_final %>%
+      group_by(trimestre, statut_activite_libelle) %>%
+      summarise(effectifs = sum(POIDS))
+    
+df_pivot <- df_eff_trim_activite %>% 
+      pivot_wider(names_from = c(statut_activite_libelle), values_from = c(effectifs))
     ```     
 
 2.  Faire l'opération inverse à l'aide de la fonction `pivot_longer()`. 
     ```{r, eval=FALSE, echo=TRUE}
 df_unpivot <- df_pivot %>% 
-      pivot_longer(!c(trimestre), names_to = "definition", values_to = "effectif")
+      pivot_longer(!c(trimestre), names_to = "statut_activite_libelle", values_to = "effectifs")
     ```
 
 # Exporter ses résultats
 
 1.  Télécharger et charger le package `xlsx`.
     ```{r, eval=FALSE, echo=TRUE}
-install.packages(xlsx) # Installation du package
+#install.packages(xlsx) # Installation du package
 library(xlsx) # Chargement du package
     ``` 
 
@@ -140,9 +151,8 @@ liste_onglet = list("statut_bit" = df_pivot,
 write_xlsx(liste_onglet, "resultat_total.xlsx") # Export du fichier excel
     ```
 
-4.  Exporter ses résultats au format .csv avec `write_csv2()` ainsi qu'au format `.Rdata`.
+4.  Exporter ses résultats au format .csv avec `write_csv2()`.
     ```{r, eval=FALSE, echo=TRUE}
 write.csv2()
-save(df_pivot, file = "df_pivot.Rdata")
     ```    
 

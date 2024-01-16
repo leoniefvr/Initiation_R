@@ -21,10 +21,7 @@ Nous avons vu précédemment comment importer, traiter et résumer ses données.
 Travailler via un R project est une bonne pratique, cela permet également de faciliter l'accès à des dossiers puisque la racine est définie par l'emplacement du R project. 
 
 1.  Créer un R project et l'enregistrer.
-    ```{r, eval=FALSE, echo=TRUE}
-load("racine/tronc/branche/df.Rdata") # Chargement du dataframe
-    ```
-    
+
 2.  Connaitre où se situe la racine du projet grace à `getwd()`.
     ```{r, eval=FALSE, echo=TRUE}
 getwd() # Permet de connaitre la racine du working directory
@@ -96,10 +93,6 @@ Lorsque l'on importe un fichier SAS en R, il faut donc bien préciser l'origine 
    
 ---
 
-# Chomâge et demandeurs d'emploi
-1.  Importer les données sur les chomeurs au sens du BIT. 
-
-2.  Joindre les données sur les demandeurs d'emploi.
 
 # Visualisation graphique
 Des bibliothèques graphiques sont à disposition ([r-graph-gallery](https://r-graph-gallery.com/) ou [r-charts](https://r-charts.com/)) pour trouver des templates de visualisation et le code associé. 
@@ -132,7 +125,7 @@ ggplot(defm) +
 
 4.  Créer un barlpot avec la spécification `geom_bar()`.
     ```{r, eval=FALSE, echo=TRUE}
-ggplot(defm, aes(x=trim, y=defmA)) + 
+ggplot(defm, aes(x=date, y=defmA)) + 
   geom_bar(stat = "identity")
     ``` 
 
