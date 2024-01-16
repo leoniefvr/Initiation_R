@@ -23,6 +23,16 @@ editor: visual
 -   🤝 Communauté importante : facilités pour trouver de l'aide 🤝
 :::
 
+## Quel avantages de R pour la Dares ? {.scrollable .smaller}
+
+-   Homogénéiser les pratiques au sein du SSP
+
+-   Renforcer l'attractivité de la Dares, dans un contexte où les sortants d'école sont plus fréquemment formés à R/Python
+
+-   Développer certains modèles dits Big Data et Machine learning très récents implémentés sous R et Python : l'exemple de Jocas à la Dares sous Python et des recommandations du GT Big Data
+
+-   Profiter de l'intégration de R à d'autres outils comme Git, qui facilitent le travail collaboratif
+
 ## Fonctionnement de R {.scrollable .smaller}
 
 <br>
@@ -52,6 +62,18 @@ Toutes les opérations sont enregistrées dans la mémoire vive de l'ordinateur 
     | ⛔Impossible de charger des données de 50GO avec un ordinateur ayant 32GO de RAM ⛔ |
 
     **Attention :** R distingue les minuscules et les majuscules
+
+## Le travail en mémoire vive à la Dares {.scrollable .smaller}
+
+La mémoire vive en R est donc utilisée à la fois pour charger les données à manipuler et pour réaliser les calculs demandés.
+
+La Dares reçoit des données administratives parfois conséquentes, plus volumineuses que la mémoire vive des ordinateurs portables fournis. Dans ce cas, différentes solutions existent et se développent au sein du SSP :
+
+-   Créer un échantillon des données à la réception, mais cela peut poser problème pour travailler sur des sous-populations ;
+
+-   Le format de données compressées parquet, qui peut être manipulé avec les packages arrow et duckdb, se développe à l'Insee ;
+
+-   Lorsque les données sont beaucoup plus volumineuses que la mémoire vive et doivent être traitées avec un serveur, des solutions telles que le calcul distribué avec Spark peuvent être envisagées. Un atelier d'exemple de manipulation des données MiDAS avec Spark sous R et sous CASD est prévu dans l'année pour illustrer ces solutions.
 
 # Présentation de RStudio {.scrollable}
 
