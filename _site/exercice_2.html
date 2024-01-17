@@ -302,7 +302,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>         HHC6, </span>
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>         EXTRIAN, </span>
 <span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>         ACTIF, </span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>         NAFG088UN) <span class="co"># Garder uniquement les variables contenues dans liste_variable</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>         NAFG088UN) <span class="co"># Garder uniquement les variables contenues dans liste_variable </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div></li>
 <li><p>Dans le nouveau dataframe, créer une variable <code>trimestre</code> concaténant la variable <code>TRIM</code> et <code>ANNEE</code> à l’aide de la fonction <code>paste0()</code>. Nous souhaitons obtenir une variable sous la forme “2019-T4”.</p>
@@ -363,11 +363,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>... <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">chomage =</span> <span class="fu">if_else</span>(ACTEU <span class="sc">==</span> <span class="st">"2"</span>, <span class="st">"oui"</span>, <span class="st">"non"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div></li>
-<li><p>A l’aide de la fonction <code>case_when()</code>, créer une variable <code>definition</code> prenant les modalités ci-dessous :</p>
+<li><p>A l’aide de la fonction <code>case_when()</code>, créer une variable <code>statut_activite_libelle</code> prenant les modalités ci-dessous :</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>... <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">definition =</span> <span class="fu">case_when</span>(ACTEU <span class="sc">==</span> <span class="st">"0"</span> <span class="sc">~</span>  <span class="st">"Sans objet"</span>,</span>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>... <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">statut_activite_libelle =</span> <span class="fu">case_when</span>(ACTEU <span class="sc">==</span> <span class="st">"0"</span> <span class="sc">~</span>  <span class="st">"Sans objet"</span>,</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>                                      ACTEU <span class="sc">==</span> <span class="st">"1"</span> <span class="sc">~</span>  <span class="st">"Actif occupé"</span>,</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>                                      ACTEU <span class="sc">==</span> <span class="st">"2"</span> <span class="sc">~</span>  <span class="st">"Chômeur"</span>,</span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>                                      ACTEU <span class="sc">==</span> <span class="st">"3"</span> <span class="sc">~</span>  <span class="st">"Inactif"</span>,</span>

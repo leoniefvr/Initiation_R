@@ -316,12 +316,12 @@ Warning
 <h1 data-number="3"><span class="header-section-number">3</span> Produire des statistiques descriptives dans un dataframe exhaustif</h1>
 <p>Auparavant, nous avons vu comment résumer un dataframe à l’aide de <code>group_by()</code> et <code>summarise()</code>. On cherche désormais à ajouter des variables agrégées dans le dataframe sans perdre l’information au niveau individuel.</p>
 <ol type="1">
-<li><p>A partir du dataframe, ajouter une variable indiquant le nombre d’individus moyen par <code>trimestre</code> et <code>definition</code> à l’aide de <code>mutate()</code>.</p>
+<li><p>A partir du dataframe, ajouter une variable indiquant le nombre d’individus moyen par <code>trimestre</code> et <code>statut_activite_libelle</code> à l’aide de <code>mutate()</code>.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>   ... <span class="sc">%&gt;%</span> </span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(trimestre, definition) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(trimestre, statut_activite_libelle) <span class="sc">%&gt;%</span> </span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sum_actif =</span> <span class="fu">sum</span>(POIDS)) <span class="sc">%&gt;%</span> </span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -341,12 +341,12 @@ Warning
 <section id="calculer-le-nombre-de-chômeurs-par-trimestre" class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> Calculer le nombre de chômeurs par trimestre</h1>
 <ol type="1">
-<li><p>Créer un dataframe de résultat avec le nombre d’individus par <code>trimestre</code> et catégorie (<code>definition</code>) avec la fonction <code>group_by()</code>.</p>
+<li><p>Créer un dataframe de résultat avec le nombre d’individus par <code>trimestre</code> et catégorie (<code>statut_activite_libelle</code>) avec la fonction <code>group_by()</code>.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>chomage <span class="ot">&lt;-</span> df_final <span class="sc">%&gt;%</span> </span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(trimestre, definition) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(trimestre, statut_activite_libelle) <span class="sc">%&gt;%</span> </span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">effectif_actif_trim =</span> <span class="fu">sum</span>(POIDS, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div></li>
@@ -372,11 +372,11 @@ Warning
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>df_eff_trim_activite <span class="ot">&lt;-</span> df_final <span class="sc">%&gt;%</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(trimestre, definition) <span class="sc">%&gt;%</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(trimestre, statut_activite_libelle) <span class="sc">%&gt;%</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">effectifs =</span> <span class="fu">sum</span>(POIDS))</span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>df_pivot <span class="ot">&lt;-</span> df_eff_trim_activite <span class="sc">%&gt;%</span> </span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> <span class="fu">c</span>(definition), <span class="at">values_from =</span> <span class="fu">c</span>(effectifs))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> <span class="fu">c</span>(statut_activite_libelle), <span class="at">values_from =</span> <span class="fu">c</span>(effectifs))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div></li>
 <li><p>Faire l’opération inverse à l’aide de la fonction <code>pivot_longer()</code>.</p>
@@ -384,7 +384,7 @@ Warning
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>df_unpivot <span class="ot">&lt;-</span> df_pivot <span class="sc">%&gt;%</span> </span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="sc">!</span><span class="fu">c</span>(trimestre), <span class="at">names_to =</span> <span class="st">"definition"</span>, <span class="at">values_to =</span> <span class="st">"effectifs"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="sc">!</span><span class="fu">c</span>(trimestre), <span class="at">names_to =</span> <span class="st">"statut_activite_libelle"</span>, <span class="at">values_to =</span> <span class="st">"effectifs"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div></li>
 </ol>
