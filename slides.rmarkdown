@@ -1,0 +1,1938 @@
+---
+title: "Prise en main des données avec R"
+format: 
+  revealjs:
+    slide-number: true 
+    footer: "Formation R - Dares"
+editor: visual
+---
+
+
+## Un rapide tour de table pour apprendre à se connaître 🙂
+
+![](images/picture_1.jpg){fig-align="center"}
+
+## Pourquoi R ? {.scrollable .smaller}
+
+<br>
+
+::: incremental
+-   ⭐ Open source et gratuit ⭐
+-   🌐 Harmonisation des langages au sein du SSP 🌐
+-   📈 Analyse statistique avancée 📈
+-   🌳 Vaste écosystème : extensions appelées "packages" (environ 20 000) 🌳
+-   🤝 Communauté importante : facilités pour trouver de l'aide 🤝
+:::
+
+## Quel avantages de R pour la Dares ? {.scrollable .smaller}
+
+-   Homogénéiser les pratiques au sein du SSP
+
+-   Renforcer l'attractivité de la Dares, dans un contexte où les sortants d'école sont plus fréquemment formés à R/Python
+
+-   Développer certains modèles dits Big Data et Machine learning très récents implémentés sous R et Python : l'exemple de Jocas à la Dares sous Python et des recommandations du GT Big Data
+
+-   Profiter de l'intégration de R à d'autres outils comme Git, qui facilitent le travail collaboratif
+
+## Fonctionnement de R {.scrollable .smaller}
+
+<br>
+
+-   R est un environnement et un langage de programmation
+
+-   **Langage interprété** : plus proche de notre langage que du langage machine
+
+-   **Langage compilé** : les commandes tapées sont exécutées directement
+
+-   **Langage objet** : on assigne une valeur à quelque chose (`a <- 1`). Le symbole `<-` désigne l'assignation. Les objets sont présents dans la mémoire vive de l'ordinateur (RAM) et l'assignation est une manière d'y avoir accès.
+
+⛔**Attention :** le symbole `=` permet également l'assignation, mais c'est une très mauvaise pratique de l'utiliser comme tel. Le symbole `=` est utilisé de préférence pour renseigner la valeur des arguments des fonctions dans R. Vous pourrez néanmoins le rencontrer parfois comme manière d'assigner. ⛔
+
+## Les spécificités de R {.scrollable .smaller}
+
+<br>
+
+Toutes les opérations sont enregistrées dans la mémoire vive de l'ordinateur (RAM) :
+
+-   Cela peut poser des problèmes lors de la manipulation de données volumineuses.
+
+-   En SAS, la mémoire RAM est sollicitée au minimum, des fichiers temporaires sont créés.
+
+    |                                                                                     |
+    |------------------------------------------------------------------------|
+    | ⛔Impossible de charger des données de 50GO avec un ordinateur ayant 32GO de RAM ⛔ |
+
+    **Attention :** R distingue les minuscules et les majuscules
+
+## Le travail en mémoire vive à la Dares {.scrollable .smaller}
+
+La mémoire vive en R est donc utilisée à la fois pour charger les données à manipuler et pour réaliser les calculs demandés.
+
+La Dares reçoit des données administratives parfois conséquentes, plus volumineuses que la mémoire vive des ordinateurs portables fournis. Dans ce cas, différentes solutions existent et se développent au sein du SSP :
+
+-   Créer un échantillon des données à la réception, mais cela peut poser problème pour travailler sur des sous-populations ;
+
+-   Le format de données compressées parquet, qui peut être manipulé avec les packages arrow et duckdb, se développe à l'Insee ;
+
+-   Lorsque les données sont beaucoup plus volumineuses que la mémoire vive et doivent être traitées avec un serveur, des solutions telles que le calcul distribué avec Spark peuvent être envisagées. Un atelier d'exemple de manipulation des données MiDAS avec Spark sous R et sous CASD est prévu dans l'année pour illustrer ces solutions.
+
+# Présentation de RStudio {.scrollable}
+
+RStudio est un environnement de développement gratuit, libre et multiplateforme pour R, un langage de programmation utilisé pour le traitement de données et l'analyse statistique.
+
+## La console {.scrollable .smaller}
+
+::: columns
+::: {.column width="50%"}
+La **console** est un peu comme une calculatrice, elle exécute mais **ne stocke pas** :
+
+-   Entrer les commandes
+
+-   Afficher les résultats
+
+-   Afficher les messages d'erreur
+
+-   Ne stocke pas d'information
+
+<br>
+
+::: panel-tabset
+### Code {.scrollable}
+
+
+```{r, echo=TRUE, results='hide', eval=FALSE}
+152/17
+```
+
+
+### Résultat {.scrollable}
+
+
+```{r, echo=FALSE}
+152/17
+
+```
+
+:::
+:::
+
+::: {.column width="50%"}
+![](images/console_R.jpeg)
+:::
+:::
+
+## L'environnement : {.scrollable .smaller}
+
+::: columns
+::: {.column width="50%"}
+<br>
+
+-   Etat de la mémoire <br>
+-   Répertoire des données (stockage des objets) <br>
+-   Import de données en mode "clic-bouton"
+
+
+```{r, echo=TRUE, results='hide', eval=FALSE}
+test_environnement <- 1+1
+```
+
+:::
+
+::: {.column width="50%"}
+![](images/console_R.jpeg)
+:::
+:::
+
+## Files, packages, help ... {.scrollable .smaller}
+
+::: columns
+::: {.column width="50%"}
+::: panel-tabset
+### Files {.scrollable}
+
+<br>
+
+Obtenir le chemin à la racine de ma working directory :
+
+
+```{r, echo=TRUE, results='hide', eval=FALSE}
+getwd()
+```
+
+
+<br>
+
+La working directory est l'endroit où R lit et exporte par défaut les fichiers.
+
+### Plots {.scrollable}
+
+<br>
+
+Fenêtre d'affichage des graphiques :
+
+
+```{r, echo=TRUE, results='hide', eval=FALSE}
+plot(100)
+```
+
+
+### Packages {.scrollable}
+
+<br>
+
+Permet de voir les packages installés et chargés.
+
+
+```{r, echo=TRUE, results='hide', eval=FALSE}
+library("existepas")
+```
+
+
+Permet également de les installer, les mettre à jour et les charger en clic bouton.
+
+### Help {.scrollable}
+
+<br>
+
+Permet d'accéder à la documentation des fonctions, ainsi qu'à des exemples. Par exemple, je ne comprends pas la fonction `mean()` :
+
+
+```{r, echo=TRUE, results='hide', eval=FALSE}
+help("mean")
+
+#ou
+
+?mean
+```
+
+
+La documentation de la fonction s'affiche dans la fenêtre Help.
+:::
+:::
+
+::: {.column width="50%"}
+![](images/console_R.jpeg)
+:::
+:::
+
+## Utiliser l'aide {.scrollable .smaller}
+
+<br>
+
+Les fonctions des packages sont documentées (de manière inégale selon les packages...), et les **arguments** principaux de chaque fonction sont présentés dans l'aide, avec des exemples d'appel de la fonction.
+
+::: {.callout-tip title="Bonne pratique"}
+Lorsqu'on appelle une fonction dans R, R détecte souvent automatiquement les arguments sans qu'on ait besoin de les nommer explicitement. Pour des raisons de lisibilité du code, il est recommandé de les **nommer** systématiquement.
+:::
+
+
+```{r, echo = TRUE}
+
+un_vecteur <- c(2, 3 ,9 , 45, 10)
+
+###Bonne pratique###
+mean(x = un_vecteur)
+
+###Mauvaise pratique###
+mean(un_vecteur)
+
+```
+
+
+## L'importance des packages {.scrollable .smaller}
+
+Pour installer un package **dans la console**, on utilise :
+
+
+```{r, echo=TRUE, results='hide', eval=FALSE}
+install.packages("dplyr")
+```
+
+
+::: callout-tip
+## Bonne pratique
+
+Ne pas laisser dans un script R (un fichier de code) l'instruction `install.packages()`, car lors de la transmission d'un script, la personne peut l'exécuter par erreur alors que le package est déjà installé/à jour sur son poste de travail.
+:::
+
+Cela permet de charger (ou mettre à jour) le package sur disque, depuis le **CRAN**. cette instruction nécessite donc une connexion à internet.
+
+On charge ensuite le package en mémoire vive :
+
+
+```{r, echo=TRUE, results='hide', eval=FALSE}
+library("dplyr")
+```
+
+
+-   L'installation du package n'est à exécuter **qu'une seule fois**
+
+-   `install.packages()` permet aussi de récupérer une version mise à jour disponible sur le CRAN
+
+-   Le chargement en mémoire vive (avec `library()`) doit être effectué au début de chaque session ouverte de R pour avoir accès aux fonctionnalités du package.
+
+::: callout-warning
+⛔ Il existe un grand nombre de packages, mais certains sont **DEPRECATED** : leur utilisation n'est plus recommandée car ils ne sont plus mis à jour et entretenus. Pour assurer la pérennité d'un programme, (chaîne de production), il est recommandé de n'utiliser que des packages largemment utilisés, régulièrement mis à jour et recommandé par la communauté (sur UtilitR par exemple).⛔
+:::
+
+
+```{r}
+library(dplyr)
+```
+
+
+## Travailler avec les projets R Studio : qu'est-ce que c'est ? {.scrollable .smaller}
+
+Il est recommandé de regrouper les scripts et autres fichiers relatifs à un même "projet statistique" ou à une même chaîne de production à l'aide d'un projet RStudio.
+
+Un **projet RStudio** permet de :
+
+-   **regrouper** les programmes et autres types de documents d'un même projet ensemble ;
+
+-   faciliter le **suivi des modifcations**, notamment avec git ;
+
+-   favoriser la **reproductibilité** et la transmission des réglages liés à un projet statistique.
+
+En pratique, c'est un fichier `.Rproj` dans un dossier qui contient les programmes et les documents d'un même projet statistique.
+
+## Travailler avec les projets R Studio : pourquoi ? {.scrollable .smaller}
+
+Il est recommandé de travailler systématiquement avec les projets RStudio. Un projet RStudio :
+
+-   **centralise** les éléments d'un projet statistique et permet d'y avoir accès plus facilement avec les **chemins relatifs** : dans un programme, pour faire référence à un document du projet RStudio, il suffit de renseigner son nom car le répertoire de travail par défaut d'un projet est le dossier où se situe le fichier `.Rproj`.
+
+-   **améliore le travail collaboratif** : le principe des chemins relatifs rend le projet statistique indépendant de l'arborescence de la machine sur laquelle il est hébergé, et permet de déplacer les fichiers plus facilement.
+
+-   **favorise la** **reproductibilité** du projet statistique (ou de développement, d'un package par exemple). Il facilite également le travail avec **Git**. Il est facile de relier un projet RStudio à git pour travailler collaborativement.
+
+## Créer un projet {.scrollable .smaller}
+
+::: columns
+::: {.column width="30%"}
+Pour créer un projet sur RStudio :
+
+-   `File > New project`
+
+-   Il est possible de le créer dans un nouveau dossier vide `New directory` ou dans un dossier existant `Existing directory`.
+
+-   Il est également possible de le relier directement à git `Version Control`.
+:::
+
+::: {.column width="60%"}
+::: r-stack
+![](images/creer_projet_rstudio.png){.fragment width="550" height="400"}
+
+![](images/new_project_2.png){.fragment width="550" height="400"}
+
+![](images/new_project_3.png){.fragment width="550" height="400"}
+:::
+:::
+:::
+
+## Ouvrir un projet (source : UtilitR) {.scrollable .smaller}
+
+<br>
+
+Lorsqu'on ouvre un projet RStudio :
+
+-   une nouvelle session R s'ouvre ;
+
+-   les sauvegardes de l'environnement sont ouvertes à partir du fichier `.RData` si l'enregistrement a été activé (déconseillé) ;
+
+-   la working directory est automatiquement définie dans le dossier où se trouve le fichier `.Rproj` ;
+
+-   les documents ouverts au moment où le projet a été fermé pour la dernière fois sont restaurés, même s'ils n'avaient pas été sauvés.
+
+## Fermer un projet (voir UtilitR) {.scrollable .smaller}
+
+<br>
+
+D'après la [documentation UtilitR sur les bonnes pratiques](https://www.book.utilitr.org/03_fiches_thematiques/fiche_rprojects) :
+
+Il est fortement conseillé de désactiver la sauvegarde du fichier `.RData` à la fermeture du projet. Pour ce faire, il faut aller dans `Tools > Global Options` et rester dans l'onglet General. Chercher `Save workspace to .RData on exit:`, et choisir l'option Never.
+
+::: {.callout-tip title="Bonne pratique"} Sauvegarder et recharger les données du projet avec le fichier `.RData` est une **très mauvaise pratique** en termes de reproductibilité. En effet, il se peut que les données sauvegardées dans le `.RData` aient subi des modifications non documentées (par exemple via la console), ou que les instructions présentes dans les scripts du projet n'aient pas été exécutées dans l'ordre. Dans ce cas, les données contenues dans le `.RData` peuvent ne pas être cohérentes avec le projet, et en les utilisant vous risquez de ne pas obtenir les résultats que vous voulez. :::
+
+## Fermer un projet (voir UtilitR) {.scrollable .smaller}
+
+::: r-stack
+![](images/new_script.png){.fragment width="550" height="400"}
+
+![](images/close_project_1.png){.fragment width="550" height="400"}
+
+![](images/close_project_2.png){.fragment width="550" height="400"}
+
+![](images/close_project_3.png){.fragment width="550" height="400"}
+:::
+
+## Rédiger un programme R : les bonnes pratiques {.scrollable .smaller}
+
+<br>
+
+Comme nous l'avons vu, la console ne permet pas de stocker un programme. Pour rédiger un programme réplicable, il faut créer un **script R** (fichier `.R`).
+
+Cette formation vise à vous proposer quelques bonnes pratiques qui permettent la transmission des programmes R, notamment ceux des chaînes de production.
+
+Ces bonnes pratiques sont inspirées de [Chapitre 5 Boite à outils \| Guide des bonnes pratiques en R à l'usage des statisticiens publics (utilitr.org)](https://www.pratiques.utilitr.org/boite-%C3%A0-outils.html).
+
+## Rédiger un programme R : les bonnes pratiques {.scrollable .smaller}
+
+::: panel-tabset
+### Nom
+
+-   Le **nom des scripts R** (fichiers .R) peut être préfixé par sa **position dans la chaîne de production**.
+
+-   Le nom des scripts R peut être suffixé par le **millésime de la production**, en cas de changement par rapport à la dernière production et surtout en l'absence de versionage (git).
+
+-   Il est préférable que le nom des objets (script, variable dans le programme, tableau de données...) ne contiennent **pas de caractères spéciaux, d'accent** et que les mots soient séparés par des **underscores**.
+
+-   Pour le nom des variables et tables manipulées dans le code, il est recommandé d'utiliser des **substantifs informatifs**.
+
+-   Dans l'appel d'une **fonction**, il est recommandé de **nommer les arguments** spécifiés explicitement, pour favoriser la réplicabilité et la compréhension pour le lecteur.
+
+### Espace et indentation
+
+-   Il est recommandé de retourner régulièrement à la ligne pour rendre le code plus lisible.
+
+-   L'**indentation** n'est pas automatique en R (contrairement à Python), il est recommandé d'indenter le code pour améliorer sa lisibilité. Le raccourci `CTRL + I` permet de réindenter une sélection de lignes.
+
+-   Il est recommandé d'insérer des espaces entre les opérateurs : assignation `<-` ; comparaison `<` `>` `<=` `>=` `==` `!=` ; opérations `+` `-` `=`.
+
+-   Pas d'espace avant ou après les parenthèses et crochets.
+
+### Commentaire
+
+-   Il est recommandé de **commenter** le code. Un commentaire débute par `#` et se termine à la fin de la ligne, contrairement à SAS où il est possible d'encadrer du texte pour le commenter entièrement.
+
+-   Le commentaire doit être clair et relativement court : il est préférable de bien nommer les objets de manière informative, ainsi que les arguments des fonctions.
+
+-   Le script peut comporter des parties délimitées par des titres en commentaires.
+:::
+
+## Importer des données {.scrollable .smaller}
+
+
+```{r, echo = FALSE, include = FALSE, eval = TRUE}
+
+
+
+
+```
+
+```{r import_data, echo=FALSE, warning=FALSE, message=FALSE}
+library("dplyr")
+
+EEC_2019 <- read.table("FD_EEC_2019.csv", 
+               header = TRUE, sep = ";", quote = "\"", dec = ".", fill = TRUE, comment.char = "")
+
+
+```
+
+
+::: panel-tabset
+### Importer un fichier csv
+
+
+```{r, echo=TRUE, results='hide', eval=FALSE}
+EEC_2019 <- read.csv2("FD_EEC_2019.csv", 
+               header = TRUE, 
+               sep = ";", 
+               quote = "\"", 
+               dec = ".", 
+               fill = TRUE, 
+               comment.char = "")
+```
+
+```{r, echo=TRUE, eval=TRUE}
+head(EEC_2019, 5)
+```
+
+
+### Importer un fichier Excel
+
+
+```{r, echo=TRUE, results='hide', eval=TRUE}
+library("openxlsx")
+
+EEC_excel <- read.xlsx("FD_EEC_2019.xlsx")
+```
+
+```{r, echo=TRUE, eval=TRUE}
+head(EEC_excel, 5)
+```
+
+
+### Importer un fichier Sas
+
+
+```{r, echo=TRUE, results='hide', eval=FALSE}
+library("haven")
+
+EEC_2019_SAS <- read_sas("FD_EEC_2019.sas7bdat")
+```
+
+:::
+
+## R : une logique vectorielle {.scrollable .smaller}
+
+<br>
+
+L'élément de base de R est le vecteur `c()` :
+
+
+```{r, echo = TRUE}
+un_vecteur_numerique <- c(2, 6, 8, 1)
+```
+
+
+R utilise la logique de la **vectorisation** : les fonctions sont appliquées à *l'ensemble d'un vecteur* (ou matrice) plutôt que d'être appliquées successivement à chacun des éléments de ce vecteur (ou de cette matrice). Cela permet une **accélération** du temps de calcul.
+
+Par exemple, pour obtenir le carré de chacun des éléments d'un vecteur :
+
+::: panel-tabset
+### Sans vectorisation
+
+
+```{r, echo=TRUE, results='hide', eval=FALSE}
+x <- 1:10
+for (k in seq_along(x)) {
+x[k] <- x[k]**2
+}
+```
+
+
+### Avec vectorisation
+
+Application de la fonction carrée au vecteur :
+
+
+```{r, echo=TRUE, results='hide', eval=FALSE}
+x <- 1:10
+x <- x**2
+```
+
+:::
+
+## Les objets élémentaires et leurs types {.scrollable .smaller}
+
+::: panel-tabset
+### Numérique {.smaller}
+
+Il existe deux types numériques en R :
+
+-   les entiers ;
+
+-   les flottants.
+
+
+```{r, echo=TRUE}
+
+num <- 5
+class(num)
+
+```
+
+
+<br>
+
+
+```{r, echo=TRUE}
+num <- integer(5)
+class(num)
+
+```
+
+
+### Les chaînes de caractère {.smaller}
+
+Une chaîne de caractère est délimitée par des quotes ou des doubles quotes. Il est recommandé d'utiliser les **doubles quotes** systématiquement.
+
+Le nombre de caractères d'une chaîne de caractères est donné par la fonction `nchar()`.
+
+La fonction `paste0()` permet de concaténer des chaînes de caractères.
+
+🔍Remarque : l'anti slash en R permet de gérer les caractères spéciaux, dans les chemins d'accès aux données, il faut donc soit les remplacer par des **slashs**, soit les doubler.🔍
+
+
+```{r, echo=TRUE}
+
+#Création d'une chaîne de caractères
+chaine <- "Oui"
+
+#Type de la variable chaine
+class(chaine)
+```
+
+
+<br>
+
+
+```{r, echo=TRUE}
+#Nombre de caractères de la variable
+nchar(chaine)
+```
+
+
+<br>
+
+
+```{r, echo=TRUE}
+#Concaténation de plusieurs chaînes de caractère
+print(paste0("Les ", "chaînes ", "de caractère ", "peuvent être concaténées."))
+```
+
+
+<br>
+
+🔍Pour aller plus loin 🔍 le package `stringr` permet de traiter les chaînes de caractère : mettre en majuscules, mettre en minuscules, extraire une sous-chaîne...
+
+### Les booléens
+
+Un booléen peut valoir `TRUE` ou `FALSE` : c'est une variable qui indique si une condition logique est vérifiée.
+
+::: fragment
+
+```{r, echo = TRUE, results='hide', eval=FALSE}
+# Test de l'égalité
+print(1 == 2)
+```
+
+:::
+
+::: fragment
+
+```{r, echo = FALSE,eval=TRUE}
+# Test de l'égalité
+print(1 == 2)
+```
+
+:::
+
+<br>
+
+::: fragment
+
+```{r, echo = TRUE, results='hide', eval=FALSE}
+a <- ("Dares" == "Dares")
+print(a)
+```
+
+:::
+
+::: fragment
+
+```{r, echo = FALSE, eval=TRUE}
+a <- ("Dares" == "Dares")
+print(a)
+```
+
+:::
+
+<br>
+
+::: fragment
+
+```{r, echo = TRUE, results='hide', eval=FALSE}
+# Comparaison numérique
+print(2 < 3)
+```
+
+:::
+
+::: fragment
+
+```{r, echo = FALSE, eval=TRUE}
+# Comparaison numérique
+print(2 < 3)
+```
+
+:::
+
+<br>
+
+::: fragment
+
+```{r, echo = TRUE, results='hide', eval=FALSE}
+print(4 >= 5)
+```
+
+:::
+
+::: fragment
+
+```{r, echo = FALSE, eval=TRUE}
+print(4 >= 5)
+```
+
+:::
+
+<br>
+
+::: fragment
+
+```{r, echo = TRUE, results='hide', eval=FALSE}
+b <- 3 <= 2
+print(b)
+```
+
+:::
+
+::: fragment
+
+```{r, echo = FALSE, eval=TRUE}
+b <- 3 <= 2
+print(b)
+```
+
+:::
+
+<br>
+
+::: fragment
+
+```{r, echo = TRUE, results='hide', eval=FALSE}
+# Test de la différence
+print("A" != "a")
+```
+
+:::
+
+::: fragment
+
+```{r, echo = FALSE, eval=TRUE}
+# Test de la différence
+print("A" != "a")
+```
+
+:::
+
+❗ **Attention :** R est sensible à la casse ❗
+:::
+
+## Les structures de données de base en R {.scrollable .smaller}
+
+::: panel-tabset
+### Vecteurs
+
+<br>
+
+Un **vecteur** est une séquence ordonnée d'objets élémentaires de **même type**. Les vecteurs ont un type (correspondant à celui des objets qu'il contient) donné par la fonction `class()` et une longueur donnée par la fonction `length`.
+
+
+```{r, echo=TRUE}
+vecteur_num <- c(3, 18, 9)
+length(vecteur_num)
+```
+
+
+<br>
+
+
+```{r, echo=TRUE}
+class(vecteur_num)
+```
+
+
+### Listes
+
+<br>
+
+Une **liste** est une séquence ordonnée, éventuellement hétérogène, d'objets de types quelconques.
+
+Une liste est toujours de type `list`, peu importe ce qui la compose.
+
+
+```{r, echo=TRUE}
+
+liste_divers <- list("A", 7, TRUE)
+length(liste_divers)
+```
+
+
+<br>
+
+
+```{r, echo=TRUE}
+class(liste_divers)
+```
+
+
+<br>
+
+
+```{r, echo=TRUE}
+#Accéder aux éléments d'une liste
+print(liste_divers[[1]])
+```
+
+:::
+
+# Manipuler des données : les avantages de dplyr
+
+## Data frames {.scrollable .smaller}
+
+<br>
+
+Le `data.frame` est un **tableau** sous forme d'une liste (classe list) de vecteurs qui représentent les colonnes. Les vecteurs doivent être de la même longueur, la longueur de chaque vecteur correspond au nombre de lignes/d'observations du tableau.
+
+Puisque **chaque colonne est un vecteur** :
+
+-   une colonne représente une variable d'un type unique ;
+
+-   une colonne a un nom, celui de la variable ;
+
+-   chaque colonne doit avoir la même hauteur.
+
+Les dimensions du data.frame sont données par la fonction `dim()`.
+
+
+```{r, echo=TRUE}
+#Obtenir les dimensions du tableau de l'enquête emploi en continu
+dim(EEC_2019)
+
+```
+
+
+## Opérations de base sur les data.frames : R base ou dplyr ? {.scrollable .smaller}
+
+<br>
+
+👉 But : si vous rencontrez des syntaxes Rbase, les comprendre. Nous recommandons pour débuter d'utiliser plutôt les syntaxes `dplyr` présentées plus loin.
+
+❓ Pourquoi ❓
+
+La syntaxe de `dplyr` est à notre avis plus lisible et intuitive pour s'initier à R, et aussi largement utilisée par la communauté des utilisateurs de R, ce qui facilite le partage de solutions.
+
+::: callout-note
+Il n'existe pas une manière unique de programmer en R, et l'utilisation de Rbase présente aussi des avantages : la stabilité par exemple, la meilleure reproductibilité car nécessite moins de packages et de dépendances... Cette formation propose une manière de programme utilisant plutôt le `tidyverse`
+:::
+
+
+```{r, echo = FALSE, eval = TRUE}
+library(forcats)
+
+EEC_ex <- EEC_2019 %>%
+  head(30) %>%
+  select(SEXE, ACTIF, COURED, AGE5, CSTOTR, NAFG004UN, AGE3, ANNEE, JOURTR) %>%
+  mutate(NAFG004UN = fct_recode(NAFG004UN,
+                                NULL = "")) %>%
+  mutate(SEXE = as.factor(SEXE)) %>%
+  mutate(SEXE = fct_recode(SEXE,
+                            "Homme" = "1",
+                            "Femme" = "2"))
+
+```
+
+
+## Opérations de base sur les data.frames : R base {.scrollable .smaller}
+
+::: panel-tabset
+### Sélectionner des lignes
+
+-   Obtenir le nom des lignes :
+
+
+```{r, echo=TRUE}
+rownames(EEC_ex)
+```
+
+
+<br>
+
+-   Sélectionner la 5ème ligne :
+
+
+```{r, echo=TRUE}
+EEC_ex[5,]
+```
+
+
+<br>
+
+-   Sélectionner les lignes 10 et 35 :
+
+
+```{r, echo=TRUE}
+EEC_ex[c(10,35),]
+```
+
+
+<br>
+
+-   Sélectionner les lignes 3 à 8 :
+
+
+```{r, echo=TRUE}
+EEC_ex[c(3:8),]
+```
+
+
+### Sélectionner des colonnes
+
+-   Connaître le nom des colonnes/variables :
+
+
+```{r, echo=TRUE}
+names(EEC_ex)
+```
+
+
+<br>
+
+-   Sélectionner une colonne **solution 1** : la 3ème colonne :
+
+
+```{r, echo=TRUE}
+EEC_ex[, 3]
+```
+
+
+<br>
+
+-   Sélectionner une colonne **solution 2**, la variable ACTIF :
+
+
+```{r, echo=TRUE}
+EEC_ex["ACTIF"]
+```
+
+
+<br>
+
+-   Sélectionner une colonne **solution 3**, la variable ACTIF
+
+
+```{r, echo=TRUE}
+EEC_ex$ACTIF
+```
+
+
+<br>
+
+-   Connaître le **type** des variables :
+
+
+```{r, echo=TRUE}
+class(EEC_ex$AGE3)
+```
+
+
+<br>
+
+-   Sélectionner la 3ème ligne et les colonnes SEXE et ACTIF :
+
+
+```{r, echo=TRUE}
+EEC_ex[3, c("SEXE", "ACTIF")]
+```
+
+:::
+
+## Opérations de base sur les data.frames : convertir des colonnes {.scrollable .smaller}
+
+<br>
+
+Convertir une variable numérique en caractère :
+
+
+```{r, echo=TRUE}
+class(EEC_ex$ANNEE)
+EEC_ex$ANNEE <- as.character(EEC_ex$ANNEE)
+class(EEC_ex$ANNEE)
+```
+
+
+<br>
+
+Convertir une colonne caractère en numérique :
+
+
+```{r, echo=TRUE}
+EEC_ex$ANNEE <- as.numeric(EEC_ex$ANNEE)
+class(EEC_ex$ANNEE)
+```
+
+
+## Les facteurs : un outil pour les variables qualitatives {.scrollable .smaller}
+
+Le type `factor` en R permet de manipuler des **variables qualitatives**.
+
+Le package `forcats` permet de traiter les facteurs : recoder les modalités, les ordonner...
+
+::: panel-tabset
+### Convertir
+
+
+```{r, echo=TRUE}
+class(EEC_2019$SEXE)
+
+#Conversion de la variable SEXE de numérique en facteur
+EEC_2019$SEXE <- as.factor(EEC_2019$SEXE)
+
+class(EEC_2019$SEXE)
+```
+
+
+### Modalités
+
+La fonction `levels()` permet de connaître l'ensemble des **modalités** existantes d'un facteur (même si elles ne sont plus présentes dans les données après sélection des lignes).
+
+
+```{r, echo=TRUE}
+levels(EEC_2019$SEXE)
+```
+
+
+### Recoder
+
+La fonction `fct_recode()` permet de renommer les modalités d'un facteur, avec la syntaxe suivante :
+
+
+```{r, echo = TRUE, eval = FALSE}
+nouvelle_variable <- fct_recode(ancienne_variable,
+                                "Nouvelle_valeur1" = "Ancienne_valeur1",
+                                "Nouvelle_valeur2" = "Ancienne_valeur2",
+                                NULL = "Modalite_a_supprimer")
+```
+
+
+Exemple : Recodage des modalités de la variable SEXE.
+
+
+```{r, echo = TRUE}
+library(forcats)
+
+EEC_2019$SEXE <- fct_recode(EEC_2019$SEXE,
+                            "Homme" = "1",
+                            "Femme" = "2")
+
+levels(EEC_2019$SEXE)
+```
+
+:::
+
+## Opérations de base sur les data.frames : les valeurs manquantes {.scrollable .smaller}
+
+Lorsqu'une **valeur est manquante** dans une enquête par exemple, elle figure sous forme de la modalité `NA`, "Not Available", qui existe pour tous les types de variables.
+
+Selon la manière dont ces valeurs manquantes existent dans les données à importer dans R, elles ne sont pas forcément détectées comme telles. Par exemple :
+
+
+```{r, echo = TRUE}
+
+test_na <- as.data.frame(
+  list(
+  c(1, ".", 3),
+  c("A", "E", ".")
+  )
+  )
+
+names(test_na) <- c("Var1", "Var2")
+
+print(test_na)
+
+```
+
+
+Il faut les recoder en `NA` avec la fonction `fct_recode()` :
+
+
+```{r, echo = TRUE}
+
+test_na$Var1 <- as.factor(test_na$Var1)
+
+test_na$Var1 <- fct_recode(test_na$Var1,
+                           NULL = ".")
+
+print(test_na)
+```
+
+
+## Les dates sous R {.scrollable .smaller}
+
+Le format de **date** le plus courant en R est la classe `Date`. Elle correspond à une distance par rapport à une date origine, ce qui permet de faire des calculs (distance entre deux dates par exemple).
+
+::: panel-tabset
+### Créer une date
+
+Il est possible de créer une date à partir d'une chaîne de caratère. *Le format standard est "AAAA-MM-JJ"*, mais il est possible de spécifier un autre format.
+
+
+```{r, echo = TRUE}
+
+date_1 <- as.Date("2023-01-24")
+
+date_2 <- as.Date("12/07/2022", format = "%d/%m/%Y")
+
+```
+
+
+### Composants
+
+Le package `lubridate` permet de traiter les dates. Il n'est pas présenter davantage ici, voici simplement comment il est possible d'accéder aux composants d'une date avec `lubridate` :
+
+
+```{r, echo = TRUE}
+library(lubridate)
+
+year(date_1)
+month(date_1)
+quarter(date_1)
+day(date_1)
+```
+
+
+### Intervalle
+
+Avec le type Date, vient la notion d'intervalle temporel, qui est également un type de données à part entière. La fonction `interval()` permet de calculer des durées.
+
+
+```{r, echo = TRUE}
+library(lubridate)
+
+date_1 <- as.Date("2023-01-24")
+
+date_2 <- as.Date("12/07/2022", format = "%d/%m/%Y")
+
+intervalle <- interval(date_1, date_2)
+intervalle
+class(intervalle)
+
+```
+
+:::
+
+## Tidyverse, dplyr et le pipe {.scrollable .smaller}
+
+<br>
+
+La majorité des utilisateurs de R utilisent un ensemble de package contenu dans le `tidyverse` , qui propose des fonctions alternatives à Rbase. Nous vous recommandons d'utiliser le tidyverse, et en particulier le package `dplyr`, pour rédiger vos programmes.
+
+Avantages du tidyverse et de dplyr :
+
+-   plus lisible, plus proche d'un langage interprété que R base ;
+
+-   utilisé par la majorité des utilisateurs de R ;
+
+-   stable.
+
+
+```{r}
+library(tidyverse)
+```
+
+
+## Le pipe {.scrollable .smaller}
+
+<br>
+
+Pour enchaîner différentes instructions sur un data.frame, on utilise le "pipe" : `%>%`, un opérateur qui permet de prendre ce qu'il y a à gauche du pipe pour l'injecter en entrée (argument) dans la fonction à droite du pipe.
+
+**Attention :** il est recommandé de définir un nouveau tableau pour enregistrer les opérations sur un data.frame.
+
+Les bonnes pratiques de rédaction d'un code sont renseignées dans [UtilitR - Les bonnes pratiques](https://www.pratiques.utilitr.org/r%C3%A9diger-un-script-r.html)
+
+## Sélectionner des colonnes {.scrollable .smaller}
+
+<br>
+
+**Sélectionner** des colonnes par leur nom avec `select()` :
+
+
+```{r, echo = TRUE}
+#Les colonnes année et Age3
+nouveau_df_1 <- EEC_ex %>%
+  select(ANNEE, AGE3)
+
+head(nouveau_df_1, 5)
+```
+
+
+. . .
+
+<br>
+
+**Supprimer** une colonne avec le `-` dans `select()` :
+
+
+```{r, echo = TRUE}
+#Toutes les colonnes sauf Age3
+nouveau_df_2 <- EEC_ex %>%
+  select(-AGE3)
+
+head(nouveau_df_2, 5)
+```
+
+
+## Afficher les premières lignes {.scrollable .smaller}
+
+<br>
+
+Avant de débuter une analyse, il est utile de **visualiser les premières lignes** du tableau de données. C'est notamment très utile lorsque les données sont volumineuses et que l'affichage du tableau complet prend du temps.
+
+
+```{r, echo = TRUE}
+
+EEC_debut <- EEC_ex %>%
+  head(5)
+EEC_debut
+
+```
+
+
+## Filtrer des lignes {.scrollable .smaller}
+
+<br>
+
+Pour filter des lignes selon une ou plusieurs conditions, on utilise la fonction `filter()` :
+
+::: panel-tabset
+### Egalité
+
+
+```{r, echo = TRUE}
+
+EEC_femme <- EEC_ex %>%
+  filter(SEXE == "Femme")
+
+head(EEC_femme, 5)
+```
+
+
+### Inégalité
+
+
+```{r, echo = TRUE}
+
+EEC_moins_30 <- EEC_ex %>%
+  filter(AGE5 <= 30)
+
+head(EEC_moins_30, 5)
+```
+
+
+### Différence
+
+
+```{r, echo = TRUE}
+
+EEC_hors_cadres <- EEC_ex %>%
+  filter(CSTOTR != 3)
+
+head(EEC_hors_cadres, 5)
+```
+
+
+### Plusieurs conditions
+
+
+```{r, echo = TRUE}
+
+#Opérateur ET
+EEC_femme_moins_30 <- EEC_ex %>%
+  filter(SEXE == "femme" & AGE5 <= 30)
+
+head(EEC_femme_moins_30, 5)
+
+#Opérateur OU
+EEC_femme_ou_cadre <- EEC_ex %>%
+  filter(SEXE == "femme" | CSTOTR == 3)
+
+head(EEC_femme_ou_cadre, 5)
+```
+
+:::
+
+## Filtrer des lignes {.scrollable .smaller}
+
+<br>
+
+::: panel-tabset
+### Inclusion dans une liste
+
+
+```{r, echo = TRUE}
+
+EEC_hors_agr <- EEC_ex %>%
+  filter(NAFG004UN %in% c("ET", "EU", "EV"))
+
+head(EEC_hors_agr, 5)
+
+```
+
+
+### Valeurs manquantes
+
+Pour tester si une valeur est manquante, il faut utiliser la fonction `is.na()`. Le test `variable == NA` renvoie une erreur.
+
+Pour tester qu'une valeur est bien présente, c'est la condition `!(is.na(variable))`. la syntaxe `!()` signifie "différent de", c'est-à-dire teste la condition contraire à ce qui est renseigné dans les parenthèses.
+
+Uniquement les lignes pour lesquelles NAFG004UN est manquante :
+
+
+```{r, echo = TRUE}
+EEC_CSP_na <- EEC_ex %>%
+  filter(is.na(NAFG004UN))
+
+head(EEC_CSP_na, 5)
+```
+
+
+<br>
+
+Uniquement les lignes pour lesquelles NAFG004UN est renseignée :
+
+
+```{r, echo = TRUE}
+EEC_CSP_hors_na <- EEC_ex %>%
+  filter(!(is.na(NAFG004UN)))
+
+head(EEC_CSP_hors_na, 5)
+```
+
+
+### Valeurs distinctes
+
+La fonction `distinct()` permet de ne sélectionner qu'une seule occurence de chaque combinaison des variables signalées.
+
+On ne souhaite qu'une seule occurence de chaque combinaison existant dans les données des variables ANNEE et TRIM :
+
+
+```{r, echo = TRUE}
+EEC_periode <- EEC_2019 %>%
+  distinct(ANNEE, TRIM)
+
+head(EEC_periode, 5)
+```
+
+:::
+
+## Créer une variable {.scrollable .smaller}
+
+::: panel-tabset
+### Avec if_else
+
+`if_else` est utilisé pour renseigner une valeur si une condition est vérifiée, une autre sinon. La syntaxe est la suivante :
+
+
+```{r, echo = TRUE, eval = FALSE}
+
+mutate(nouvelle_variable = if_else(condition, valeur_condition_verifiee, valeur_sinon))
+
+```
+
+```{r, echo = TRUE}
+EEC_agr <- EEC_2019 %>%
+  mutate(agriculture = if_else(NAFG004UN == "ES", 1, 0))
+
+head(EEC_agr, 5)
+```
+
+
+### Avec case_when
+
+`case_when` permet de créer une variable qui prend différentes modalités selon plusieurs conditions évaluées successivement, selon la syntaxe suivante :
+
+
+```{r, echo = TRUE, eval = FALSE}
+
+mutate(nouvelle_variable = case_when(condition1 ~ valeur1,
+                                     condition2 ~ valeur2,
+                                     condition3 ~ valeur3,
+                                     TRUE ~ valeur_par_défaut))
+
+```
+
+
+Les conditions sont explorées successivement jusqu'à ce qu'une d'entre elles donne `TRUE`, elles ne sont donc pas nécessairement exclusives l'une de l'autre. La dernière ligne « voiture balai » (qui n'est pas obligatoire) exploite cette fonctionnalité avec une condition toujours vraie qui piège tous les cas non explorés.
+
+### Avec une condition
+
+ll est également possible de créer directement une variable de type **booléen** en mentionnat uniquement la condition :
+
+
+```{r, echo = TRUE, eval = FALSE}
+mutate(individu_cadre = (CSTOTR == 3))
+```
+
+
+La nouvelle variable `individu_cadre` vaut `TRUE` lorsque CSTOTR vaut 3, `FALSE` sinon.
+:::
+
+## Modifier des variables {.scrollable .smaller}
+
+<br>
+
+::: panel-tabset
+### Renommer une variable
+
+
+```{r, echo = TRUE, eval = FALSE}
+rename(nouveau_nom_var1 = ancien_nom_var1,
+       nouveau_nom_var2 = ancien_nom_var2)
+```
+
+```{r, echo = TRUE}
+
+EEC_2 <- EEC_ex %>%
+  rename(AGE_3_classes = AGE3)
+
+head(EEC_2, 5)
+```
+
+
+### Discrétiser une variable quanti
+
+Avec `cut()`, la borne inférieure est exclue, la borne supérieure est incluse.
+
+
+```{r, echo = TRUE}
+EEC_3 <- EEC_ex %>%
+  mutate(JOURTR_classe = cut(JOURTR, breaks = c(2,4)))
+
+head(EEC_3, 5)
+```
+
+:::
+
+## Convertir des variables {.scrollable .smaller}
+
+Les fonctions de conversion peuvent être appliquées aux colonnes d'un data.frame. Il est conseillé d'affecter à chaque variable le type le plus proche de sa nature :
+
+
+```{r, echo = TRUE}
+#Conversion de la variable ENFRED en facteur et de la variable COURED en caractères :
+
+EEC_2019 <- EEC_2019 %>%
+  mutate(ENFRED = as.factor(ENFRED),
+         COURED = as.character(COURED))
+```
+
+
+<br>
+
+::: columns
+::: {.column width="50%"}
+**🤔 Comment recoder ? 🤔**
+
+-   transformer les variables qualitatives en facteurs ;
+
+-   ordonner les modalités pour les variables qualitatives ordinales ;
+
+-   convertir les variables numériques en numérique ;
+
+-   recoder les valeurs manquantes (par exemple les caractères vides) ;
+
+-   transformer les chaînes de caractère en Date si nécessaire.
+:::
+
+::: {.column width="50%"}
+❓ **Pourquoi recoder** ❓
+
+-   pour réaliser des statistiques descriptives plus rapidement, par exemple avec la fonction summary ;
+
+-   pour que les fonctions économétriques détectent une modalité de référence pertinente pour les variables ordinales ;
+
+-   pour tracer des séries temporelles dans le cas des dates...
+:::
+:::
+
+# Statistiques descriptives
+
+🧰 La boite à outil du statisticien :
+
+## La fonction COUNT {.scrollable .smaller}
+
+<br>
+
+-   Connaitre le nombre de lignes d'un dataframe
+    -   On peut également avoir cette information dans le panneau "environnement"
+-   Compter le nombre d'individus dans une table exhaustive
+    -   ⛔ Ne pas utiliser pour des données échantillonées ⛔
+
+. . .
+
+Ne pas calculer par exemple le nombre de chômeurs au sens du BIT sans pondération à partir de l'EEC :
+
+
+```{r,  echo=TRUE}
+chomeurs <- EEC_2019 %>% 
+  filter(ACTEU == "2") %>% 
+  count()
+
+print(paste0("Le nombre de chômeurs au sens du BIT N'EST PAS ", as.character(chomeurs)))
+```
+
+
+## La fonction summarise {.scrollable .smaller}
+
+<br>
+
+Cette fonction permet d'avoir un ensemble de **statistiques descriptives** : effectif, somme, moyenne, médiane, quantile, min, max...
+
+Elle est fréquemment utilisée avec l'instruction `group_by()`, qui permet d'effectuer ces calculs au sein des groupes formés par les modalités d'une variable.
+
+::: {.callout-tip title="Group_by"}
+Pour les habitués de SQL, group_by n'est pas un mot clé mais une **vraie fonction R** avec une entrée et une sortie. Le résultat est une table avec les mêmes données mais un « index » en plus disant où sont les observations de chaque modalité. La présence de cet index change le fonctionnement de plusieurs fonctions de `dplyr` en les forçant à travailler par morceau.
+:::
+
+## La fonction summarise {.scrollable .smaller}
+
+<br>
+
+::: panel-tabset
+### Effectif
+
+La fonction `n()` permet d'obtenir les effectifs.
+
+Calcul du nombre de personnes de 30 ans ou moins :
+
+
+```{r, echo = TRUE}
+eff_moins_30 <- EEC_2019 %>%
+  filter(AGE3 <= 30) %>%
+  summarise(eff_moins_30 = n())
+eff_moins_30
+```
+
+
+Calcul du nombre de personnes par classe d'âge en 3 classes :
+
+
+```{r, echo = TRUE}
+eff_age_classe <- EEC_2019 %>%
+  group_by(AGE3) %>%
+  summarise(eff_age3 = n())
+eff_age_classe
+```
+
+
+Calcul du nombre de personnes par SEXE :
+
+
+```{r, echo = TRUE}
+eff_sexe <- EEC_2019 %>%
+  group_by(SEXE) %>%
+  summarise(eff_sexe = n())
+eff_sexe
+```
+
+
+### Somme, moyenne
+
+Les fonctions `sum()` et `mean()` peuvent être utilisées également avec `summarise()`.
+
+::: callout-warning
+**Tout calcul impliquant un `NA` restitue un `NA`** : les opérations, les tests, les tris. Dans les calculs statistiques (par exemple avec les fonctions appelées par le `summarise` de dplyr utilisé pour faire des récapitulations : comptages, totaux ou autres statistiques), il y a généralement un argument supplémentaire `na.rm` (pour "remove") qui permet de ne pas tenir compte des valeurs manquantes, mais son positionnement par défaut est souvent à "faux" (FALSE, ne pas enlever les valeurs manquantes du calcul).
+:::
+
+⚠️ **ATTENTION** ⚠️ Les valeurs manquantes sont le principal point d'incompatibilité avec SAS et leur traitement nécessite de redoubler d'attention quand on convertit un programme car le fonctionnement est radicalement différent en R.
+
+Calcul de la moyenne du nombre de jours travaillés par semaine par sexe :
+
+
+```{r, echo = TRUE}
+EEC_jourtr_sexe <- EEC_2019 %>%
+  group_by(SEXE) %>%
+  summarise(moy_jour_tr = mean(JOURTR, na.rm = TRUE))
+EEC_jourtr_sexe
+
+```
+
+
+### Distribution
+
+`summarise()` est également utile pour des statistiques de distribution.
+
+Calcul de statistiques de distribution du nombre de jours travaillés par semaine par classe d'âge :
+
+
+```{r, echo = TRUE}
+EEC_jourtr_age <- EEC_2019 %>%
+  group_by(AGE3) %>%
+  summarise(min_jour_tr = min(JOURTR, na.rm = TRUE),
+            q1_jour_tr = quantile(JOURTR, na.rm = TRUE, probs = 0.25),
+            med_jour_tr = median(JOURTR, na.rm = TRUE),
+            q3_jour_tr = quantile(JOURTR, na.rm = TRUE, probs = 0.75),
+            max_jour_tr = max(JOURTR, na.rm = TRUE))
+EEC_jourtr_age
+```
+
+
+### Plusieurs variables
+
+Il est possible de renseigner plusieurs variables dans l'instruction `group_by()`. Les statistiques demandées dans `summarise()` sont alors calculées au sein de chaque classe formée par le croisement des modalités des deux variables.
+
+⚠️ **ATTENTION** ⚠️ la valeur par défaut de l'argument `drop_last` de la fonction `summarise()` est `TRUE`, ce qui implique que le dernier niveau de regroupement (la dernière variable renseignée dans le `group_by()`) est supprimé à l'issue de l'application de la fonction `summarise()`. Un `warning` le précise dans la console lorsque cette fonction est utilisée avec plusieurs variables de regroupement.
+
+Calcul de la moyenne de jours travaillés par semaine par groupe de sexe croisé avec l'âge en 3 classes :
+
+
+```{r, echo = TRUE}
+EEC_jourtr_sexe_age <- EEC_2019 %>%
+  group_by(SEXE, AGE3) %>%
+  summarise(moy_jour_tr = mean(JOURTR, na.rm = TRUE))
+EEC_jourtr_sexe_age
+```
+
+:::
+
+## Regrouper par catégorie {.scrollable .smaller}
+
+L'opérateur pipe `%>%` permet d'enchaîner les opérations sur une table de données.
+
+Il faut faire attention à cet enchaînement lorsqu'on utilise l'instruction `group_by`. Cette instruction peut être utilisée avec d'autres fonctions de `dplyr` (`filter()` et `mutate()` par exemple), mais elle ne se comporte pas de la même manière avec toutes les fonctions. En effet, le dernier niveau de regroupement (la dernière variable renseignée dans le `group_by()`) est supprimé à l'issue de l'application de la fonction `summarise()`, tandis que ce n'est pas le cas avec les fonctions `mutate()` et `filter()`.
+
+Ainsi, il est possible d'utiliser l'instruction `ungroup()` pour remédier au regroupement des observations dans la suite des opérations sur la table.
+
+
+```{r, echo = TRUE}
+ex_plusieurs_gpes <- EEC_2019 %>%
+  group_by(SEXE, AGE3) %>%
+  mutate(moy_jour_tr = mean(JOURTR, na.rm = TRUE)) %>%
+  ungroup() %>%
+  distinct(SEXE, moy_jour_tr, AGE3) %>%
+  group_by(SEXE) %>%
+  filter(moy_jour_tr == min(moy_jour_tr))
+
+ex_plusieurs_gpes
+```
+
+
+## Trier ses données {.scrollable .smaller}
+
+Lorsqu'on utilise un regroupement, le résultat est trié en majeur selon ce regroupement. Si on souhaite effectuer un autre tri, il faut déclencher le tri avec la fonction `arrange()`. Le mot clé `desc` (malgré la syntaxe, ce n'est pas une fonction) permet de trier par ordre décroissant. Il est possible d'utiliser plusieurs colonnes pour le tri.
+
+👁️‍🗨️ **REMARQUE** 👁️‍🗨️ Contrairement à SAS où trier est la procédure la plus utilisée, R se charge de lui même de faire les tris dont il pourrait avoir besoin. Trier n'a généralement un sens que pour organiser la présentation de résultats.
+
+
+```{r, echo = TRUE}
+ex_arrange <- EEC_2019 %>%
+  select(SEXE, AGE3, JOURTR) %>%
+  group_by(SEXE, AGE3) %>%
+  summarise(moy_jour_tr = mean(JOURTR, na.rm = TRUE)) %>%
+  arrange(moy_jour_tr)
+ex_arrange
+```
+
+
+REMARQUE : Contrairement à SAS où trier est la procédure la plus utilisée, R se charge de lui même de faire les tris dont il pourrait avoir besoin. Trier n'a généralement un sens que pour organiser la présentation de résultats.
+
+## Connaitre le numéro de ligne {.scrollable .smaller}
+
+La fonction `row_number()` permet de connaître l'ordre de classement de l'observation dans la table.
+
+Les fonctions `first()` et `last()` permettent de récupérer respectivement la première et la dernière observation d'un groupe.
+
+
+```{r, echo = TRUE}
+ex_arrange_2 <- EEC_2019 %>%
+  select(SEXE, AGE3, JOURTR) %>%
+  group_by(SEXE, AGE3) %>%
+  summarise(moy_jour_tr = mean(JOURTR, na.rm = TRUE)) %>%
+  arrange(moy_jour_tr) %>%
+  mutate(numero = row_number())
+ex_arrange_2
+```
+
+
+## Travailler avec des données pondérées {.scrollable .smaller}
+
+Le package `Hmisc` permet de traiter des données pondérées.
+
+Des fonctions utilisant des pondérations se trouvent dans le package Hmisc, elles utilisent un argument supplémentaire `weights` qui permet de passer la colonne contenant les pondérations. Il s'agit de :
+
+-   `wtd.mean` : la moyenne
+
+-   `wtd.var` : la variance (en déduire l'écart type si besoin)
+
+-   `wtd.quantile` : un quantile, plusieurs algorithmes sont implémentés, mais aucun ne correspond à ce que fait SAS.
+
+
+```{r, echo = TRUE}
+df <- data.frame(age = c(20, 30, 40, 50, 60), poids=c(1, 1, 1, 1, 3))
+
+library(Hmisc)
+
+new_df <- df %>% 
+  summarise(quartile1 = wtd.quantile(age,w=poids,probs=.25),
+            mediane = wtd.quantile(age,w=poids,probs=.5),
+            moyenne = wtd.mean(age,w=poids))
+```
+
+
+## Concaténations {.scrollable .smaller}
+
+::: panel-tabset
+### Des lignes
+
+<br>
+
+Mettre les lignes d'une table derrière les lignes d'une autre : la fonction `bind_rows()`
+
+-   Les deux listes de colonnes peuvent ne pas être strictement identiques : les données ne sont mises bout à bout que si les noms des colonnes coïncident, sinon des valeurs manquantes sont générées.
+
+-   Les colonnes peuvent être dans un **ordre différent** dans les deux tables, la fonction se charge de les réordonner.
+
+-   Par contre **une colonne de même nom doit avoir le même type dans les deux tables** ou la concaténation ne se fait pas.
+
+### Des colonnes
+
+<br>
+
+Mettre les colonnes d'une table à coté des colonnes d'une autre : la fonction `bind_cols()`.
+
+-   Le **nombre de lignes doit coïncider** dans les deux tables : c'est un garde-fou contre les erreurs de manipulation, car la fonction ne réalise pas une jointure mais une simple juxtaposition.
+
+-   L'usage de cette fonction est donc **plus rare** et limité aux situations où on est absolument sûr d'avoir le bon nombre de lignes et des données qui sont rangées de la même façon dans les deux tables.
+:::
+
+## Jointures {.scrollable .smaller}
+
+::: panel-tabset
+### A gauche/à droite
+
+<br>
+
+::: columns
+::: {.column width="70%"}
+
+```{r, echo = TRUE, eval = FALSE}
+
+table_jointe <- table_1 %>%
+  left_join(table_2, by = c("var1_table1" = "var2_table2",
+                            "var3_table1" = "var4_table2"))
+
+```
+
+:::
+
+::: {.column width="30%"}
+![](images/left_join.png)
+:::
+:::
+
+### Interne
+
+<br>
+
+::: columns
+::: {.column width="70%"}
+
+```{r, echo = TRUE, eval = FALSE}
+
+table_jointe <- table_1 %>%
+  inner_join(table_2, by = c("var1_table1" = "var2_table2",
+                             "var3_table1" = "var4_table2"))
+
+```
+
+:::
+
+::: {.column width="30%"}
+![](images/inner_join.png)
+:::
+:::
+
+### Externe
+
+<br>
+
+::: columns
+::: {.column width="70%"}
+
+```{r, echo = TRUE, eval = FALSE}
+
+table_jointe <- table_1 %>%
+  full_join(table_2, by = c("var1_table1" = "var2_table2",
+                            "var3_table1" = "var4_table2"))
+
+```
+
+:::
+
+::: {.column width="30%"}
+![](images/full_join.png)
+:::
+:::
+
+### Anti_join
+
+<br>
+
+Pour récupérer les observations de la table de gauche qui sont absentes de la table de droite.
+
+::: columns
+::: {.column width="70%"}
+
+```{r, echo = TRUE, eval = FALSE}
+
+table_jointe <- table_1 %>%
+  anti_join(table_2, by = c("var1_table1" = "var2_table2",
+                            "var3_table1" = "var4_table2"))
+
+```
+
+:::
+
+::: {.column width="30%"}
+![](images/anti_join.png)
+:::
+:::
+:::
+
+## Transpositions {.scrollable .smaller}
+
+<br>
+
+Pour pivoter des données, il est possible d'utiliser les fonctions `pivot_longer()` et `pivot_wider()` du package `tidyr`.
+
+Par exemple, pour la fonction `pivot_longer()`, la syntaxe est la suivante : `pivot_longer(cols = c("Var_1_pivotee", "Var_2_pivotee"), names_to = c("nom_de_la_nouvelle_colonne"))`
+
+
+```{r, echo = TRUE}
+
+library(tidyr)
+
+ex_pivot <- EEC_2019 %>%
+  select(SEXE, AGE3, JOURTR) %>%
+  group_by(SEXE, AGE3) %>%
+  summarise(moy_jour_tr = mean(JOURTR, na.rm = TRUE),
+            med_jour_tr = median(JOURTR, na.rm = TRUE)) %>%
+  ungroup() %>%
+  pivot_longer(cols = c("moy_jour_tr", "med_jour_tr"), names_to = c("indicateur"))
+ex_pivot
+
+```
+
+
+L'article [Les pivots expliqués à ma fille](https://od-datamining.com/knwbase/pivots_r_fille/) est particulièrement bien fait sur le sujet.
+
+## Graphiques avec plot {.scrollable .smaller}
+
+Voici une présentation succinte de quelques fonctions usuelles de Rbase permettant de faire des graphiques :
+
+::: panel-tabset
+### Barplot
+
+
+```{r, echo = TRUE}
+
+ex_barplot <- EEC_2019 %>%
+  select(SEXE, JOURTR) %>%
+  group_by(SEXE) %>%
+  summarise(moy_jour_tr = mean(JOURTR, na.rm = TRUE))
+
+barplot(ex_barplot$moy_jour_tr, legend.text = ex_barplot$SEXE)
+
+```
+
+
+### Hist
+
+
+```{r, echo = TRUE}
+ex_hist <- EEC_2019 %>%
+  select(JOURTR)
+
+hist(ex_hist$JOURTR)
+
+```
+
+
+### Plot
+
+
+```{r, echo = TRUE}
+data(iris)
+plot(x = iris$Sepal.Length, y = iris$Sepal.Width)
+
+```
+
+:::
+
+## Ressources sur ggplot2 {.scrollable .smaller}
+
+<br>
+
+Le package `ggplot2` permet de créer des graphiques très souplement, en modifiant une grande partie des paramètres. Il ne fait pas l'objet d'une présentation ici, mais pour s'y former, la fiche UtilitR sur le sujet [UtilitR-Ggplot2](https://www.book.utilitr.org/03_fiches_thematiques/fiche_graphiques) , ainsi que le site [R-graph-gallery](https://r-graph-gallery.com/) vous sont recommandés.
+
+Enfin, pour avoir des recommandations sur les différents types de visualisation possibles selon la nature des variables à représenter, le site [From Data to Viz](https://www.data-to-viz.com/) est très utile.
+
+# Exporter des données {.scrollable .smaller}
+
+::: panel-tabset
+### En Excel : UtilitR {.scrollable .smaller}
+
+Pour l'exportation de données au format **xlsx**, le package `openxlsx` est à privilégier car il présente de multiples options très pratiques pour personnaliser les exports.
+
+Les [deux vignettes](https://ycphs.github.io/openxlsx/articles/Introduction.html) du package sur ce sujet apportent quelques exemples des potentialités d'écriture de classeurs xlsx. La première présente notamment l'utilisation de la fonction `write.xlsx()` et la seconde illustre quelques possibilités autour de la fonction `writeData()`.
+
+
+```{r, echo = TRUE}
+
+library(dplyr)
+
+eff_par_age <- EEC_2019 %>%
+  group_by(AGE3) %>%
+  summarise(eff_par_age = n())
+eff_par_age
+
+library(openxlsx)
+
+write.xlsx(eff_par_age, file = "mon_export.xlsx", asTable = TRUE)
+
+```
+
+
+### En CSV
+
+<br>
+
+
+```{r, echo = TRUE}
+
+eff_par_age <- EEC_2019 %>%
+  group_by(AGE3) %>%
+  summarise(eff_par_age = n())
+eff_par_age
+
+write.csv(x = eff_par_age, file = "monFichier.csv")
+```
+
+
+### En PNG
+
+<br>
+
+Pour exporter un graphique :
+
+
+```{r, echo = TRUE}
+
+png(filename = "mon_graphique.png", width = 500, height = 300)
+hist(EEC_2019$JOURTR)
+dev.off()
+
+```
+
+:::
+
+# Aide pour R {.scrollable .smaller}
+
+-   cheatsheets disponibles sur UtilitR à avoir en local
+
+-   utilitR
+
+-   stackoverflow
+
+-   issues github sur le sujet
+
+-   forums internes : tchap Outils Stats v2, Langage R, Dares entraide Git et R
+
+-   vos collègues
+
+-   nous
+
+-   des ateliers thématiques
+
