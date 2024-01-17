@@ -133,7 +133,7 @@ Ces objets sont stockés en mémoire vive pour la durée de la session de travai
     nouvel_objet <- df$prenom # Récupérer le vecteur prenom à partir du dataframe
     ```
 
-    ## De quel type est ce nouvel objet ?
+    De quel type est ce nouvel objet ?
 
 # Changer le type d'un objet
 

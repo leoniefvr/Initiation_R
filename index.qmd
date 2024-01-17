@@ -30,8 +30,9 @@ theme :
 
 |   Durée    |                         Programme                                   |
 |:----------:|:-------------------------------------------------------------------:|
-| 4 heures   | [Slides : Formation théorique](slides.qmd)                          |
+| 2 heures   | [Slides : Formation théorique](slides.qmd) jusq'à la slide 41       |
 | 45 minutes | [Exercice 1 : Débuter avec R](exercice_1.qmd)                       |
+| 1 heure    | Fin des [Slides : Formation théorique](slides.qmd)                  |
 | 45 minutes | [Exercice 2 : Nettoyer et enrichir les données](exercice_2.qmd)     |
 | 45 minutes | [Exercice 3 : Statistiques descriptives](exercice_3.qmd)            |
 | 45 minutes | [Exercice 4 : Pour aller plus loin](exercice_4.qmd)                 |

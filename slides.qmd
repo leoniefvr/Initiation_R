@@ -1728,5 +1728,3 @@ dev.off()
 -   nous
 
 -   des ateliers thématiques
-
-# Bibliographie

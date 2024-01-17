@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Formation R</title>
+<title>Formation R - Exercice 4 : Pour aller plus loin</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -132,7 +132,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Formation R</h1>
+      <h1 class="quarto-secondary-nav-title">Exercice 4 : Pour aller plus loin</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -160,7 +160,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">Introduction</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Introduction</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -185,7 +185,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./exercice_4.html" class="sidebar-item-text sidebar-link">Exercice 4</a>
+  <a href="./exercice_4.html" class="sidebar-item-text sidebar-link active">Exercice 4</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -202,9 +202,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul class="collapse">
-  <li><a href="#objectifs" id="toc-objectifs" class="nav-link active" data-scroll-target="#objectifs"><span class="toc-section-number">1</span>  Objectifs ✔️</a></li>
-  <li><a href="#emploi-du-temps" id="toc-emploi-du-temps" class="nav-link" data-scroll-target="#emploi-du-temps"><span class="toc-section-number">2</span>  Emploi du temps</a></li>
-  <li><a href="#des-outils-utiles-à-connaitre" id="toc-des-outils-utiles-à-connaitre" class="nav-link" data-scroll-target="#des-outils-utiles-à-connaitre"><span class="toc-section-number">3</span>  Des outils utiles à connaitre 🧰</a></li>
+  <li><a href="#créer-un-r-projet" id="toc-créer-un-r-projet" class="nav-link active" data-scroll-target="#créer-un-r-projet"><span class="toc-section-number">1</span>  Créer un R projet</a></li>
+  <li><a href="#importer-des-données-sas-sur-les-demandeurs-demploi" id="toc-importer-des-données-sas-sur-les-demandeurs-demploi" class="nav-link" data-scroll-target="#importer-des-données-sas-sur-les-demandeurs-demploi"><span class="toc-section-number">2</span>  Importer des données SAS sur les demandeurs d’emploi</a></li>
+  <li><a href="#manipuler-les-dates" id="toc-manipuler-les-dates" class="nav-link" data-scroll-target="#manipuler-les-dates"><span class="toc-section-number">3</span>  Manipuler les dates</a></li>
+  <li><a href="#visualisation-graphique" id="toc-visualisation-graphique" class="nav-link" data-scroll-target="#visualisation-graphique"><span class="toc-section-number">4</span>  Visualisation graphique</a></li>
   </ul>
 </nav>
     </div>
@@ -213,7 +214,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Formation R</h1>
+<h1 class="title d-none d-lg-block">Exercice 4 : Pour aller plus loin</h1>
 </div>
 
 
@@ -228,257 +229,172 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<div class="callout-note callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
+<p>Nous avons vu précédemment comment importer, traiter et résumer ses données.</p>
+<section id="créer-un-r-projet" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Créer un R projet</h1>
+<p>Travailler via un R project est une bonne pratique, cela permet également de faciliter l’accès à des dossiers puisque la racine est définie par l’emplacement du R project.</p>
+<ol type="1">
+<li><p>Créer un R project et l’enregistrer.</p></li>
+<li><p>Connaitre où se situe la racine du projet grace à <code>getwd()</code>.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>() <span class="co"># Permet de connaitre la racine du working directory</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div></li>
+<li><p>Installer si besoin et charger les packages <code>dplyr</code>, <code>haven</code>, <code>tidyr</code>, <code>lubridate</code> et <code>ggplot2</code>.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages(haven) </span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven) </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div></li>
+</ol>
+<hr>
+</section>
+<section id="importer-des-données-sas-sur-les-demandeurs-demploi" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Importer des données SAS sur les demandeurs d’emploi</h1>
+<p>Les fichiers SAS sont encore nombreux au sein du SSP, nous allons donc voir comment traiter ces données.</p>
+<ol type="1">
+<li><p>Importer les données SAS du nombre de demandeurs d’emploi via la fonction <code>read_sas()</code> du package <code>haven</code>.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>defm <span class="ot">&lt;-</span> <span class="fu">read_sas</span>(<span class="st">"defm_trim.sas7bdat"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div></li>
+<li><p>Changer le format de la date pour le passer au format <code>Date</code>, attention à l’origine des dates.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>... <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Date =</span> <span class="fu">as.Date</span>(Date, <span class="at">origin =</span> <span class="st">"1960-01-01"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div></li>
+</ol>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Note
+L’origine des dates
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
-<li>R et R studio sont disponibles sur le centre logiciel ainsi que sur <a href="https://posit.co/download/rstudio-desktop/">posit</a>.</li>
-<li>Le cahier d’exercice est disponible sur <a href="https://gitlab.intranet.social.gouv.fr/Dares/Interdepartements/Formations_internes_R">Gitlab</a>.</li>
+<li>En SAS, la date de référence d’une date est le 1er janvier 1950</li>
+<li>En R, la date de référence d’une date est le 1er janvier 1960</li>
 </ul>
+<p>Lorsque l’on importe un fichier SAS en R, il faut donc bien préciser l’origine de la date dans la fonction <code>as.Date(x, origin = "1960-01-01")</code>.</p>
 </div>
 </div>
-<section id="objectifs" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Objectifs ✔️</h1>
-<ul>
-<li>Connaitre l’environnement R (packages, objets)</li>
-<li>Importer, nettoyer et enrichir ses données</li>
-<li>Produire des statisitiques descriptives</li>
-<li>Produire un code reproductible suivant les règles de bonne conduite</li>
-</ul>
+</div>
+<hr>
 </section>
-<section id="emploi-du-temps" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Emploi du temps</h1>
-<table class="table">
-<thead>
-<tr class="header">
-<th style="text-align: center;">Durée</th>
-<th style="text-align: center;">Programme</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">2 heures</td>
-<td style="text-align: center;"><a href="./slides.html">Slides : Formation théorique</a> jusq’à la slide 41</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">45 minutes</td>
-<td style="text-align: center;"><a href="./exercice_1.html">Exercice 1 : Débuter avec R</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">1 heure</td>
-<td style="text-align: center;">Fin des <a href="./slides.html">Slides : Formation théorique</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">45 minutes</td>
-<td style="text-align: center;"><a href="./exercice_2.html">Exercice 2 : Nettoyer et enrichir les données</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">45 minutes</td>
-<td style="text-align: center;"><a href="./exercice_3.html">Exercice 3 : Statistiques descriptives</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">45 minutes</td>
-<td style="text-align: center;"><a href="./exercice_4.html">Exercice 4 : Pour aller plus loin</a></td>
-</tr>
-</tbody>
-</table>
+<section id="manipuler-les-dates" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Manipuler les dates</h1>
+<ol type="1">
+<li><p>Créer une nouvelle variable prenant pour valeur le premier jour du premier mois du trimestre plutôt que le premier jour du dernier mois via la fonction <code>months()</code>.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>... <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">deb_trimestre =</span> date <span class="sc">-</span> <span class="fu">months</span>(<span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div></li>
+<li><p>Calculer l’écart entre les 2 dates en jours, puis en semaines via la fonction <code>difftime()</code>.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>... <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">diff_jour =</span> <span class="fu">difftime</span>(date, deb_trimestre, <span class="at">units =</span> <span class="st">"days"</span>),</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">diff_week =</span> <span class="fu">difftime</span>(date, deb_trimestre, <span class="at">units =</span> <span class="st">"weeks"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div></li>
+<li><p>Calculer la date de fin de trimestre.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>... <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">fin_trim =</span> (date <span class="sc">+</span> <span class="fu">months</span>(<span class="dv">1</span>)) <span class="sc">-</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div></li>
+<li><p>Créer une variable indiquant le trimestre via la fonction <code>quarter()</code>.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>... <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">trim =</span> <span class="fu">quarter</span>(date))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div></li>
+<li><p>Recréer la variable trimestre au format “2016-T1”.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>... <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">trim =</span> <span class="fu">quarter</span>(date))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div></li>
+</ol>
+<hr>
 </section>
-<section id="des-outils-utiles-à-connaitre" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Des outils utiles à connaitre 🧰</h1>
-<div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Les fonctions <code>help</code> et <code>?</code> permettent d’avoir des informations sur la fonction que l’on utilise
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>La fonction <code>help</code> est très pratique pour se renseigner sur une fonction. Elle montre tous les arguments de la fonction et propose des exemples.</p>
+<section id="visualisation-graphique" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Visualisation graphique</h1>
+<p>Des bibliothèques graphiques sont à disposition (<a href="https://r-graph-gallery.com/">r-graph-gallery</a> ou <a href="https://r-charts.com/">r-charts</a>) pour trouver des templates de visualisation et le code associé.</p>
+<ol type="1">
+<li><p>Créer un graphique simple avec la date et le nombre de demandeurs d’emploi en utilisant la fonction <code>plot()</code></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Permet d'avoir les informations sur la fonction mean </span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(<span class="st">"mean"</span>) </span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>?mean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Les opérateurs R
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<table class="table">
-<colgroup>
-<col style="width: 13%">
-<col style="width: 27%">
-<col style="width: 58%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Opérateur</th>
-<th style="text-align: center;">Signification</th>
-<th style="text-align: center;">Exemple</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><code>+</code></td>
-<td style="text-align: center;"><code>Somme</code></td>
-<td style="text-align: center;"><code>mutate(variable = variable + 1)</code></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><code>/</code></td>
-<td style="text-align: center;"><code>Division</code></td>
-<td style="text-align: center;"><code>mutate(variable = variable / 100)</code></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><code>*</code></td>
-<td style="text-align: center;"><code>Multiplication</code></td>
-<td style="text-align: center;"><code>mutate(variable = variable * 100)</code></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><code>&amp;</code></td>
-<td style="text-align: center;"><code>et</code></td>
-<td style="text-align: center;"><code>filter(variable &gt; 10 &amp; variable &lt; 20)</code></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><code>|</code></td>
-<td style="text-align: center;"><code>ou</code></td>
-<td style="text-align: center;"><code>filter(variable_1 == 10 | variable_2 == 20)</code></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><code>==</code></td>
-<td style="text-align: center;"><code>égal</code></td>
-<td style="text-align: center;"><code>filter(variable == 10)</code></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><code>!=</code></td>
-<td style="text-align: center;"><code>différent</code></td>
-<td style="text-align: center;"><code>filter(variable != 10)</code></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><code>&lt;</code></td>
-<td style="text-align: center;"><code>inférieur</code></td>
-<td style="text-align: center;"><code>filter(variable &lt; 10)</code></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><code>&gt;</code></td>
-<td style="text-align: center;"><code>supérieur</code></td>
-<td style="text-align: center;"><code>filter(variable &gt; 10)</code></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><code>&lt;=</code></td>
-<td style="text-align: center;"><code>inférieur ou égal</code></td>
-<td style="text-align: center;"><code>filter(variable &lt;= 10)</code></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><code>&gt;=</code></td>
-<td style="text-align: center;"><code>supérieur ou égal</code></td>
-<td style="text-align: center;"><code>filter(variable &gt;= 10)</code></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><code>%in%</code></td>
-<td style="text-align: center;"><code>appartenant</code></td>
-<td style="text-align: center;"><code>filter(variable %in% c(10,20,30)</code></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Avoir des informations sur sa session avec la fonction <code>sessionInfo()</code>
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Ceci permet de connaitre sa version de R, les packages attachés à la session, etc.</p>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(defm<span class="sc">$</span>date, defm<span class="sc">$</span>defmA)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div></li>
+<li><p>Créer une ligne simple avec la date et le nombre de demandeurs d’emploi en utilisant la fonction <code>ggplot()</code></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>() <span class="co"># Permet d'avoir des informations sur la session en cours dont la version de R</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">getRversion</span>() <span class="co"># Permet d'identifier la version de R</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">version</span>() <span class="co"># Permet d'obtenir différentes informations sur R</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Connaitre les packages installés sur son environnement avec <code>library()</code>
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(defm, <span class="fu">aes</span>(<span class="at">x=</span>date, <span class="at">y=</span>defmA)) <span class="sc">+</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div></li>
+<li><p>Ajouter un titre avec <code>ggtitle()</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>() <span class="co"># Permet de connaitre les packages installés</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Connaitre les packages chargés dans son environnement avec <code>search()</code>
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(defm, <span class="fu">aes</span>(<span class="at">x=</span>date, <span class="at">y=</span>defmA)) <span class="sc">+</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Titre"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div></li>
+<li><p>Ajouter une seconde courbe, par exemple celle de l’ensemble des demandeurs d’emploi inscrits en catégories A, B ou C.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">search</span>() <span class="co"># Permet de connaitre les packages chargés </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Connaitre la version d’un package avec <code>packageVersion()</code>
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(defm) <span class="sc">+</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x=</span>date, <span class="at">y=</span>defmA))<span class="sc">+</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x=</span>date, <span class="at">y=</span>defmABC))<span class="sc">+</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Titre"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div></li>
+<li><p>Créer un barlpot avec la spécification <code>geom_bar()</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">packageVersion</span>(<span class="st">"dplyr"</span>) <span class="co"># Permet de connaitre la version du package dplyr</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(defm, <span class="fu">aes</span>(<span class="at">x=</span>date, <span class="at">y=</span>defmA)) <span class="sc">+</span> </span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div></li>
+<li><p>Créer un histograme avec la spécification <code>geom_histogram()</code>.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(defm, <span class="fu">aes</span>(<span class="at">x=</span>defmA)) <span class="sc">+</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div></li>
+</ol>
 
 
 </section>
