@@ -412,6 +412,15 @@
 </ul>
 </div>
 </section>
+<section id="quel-avantages-de-r-pour-la-dares" class="slide level2 scrollable smaller">
+<h2>Quel avantages de R pour la Dares ?</h2>
+<ul>
+<li><p>Homogénéiser les pratiques au sein du SSP</p></li>
+<li><p>Renforcer l’attractivité de la Dares, dans un contexte où les sortants d’école sont plus fréquemment formés à R/Python</p></li>
+<li><p>Développer certains modèles dits Big Data et Machine learning très récents implémentés sous R et Python : l’exemple de Jocas à la Dares sous Python et des recommandations du GT Big Data</p></li>
+<li><p>Profiter de l’intégration de R à d’autres outils comme Git, qui facilitent le travail collaboratif</p></li>
+</ul>
+</section>
 <section id="fonctionnement-de-r" class="slide level2 scrollable smaller">
 <h2>Fonctionnement de R</h2>
 <p><br></p>
@@ -441,6 +450,16 @@
 </tbody>
 </table>
 <p><strong>Attention :</strong> R distingue les minuscules et les majuscules</p></li>
+</ul>
+</section>
+<section id="le-travail-en-mémoire-vive-à-la-dares" class="slide level2 scrollable smaller">
+<h2>Le travail en mémoire vive à la Dares</h2>
+<p>La mémoire vive en R est donc utilisée à la fois pour charger les données à manipuler et pour réaliser les calculs demandés.</p>
+<p>La Dares reçoit des données administratives parfois conséquentes, plus volumineuses que la mémoire vive des ordinateurs portables fournis. Dans ce cas, différentes solutions existent et se développent au sein du SSP :</p>
+<ul>
+<li><p>Créer un échantillon des données à la réception, mais cela peut poser problème pour travailler sur des sous-populations ;</p></li>
+<li><p>Le format de données compressées parquet, qui peut être manipulé avec les packages arrow et duckdb, se développe à l’Insee ;</p></li>
+<li><p>Lorsque les données sont beaucoup plus volumineuses que la mémoire vive et doivent être traitées avec un serveur, des solutions telles que le calcul distribué avec Spark peuvent être envisagées. Un atelier d’exemple de manipulation des données MiDAS avec Spark sous R et sous CASD est prévu dans l’année pour illustrer ces solutions.</p></li>
 </ul>
 </section>
 <section>
@@ -2459,10 +2478,6 @@ attr(,"package")
 <li><p>nous</p></li>
 <li><p>des ateliers thématiques</p></li>
 </ul>
-</section>
-
-<section id="bibliographie" class="title-slide slide level1 center">
-<h1>Bibliographie</h1>
 
 <div class="footer footer-default">
 <p>Formation R - Dares</p>
