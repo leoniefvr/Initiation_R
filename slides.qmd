@@ -58,7 +58,7 @@ Toutes les opérations sont enregistrées dans la mémoire vive de l'ordinateur 
 -   En SAS, la mémoire RAM est sollicitée au minimum, des fichiers temporaires sont créés.
 
     |                                                                                     |
-    |------------------------------------------------------------------------|
+    |-------------------------------------------------------------------------------------|
     | ⛔Impossible de charger des données de 50GO avec un ordinateur ayant 32GO de RAM ⛔ |
 
     **Attention :** R distingue les minuscules et les majuscules
