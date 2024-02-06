@@ -1,1 +1,1 @@
-Sitemap: https://github.com/leoniefvr/Initiation_R/sitemap.xml
+Sitemap: https://leoniefvr.github.io/Initiation_R/sitemap.xml

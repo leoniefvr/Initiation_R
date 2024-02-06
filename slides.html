@@ -8,7 +8,7 @@
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.450">
+  <meta name="generator" content="quarto-1.4.549">
 
   <title>Formation R - Prise en main des données avec R</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -30,7 +30,7 @@
     }
     /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span { line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -220,7 +220,8 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -398,7 +399,7 @@
 <section id="un-rapide-tour-de-table-pour-apprendre-à-se-connaître" class="slide level2">
 <h2>Un rapide tour de table pour apprendre à se connaître 🙂</h2>
 
-<img data-src="images/picture_1.jpg" class="r-stretch quarto-figure-center"></section>
+<img data-src="images/picture_1.jpg" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="pourquoi-r" class="slide level2 scrollable smaller">
 <h2>Pourquoi R ?</h2>
 <p><br></p>
@@ -484,7 +485,7 @@
 <div class="tab-content">
 <div id="tabset-1-1">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="dv">152</span><span class="sc">/</span><span class="dv">17</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="dv">152</span><span class="sc">/</span><span class="dv">17</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="tabset-1-2">
@@ -512,7 +513,7 @@
 <li>Import de données en mode “clic-bouton”</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>test_environnement <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">+</span><span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>test_environnement <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">+</span><span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:50%;">
 <p><img data-src="images/console_R.jpeg"></p>
@@ -530,7 +531,7 @@
 <p><br></p>
 <p>Obtenir le chemin à la racine de ma working directory :</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">getwd</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">getwd</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
 <p>La working directory est l’endroit où R lit et exporte par défaut les fichiers.</p>
@@ -539,14 +540,14 @@
 <p><br></p>
 <p>Fenêtre d’affichage des graphiques :</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">plot</span>(<span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">plot</span>(<span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="tabset-2-3">
 <p><br></p>
 <p>Permet de voir les packages installés et chargés.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">library</span>(<span class="st">"existepas"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">library</span>(<span class="st">"existepas"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Permet également de les installer, les mettre à jour et les charger en clic bouton.</p>
 </div>
@@ -554,11 +555,11 @@
 <p><br></p>
 <p>Permet d’accéder à la documentation des fonctions, ainsi qu’à des exemples. Par exemple, je ne comprends pas la fonction <code>mean()</code> :</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">help</span>(<span class="st">"mean"</span>)</span>
-<span id="cb7-2"><a href="#cb7-2"></a></span>
-<span id="cb7-3"><a href="#cb7-3"></a><span class="co">#ou</span></span>
-<span id="cb7-4"><a href="#cb7-4"></a></span>
-<span id="cb7-5"><a href="#cb7-5"></a>?mean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">help</span>(<span class="st">"mean"</span>)</span>
+<span id="cb7-2"><a></a></span>
+<span id="cb7-3"><a></a><span class="co">#ou</span></span>
+<span id="cb7-4"><a></a></span>
+<span id="cb7-5"><a></a>?mean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>La documentation de la fonction s’affiche dans la fenêtre Help.</p>
 </div>
@@ -573,6 +574,7 @@
 <h2>Utiliser l’aide</h2>
 <p><br></p>
 <p>Les fonctions des packages sont documentées (de manière inégale selon les packages…), et les <strong>arguments</strong> principaux de chaque fonction sont présentés dans l’aide, avec des exemples d’appel de la fonction.</p>
+<div title="Bonne pratique">
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -586,16 +588,17 @@
 </div>
 </div>
 </div>
+</div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>un_vecteur <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span> ,<span class="dv">9</span> , <span class="dv">45</span>, <span class="dv">10</span>)</span>
-<span id="cb8-2"><a href="#cb8-2"></a></span>
-<span id="cb8-3"><a href="#cb8-3"></a><span class="do">###Bonne pratique###</span></span>
-<span id="cb8-4"><a href="#cb8-4"></a><span class="fu">mean</span>(<span class="at">x =</span> un_vecteur)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>un_vecteur <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span> ,<span class="dv">9</span> , <span class="dv">45</span>, <span class="dv">10</span>)</span>
+<span id="cb8-2"><a></a></span>
+<span id="cb8-3"><a></a><span class="do">###Bonne pratique###</span></span>
+<span id="cb8-4"><a></a><span class="fu">mean</span>(<span class="at">x =</span> un_vecteur)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 13.8</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="do">###Mauvaise pratique###</span></span>
-<span id="cb10-2"><a href="#cb10-2"></a><span class="fu">mean</span>(un_vecteur)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="do">###Mauvaise pratique###</span></span>
+<span id="cb10-2"><a></a><span class="fu">mean</span>(un_vecteur)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 13.8</code></pre>
 </div>
@@ -605,7 +608,7 @@
 <h2>L’importance des packages</h2>
 <p>Pour installer un package <strong>dans la console</strong>, on utilise :</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">install.packages</span>(<span class="st">"dplyr"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">install.packages</span>(<span class="st">"dplyr"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
@@ -623,7 +626,7 @@
 <p>Cela permet de charger (ou mettre à jour) le package sur disque, depuis le <strong>CRAN</strong>. cette instruction nécessite donc une connexion à internet.</p>
 <p>On charge ensuite le package en mémoire vive :</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">library</span>(<span class="st">"dplyr"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">library</span>(<span class="st">"dplyr"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li><p>L’installation du package n’est à exécuter <strong>qu’une seule fois</strong></p></li>
@@ -756,16 +759,16 @@
 <div class="tab-content">
 <div id="tabset-4-1">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>EEC_2019 <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">"FD_EEC_2019.csv"</span>, </span>
-<span id="cb14-2"><a href="#cb14-2"></a>               <span class="at">header =</span> <span class="cn">TRUE</span>, </span>
-<span id="cb14-3"><a href="#cb14-3"></a>               <span class="at">sep =</span> <span class="st">";"</span>, </span>
-<span id="cb14-4"><a href="#cb14-4"></a>               <span class="at">quote =</span> <span class="st">"</span><span class="sc">\"</span><span class="st">"</span>, </span>
-<span id="cb14-5"><a href="#cb14-5"></a>               <span class="at">dec =</span> <span class="st">"."</span>, </span>
-<span id="cb14-6"><a href="#cb14-6"></a>               <span class="at">fill =</span> <span class="cn">TRUE</span>, </span>
-<span id="cb14-7"><a href="#cb14-7"></a>               <span class="at">comment.char =</span> <span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>EEC_2019 <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">"FD_EEC_2019.csv"</span>, </span>
+<span id="cb14-2"><a></a>               <span class="at">header =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb14-3"><a></a>               <span class="at">sep =</span> <span class="st">";"</span>, </span>
+<span id="cb14-4"><a></a>               <span class="at">quote =</span> <span class="st">"</span><span class="sc">\"</span><span class="st">"</span>, </span>
+<span id="cb14-5"><a></a>               <span class="at">dec =</span> <span class="st">"."</span>, </span>
+<span id="cb14-6"><a></a>               <span class="at">fill =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb14-7"><a></a>               <span class="at">comment.char =</span> <span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="fu">head</span>(EEC_2019, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">head</span>(EEC_2019, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  ANNEE TRIM CATAU2010R METRODOM TYPMEN7 AGE3 AGE5 COURED ENFRED NFRRED SEXE
 1  2019    1          1        1       1   50   60      2      2      1    2
@@ -838,12 +841,12 @@
 </div>
 <div id="tabset-4-2">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">library</span>(<span class="st">"openxlsx"</span>)</span>
-<span id="cb17-2"><a href="#cb17-2"></a></span>
-<span id="cb17-3"><a href="#cb17-3"></a>EEC_excel <span class="ot">&lt;-</span> <span class="fu">read.xlsx</span>(<span class="st">"FD_EEC_2019.xlsx"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">library</span>(<span class="st">"openxlsx"</span>)</span>
+<span id="cb17-2"><a></a></span>
+<span id="cb17-3"><a></a>EEC_excel <span class="ot">&lt;-</span> <span class="fu">read.xlsx</span>(<span class="st">"FD_EEC_2019.xlsx"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">head</span>(EEC_excel, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="fu">head</span>(EEC_excel, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  ANNEE TRIM CATAU2010R METRODOM TYPMEN7 AGE3 AGE5 COURED ENFRED NFRRED SEXE
 1  2019    1          1        1       1   50   60      2      2      1    2
@@ -916,9 +919,9 @@
 </div>
 <div id="tabset-4-3">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">library</span>(<span class="st">"haven"</span>)</span>
-<span id="cb20-2"><a href="#cb20-2"></a></span>
-<span id="cb20-3"><a href="#cb20-3"></a>EEC_2019_SAS <span class="ot">&lt;-</span> <span class="fu">read_sas</span>(<span class="st">"FD_EEC_2019.sas7bdat"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="fu">library</span>(<span class="st">"haven"</span>)</span>
+<span id="cb20-2"><a></a></span>
+<span id="cb20-3"><a></a>EEC_2019_SAS <span class="ot">&lt;-</span> <span class="fu">read_sas</span>(<span class="st">"FD_EEC_2019.sas7bdat"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -929,7 +932,7 @@
 <p><br></p>
 <p>L’élément de base de R est le vecteur <code>c()</code> :</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>un_vecteur_numerique <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a>un_vecteur_numerique <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>R utilise la logique de la <strong>vectorisation</strong> : les fonctions sont appliquées à <em>l’ensemble d’un vecteur</em> (ou matrice) plutôt que d’être appliquées successivement à chacun des éléments de ce vecteur (ou de cette matrice). Cela permet une <strong>accélération</strong> du temps de calcul.</p>
 <p>Par exemple, pour obtenir le carré de chacun des éléments d’un vecteur :</p>
@@ -938,17 +941,17 @@
 <div class="tab-content">
 <div id="tabset-5-1">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
-<span id="cb22-2"><a href="#cb22-2"></a><span class="cf">for</span> (k <span class="cf">in</span> <span class="fu">seq_along</span>(x)) {</span>
-<span id="cb22-3"><a href="#cb22-3"></a>x[k] <span class="ot">&lt;-</span> x[k]<span class="sc">**</span><span class="dv">2</span></span>
-<span id="cb22-4"><a href="#cb22-4"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
+<span id="cb22-2"><a></a><span class="cf">for</span> (k <span class="cf">in</span> <span class="fu">seq_along</span>(x)) {</span>
+<span id="cb22-3"><a></a>x[k] <span class="ot">&lt;-</span> x[k]<span class="sc">**</span><span class="dv">2</span></span>
+<span id="cb22-4"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="tabset-5-2">
 <p>Application de la fonction carrée au vecteur :</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
-<span id="cb23-2"><a href="#cb23-2"></a>x <span class="ot">&lt;-</span> x<span class="sc">**</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
+<span id="cb23-2"><a></a>x <span class="ot">&lt;-</span> x<span class="sc">**</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -966,16 +969,16 @@
 <li><p>les flottants.</p></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>num <span class="ot">&lt;-</span> <span class="dv">5</span></span>
-<span id="cb24-2"><a href="#cb24-2"></a><span class="fu">class</span>(num)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a>num <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb24-2"><a></a><span class="fu">class</span>(num)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "numeric"</code></pre>
 </div>
 </div>
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a>num <span class="ot">&lt;-</span> <span class="fu">integer</span>(<span class="dv">5</span>)</span>
-<span id="cb26-2"><a href="#cb26-2"></a><span class="fu">class</span>(num)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a>num <span class="ot">&lt;-</span> <span class="fu">integer</span>(<span class="dv">5</span>)</span>
+<span id="cb26-2"><a></a><span class="fu">class</span>(num)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "integer"</code></pre>
 </div>
@@ -987,27 +990,27 @@
 <p>La fonction <code>paste0()</code> permet de concaténer des chaînes de caractères.</p>
 <p>🔍Remarque : l’anti slash en R permet de gérer les caractères spéciaux, dans les chemins d’accès aux données, il faut donc soit les remplacer par des <strong>slashs</strong>, soit les doubler.🔍</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="co">#Création d'une chaîne de caractères</span></span>
-<span id="cb28-2"><a href="#cb28-2"></a>chaine <span class="ot">&lt;-</span> <span class="st">"Oui"</span></span>
-<span id="cb28-3"><a href="#cb28-3"></a></span>
-<span id="cb28-4"><a href="#cb28-4"></a><span class="co">#Type de la variable chaine</span></span>
-<span id="cb28-5"><a href="#cb28-5"></a><span class="fu">class</span>(chaine)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a><span class="co">#Création d'une chaîne de caractères</span></span>
+<span id="cb28-2"><a></a>chaine <span class="ot">&lt;-</span> <span class="st">"Oui"</span></span>
+<span id="cb28-3"><a></a></span>
+<span id="cb28-4"><a></a><span class="co">#Type de la variable chaine</span></span>
+<span id="cb28-5"><a></a><span class="fu">class</span>(chaine)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "character"</code></pre>
 </div>
 </div>
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="co">#Nombre de caractères de la variable</span></span>
-<span id="cb30-2"><a href="#cb30-2"></a><span class="fu">nchar</span>(chaine)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a><span class="co">#Nombre de caractères de la variable</span></span>
+<span id="cb30-2"><a></a><span class="fu">nchar</span>(chaine)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3</code></pre>
 </div>
 </div>
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="co">#Concaténation de plusieurs chaînes de caractère</span></span>
-<span id="cb32-2"><a href="#cb32-2"></a><span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"Les "</span>, <span class="st">"chaînes "</span>, <span class="st">"de caractère "</span>, <span class="st">"peuvent être concaténées."</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a><span class="co">#Concaténation de plusieurs chaînes de caractère</span></span>
+<span id="cb32-2"><a></a><span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"Les "</span>, <span class="st">"chaînes "</span>, <span class="st">"de caractère "</span>, <span class="st">"peuvent être concaténées."</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Les chaînes de caractère peuvent être concaténées."</code></pre>
 </div>
@@ -1019,8 +1022,8 @@
 <p>Un booléen peut valoir <code>TRUE</code> ou <code>FALSE</code> : c’est une variable qui indique si une condition logique est vérifiée.</p>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="co"># Test de l'égalité</span></span>
-<span id="cb34-2"><a href="#cb34-2"></a><span class="fu">print</span>(<span class="dv">1</span> <span class="sc">==</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a></a><span class="co"># Test de l'égalité</span></span>
+<span id="cb34-2"><a></a><span class="fu">print</span>(<span class="dv">1</span> <span class="sc">==</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="fragment">
@@ -1033,8 +1036,8 @@
 <p><br></p>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>a <span class="ot">&lt;-</span> (<span class="st">"Dares"</span> <span class="sc">==</span> <span class="st">"Dares"</span>)</span>
-<span id="cb36-2"><a href="#cb36-2"></a><span class="fu">print</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a>a <span class="ot">&lt;-</span> (<span class="st">"Dares"</span> <span class="sc">==</span> <span class="st">"Dares"</span>)</span>
+<span id="cb36-2"><a></a><span class="fu">print</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="fragment">
@@ -1047,8 +1050,8 @@
 <p><br></p>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a><span class="co"># Comparaison numérique</span></span>
-<span id="cb38-2"><a href="#cb38-2"></a><span class="fu">print</span>(<span class="dv">2</span> <span class="sc">&lt;</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a><span class="co"># Comparaison numérique</span></span>
+<span id="cb38-2"><a></a><span class="fu">print</span>(<span class="dv">2</span> <span class="sc">&lt;</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="fragment">
@@ -1061,7 +1064,7 @@
 <p><br></p>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a><span class="fu">print</span>(<span class="dv">4</span> <span class="sc">&gt;=</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a></a><span class="fu">print</span>(<span class="dv">4</span> <span class="sc">&gt;=</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="fragment">
@@ -1074,8 +1077,8 @@
 <p><br></p>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a>b <span class="ot">&lt;-</span> <span class="dv">3</span> <span class="sc">&lt;=</span> <span class="dv">2</span></span>
-<span id="cb42-2"><a href="#cb42-2"></a><span class="fu">print</span>(b)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a></a>b <span class="ot">&lt;-</span> <span class="dv">3</span> <span class="sc">&lt;=</span> <span class="dv">2</span></span>
+<span id="cb42-2"><a></a><span class="fu">print</span>(b)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="fragment">
@@ -1088,8 +1091,8 @@
 <p><br></p>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a><span class="co"># Test de la différence</span></span>
-<span id="cb44-2"><a href="#cb44-2"></a><span class="fu">print</span>(<span class="st">"A"</span> <span class="sc">!=</span> <span class="st">"a"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a></a><span class="co"># Test de la différence</span></span>
+<span id="cb44-2"><a></a><span class="fu">print</span>(<span class="st">"A"</span> <span class="sc">!=</span> <span class="st">"a"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="fragment">
@@ -1113,15 +1116,15 @@
 <p><br></p>
 <p>Un <strong>vecteur</strong> est une séquence ordonnée d’objets élémentaires de <strong>même type</strong>. Les vecteurs ont un type (correspondant à celui des objets qu’il contient) donné par la fonction <code>class()</code> et une longueur donnée par la fonction <code>length</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a>vecteur_num <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">18</span>, <span class="dv">9</span>)</span>
-<span id="cb46-2"><a href="#cb46-2"></a><span class="fu">length</span>(vecteur_num)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a></a>vecteur_num <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">18</span>, <span class="dv">9</span>)</span>
+<span id="cb46-2"><a></a><span class="fu">length</span>(vecteur_num)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3</code></pre>
 </div>
 </div>
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a><span class="fu">class</span>(vecteur_num)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a></a><span class="fu">class</span>(vecteur_num)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "numeric"</code></pre>
 </div>
@@ -1132,23 +1135,23 @@
 <p>Une <strong>liste</strong> est une séquence ordonnée, éventuellement hétérogène, d’objets de types quelconques.</p>
 <p>Une liste est toujours de type <code>list</code>, peu importe ce qui la compose.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1"></a>liste_divers <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">"A"</span>, <span class="dv">7</span>, <span class="cn">TRUE</span>)</span>
-<span id="cb50-2"><a href="#cb50-2"></a><span class="fu">length</span>(liste_divers)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a></a>liste_divers <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">"A"</span>, <span class="dv">7</span>, <span class="cn">TRUE</span>)</span>
+<span id="cb50-2"><a></a><span class="fu">length</span>(liste_divers)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3</code></pre>
 </div>
 </div>
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1"></a><span class="fu">class</span>(liste_divers)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a></a><span class="fu">class</span>(liste_divers)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "list"</code></pre>
 </div>
 </div>
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1"></a><span class="co">#Accéder aux éléments d'une liste</span></span>
-<span id="cb54-2"><a href="#cb54-2"></a><span class="fu">print</span>(liste_divers[[<span class="dv">1</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a></a><span class="co">#Accéder aux éléments d'une liste</span></span>
+<span id="cb54-2"><a></a><span class="fu">print</span>(liste_divers[[<span class="dv">1</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "A"</code></pre>
 </div>
@@ -1174,8 +1177,8 @@
 </ul>
 <p>Les dimensions du data.frame sont données par la fonction <code>dim()</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1"></a><span class="co">#Obtenir les dimensions du tableau de l'enquête emploi en continu</span></span>
-<span id="cb56-2"><a href="#cb56-2"></a><span class="fu">dim</span>(EEC_2019)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a></a><span class="co">#Obtenir les dimensions du tableau de l'enquête emploi en continu</span></span>
+<span id="cb56-2"><a></a><span class="fu">dim</span>(EEC_2019)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 416298    124</code></pre>
 </div>
@@ -1211,7 +1214,7 @@
 <li>Obtenir le nom des lignes :</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1"></a><span class="fu">rownames</span>(EEC_ex)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a></a><span class="fu">rownames</span>(EEC_ex)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "1"  "2"  "3"  "4"  "5"  "6"  "7"  "8"  "9"  "10" "11" "12" "13" "14" "15"
 [16] "16" "17" "18" "19" "20" "21" "22" "23" "24" "25" "26" "27" "28" "29" "30"</code></pre>
@@ -1222,7 +1225,7 @@
 <li>Sélectionner la 5ème ligne :</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1"></a>EEC_ex[<span class="dv">5</span>,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a></a>EEC_ex[<span class="dv">5</span>,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   SEXE ACTIF COURED AGE5 CSTOTR NAFG004UN AGE3 ANNEE JOURTR
 5 Femme     2      1   60      7      &lt;NA&gt;   50  2019     NA</code></pre>
@@ -1233,7 +1236,7 @@
 <li>Sélectionner les lignes 10 et 35 :</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1"></a>EEC_ex[<span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">35</span>),]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a></a>EEC_ex[<span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">35</span>),]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    SEXE ACTIF COURED AGE5 CSTOTR NAFG004UN AGE3 ANNEE JOURTR
 10 Homme     1      2   15      4        EV   15  2019      5
@@ -1245,7 +1248,7 @@ NA  &lt;NA&gt;    NA     NA   NA     NA      &lt;NA&gt;   NA    NA     NA</code>
 <li>Sélectionner les lignes 3 à 8 :</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1"></a>EEC_ex[<span class="fu">c</span>(<span class="dv">3</span><span class="sc">:</span><span class="dv">8</span>),]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a></a>EEC_ex[<span class="fu">c</span>(<span class="dv">3</span><span class="sc">:</span><span class="dv">8</span>),]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   SEXE ACTIF COURED AGE5 CSTOTR NAFG004UN AGE3 ANNEE JOURTR
 3 Femme     2      1   60      7      &lt;NA&gt;   50  2019     NA
@@ -1262,7 +1265,7 @@ NA  &lt;NA&gt;    NA     NA   NA     NA      &lt;NA&gt;   NA    NA     NA</code>
 <li>Connaître le nom des colonnes/variables :</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1"></a><span class="fu">names</span>(EEC_ex)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a></a><span class="fu">names</span>(EEC_ex)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "SEXE"      "ACTIF"     "COURED"    "AGE5"      "CSTOTR"    "NAFG004UN"
 [7] "AGE3"      "ANNEE"     "JOURTR"   </code></pre>
@@ -1273,7 +1276,7 @@ NA  &lt;NA&gt;    NA     NA   NA     NA      &lt;NA&gt;   NA    NA     NA</code>
 <li>Sélectionner une colonne <strong>solution 1</strong> : la 3ème colonne :</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1"></a>EEC_ex[, <span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a></a>EEC_ex[, <span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] 2 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 2 2 1 1 1 1 1 1 1 1 1</code></pre>
 </div>
@@ -1283,7 +1286,7 @@ NA  &lt;NA&gt;    NA     NA   NA     NA      &lt;NA&gt;   NA    NA     NA</code>
 <li>Sélectionner une colonne <strong>solution 2</strong>, la variable ACTIF :</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1"></a>EEC_ex[<span class="st">"ACTIF"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a></a>EEC_ex[<span class="st">"ACTIF"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   ACTIF
 1      2
@@ -1323,7 +1326,7 @@ NA  &lt;NA&gt;    NA     NA   NA     NA      &lt;NA&gt;   NA    NA     NA</code>
 <li>Sélectionner une colonne <strong>solution 3</strong>, la variable ACTIF</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1"></a>EEC_ex<span class="sc">$</span>ACTIF</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a></a>EEC_ex<span class="sc">$</span>ACTIF</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] 2 1 2 1 2 1 2 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 1 2 1 2 2 2 2 2</code></pre>
 </div>
@@ -1333,7 +1336,7 @@ NA  &lt;NA&gt;    NA     NA   NA     NA      &lt;NA&gt;   NA    NA     NA</code>
 <li>Connaître le <strong>type</strong> des variables :</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1"></a><span class="fu">class</span>(EEC_ex<span class="sc">$</span>AGE3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a></a><span class="fu">class</span>(EEC_ex<span class="sc">$</span>AGE3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "integer"</code></pre>
 </div>
@@ -1343,7 +1346,7 @@ NA  &lt;NA&gt;    NA     NA   NA     NA      &lt;NA&gt;   NA    NA     NA</code>
 <li>Sélectionner la 3ème ligne et les colonnes SEXE et ACTIF :</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1"></a>EEC_ex[<span class="dv">3</span>, <span class="fu">c</span>(<span class="st">"SEXE"</span>, <span class="st">"ACTIF"</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a></a>EEC_ex[<span class="dv">3</span>, <span class="fu">c</span>(<span class="st">"SEXE"</span>, <span class="st">"ACTIF"</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   SEXE ACTIF
 3 Femme     2</code></pre>
@@ -1358,12 +1361,12 @@ NA  &lt;NA&gt;    NA     NA   NA     NA      &lt;NA&gt;   NA    NA     NA</code>
 <p><br></p>
 <p>Convertir une variable numérique en caractère :</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1"></a><span class="fu">class</span>(EEC_ex<span class="sc">$</span>ANNEE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a></a><span class="fu">class</span>(EEC_ex<span class="sc">$</span>ANNEE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "integer"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1"></a>EEC_ex<span class="sc">$</span>ANNEE <span class="ot">&lt;-</span> <span class="fu">as.character</span>(EEC_ex<span class="sc">$</span>ANNEE)</span>
-<span id="cb80-2"><a href="#cb80-2"></a><span class="fu">class</span>(EEC_ex<span class="sc">$</span>ANNEE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a></a>EEC_ex<span class="sc">$</span>ANNEE <span class="ot">&lt;-</span> <span class="fu">as.character</span>(EEC_ex<span class="sc">$</span>ANNEE)</span>
+<span id="cb80-2"><a></a><span class="fu">class</span>(EEC_ex<span class="sc">$</span>ANNEE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "character"</code></pre>
 </div>
@@ -1371,8 +1374,8 @@ NA  &lt;NA&gt;    NA     NA   NA     NA      &lt;NA&gt;   NA    NA     NA</code>
 <p><br></p>
 <p>Convertir une colonne caractère en numérique :</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1"></a>EEC_ex<span class="sc">$</span>ANNEE <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(EEC_ex<span class="sc">$</span>ANNEE)</span>
-<span id="cb82-2"><a href="#cb82-2"></a><span class="fu">class</span>(EEC_ex<span class="sc">$</span>ANNEE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a></a>EEC_ex<span class="sc">$</span>ANNEE <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(EEC_ex<span class="sc">$</span>ANNEE)</span>
+<span id="cb82-2"><a></a><span class="fu">class</span>(EEC_ex<span class="sc">$</span>ANNEE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "numeric"</code></pre>
 </div>
@@ -1387,14 +1390,14 @@ NA  &lt;NA&gt;    NA     NA   NA     NA      &lt;NA&gt;   NA    NA     NA</code>
 <div class="tab-content">
 <div id="tabset-9-1">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1"></a><span class="fu">class</span>(EEC_2019<span class="sc">$</span>SEXE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a></a><span class="fu">class</span>(EEC_2019<span class="sc">$</span>SEXE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "integer"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1"></a><span class="co">#Conversion de la variable SEXE de numérique en facteur</span></span>
-<span id="cb86-2"><a href="#cb86-2"></a>EEC_2019<span class="sc">$</span>SEXE <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(EEC_2019<span class="sc">$</span>SEXE)</span>
-<span id="cb86-3"><a href="#cb86-3"></a></span>
-<span id="cb86-4"><a href="#cb86-4"></a><span class="fu">class</span>(EEC_2019<span class="sc">$</span>SEXE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a></a><span class="co">#Conversion de la variable SEXE de numérique en facteur</span></span>
+<span id="cb86-2"><a></a>EEC_2019<span class="sc">$</span>SEXE <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(EEC_2019<span class="sc">$</span>SEXE)</span>
+<span id="cb86-3"><a></a></span>
+<span id="cb86-4"><a></a><span class="fu">class</span>(EEC_2019<span class="sc">$</span>SEXE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "factor"</code></pre>
 </div>
@@ -1403,7 +1406,7 @@ NA  &lt;NA&gt;    NA     NA   NA     NA      &lt;NA&gt;   NA    NA     NA</code>
 <div id="tabset-9-2">
 <p>La fonction <code>levels()</code> permet de connaître l’ensemble des <strong>modalités</strong> existantes d’un facteur (même si elles ne sont plus présentes dans les données après sélection des lignes).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1"></a><span class="fu">levels</span>(EEC_2019<span class="sc">$</span>SEXE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a></a><span class="fu">levels</span>(EEC_2019<span class="sc">$</span>SEXE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "1" "2"</code></pre>
 </div>
@@ -1412,20 +1415,20 @@ NA  &lt;NA&gt;    NA     NA   NA     NA      &lt;NA&gt;   NA    NA     NA</code>
 <div id="tabset-9-3">
 <p>La fonction <code>fct_recode()</code> permet de renommer les modalités d’un facteur, avec la syntaxe suivante :</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1"></a>nouvelle_variable <span class="ot">&lt;-</span> <span class="fu">fct_recode</span>(ancienne_variable,</span>
-<span id="cb90-2"><a href="#cb90-2"></a>                                <span class="st">"Nouvelle_valeur1"</span> <span class="ot">=</span> <span class="st">"Ancienne_valeur1"</span>,</span>
-<span id="cb90-3"><a href="#cb90-3"></a>                                <span class="st">"Nouvelle_valeur2"</span> <span class="ot">=</span> <span class="st">"Ancienne_valeur2"</span>,</span>
-<span id="cb90-4"><a href="#cb90-4"></a>                                <span class="at">NULL =</span> <span class="st">"Modalite_a_supprimer"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a></a>nouvelle_variable <span class="ot">&lt;-</span> <span class="fu">fct_recode</span>(ancienne_variable,</span>
+<span id="cb90-2"><a></a>                                <span class="st">"Nouvelle_valeur1"</span> <span class="ot">=</span> <span class="st">"Ancienne_valeur1"</span>,</span>
+<span id="cb90-3"><a></a>                                <span class="st">"Nouvelle_valeur2"</span> <span class="ot">=</span> <span class="st">"Ancienne_valeur2"</span>,</span>
+<span id="cb90-4"><a></a>                                <span class="at">NULL =</span> <span class="st">"Modalite_a_supprimer"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Exemple : Recodage des modalités de la variable SEXE.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1"></a><span class="fu">library</span>(forcats)</span>
-<span id="cb91-2"><a href="#cb91-2"></a></span>
-<span id="cb91-3"><a href="#cb91-3"></a>EEC_2019<span class="sc">$</span>SEXE <span class="ot">&lt;-</span> <span class="fu">fct_recode</span>(EEC_2019<span class="sc">$</span>SEXE,</span>
-<span id="cb91-4"><a href="#cb91-4"></a>                            <span class="st">"Homme"</span> <span class="ot">=</span> <span class="st">"1"</span>,</span>
-<span id="cb91-5"><a href="#cb91-5"></a>                            <span class="st">"Femme"</span> <span class="ot">=</span> <span class="st">"2"</span>)</span>
-<span id="cb91-6"><a href="#cb91-6"></a></span>
-<span id="cb91-7"><a href="#cb91-7"></a><span class="fu">levels</span>(EEC_2019<span class="sc">$</span>SEXE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a></a><span class="fu">library</span>(forcats)</span>
+<span id="cb91-2"><a></a></span>
+<span id="cb91-3"><a></a>EEC_2019<span class="sc">$</span>SEXE <span class="ot">&lt;-</span> <span class="fu">fct_recode</span>(EEC_2019<span class="sc">$</span>SEXE,</span>
+<span id="cb91-4"><a></a>                            <span class="st">"Homme"</span> <span class="ot">=</span> <span class="st">"1"</span>,</span>
+<span id="cb91-5"><a></a>                            <span class="st">"Femme"</span> <span class="ot">=</span> <span class="st">"2"</span>)</span>
+<span id="cb91-6"><a></a></span>
+<span id="cb91-7"><a></a><span class="fu">levels</span>(EEC_2019<span class="sc">$</span>SEXE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Homme" "Femme"</code></pre>
 </div>
@@ -1439,16 +1442,16 @@ NA  &lt;NA&gt;    NA     NA   NA     NA      &lt;NA&gt;   NA    NA     NA</code>
 <p>Lorsqu’une <strong>valeur est manquante</strong> dans une enquête par exemple, elle figure sous forme de la modalité <code>NA</code>, “Not Available”, qui existe pour tous les types de variables.</p>
 <p>Selon la manière dont ces valeurs manquantes existent dans les données à importer dans R, elles ne sont pas forcément détectées comme telles. Par exemple :</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb93"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a href="#cb93-1"></a>test_na <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(</span>
-<span id="cb93-2"><a href="#cb93-2"></a>  <span class="fu">list</span>(</span>
-<span id="cb93-3"><a href="#cb93-3"></a>  <span class="fu">c</span>(<span class="dv">1</span>, <span class="st">"."</span>, <span class="dv">3</span>),</span>
-<span id="cb93-4"><a href="#cb93-4"></a>  <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"E"</span>, <span class="st">"."</span>)</span>
-<span id="cb93-5"><a href="#cb93-5"></a>  )</span>
-<span id="cb93-6"><a href="#cb93-6"></a>  )</span>
-<span id="cb93-7"><a href="#cb93-7"></a></span>
-<span id="cb93-8"><a href="#cb93-8"></a><span class="fu">names</span>(test_na) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Var1"</span>, <span class="st">"Var2"</span>)</span>
-<span id="cb93-9"><a href="#cb93-9"></a></span>
-<span id="cb93-10"><a href="#cb93-10"></a><span class="fu">print</span>(test_na)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb93"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a></a>test_na <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(</span>
+<span id="cb93-2"><a></a>  <span class="fu">list</span>(</span>
+<span id="cb93-3"><a></a>  <span class="fu">c</span>(<span class="dv">1</span>, <span class="st">"."</span>, <span class="dv">3</span>),</span>
+<span id="cb93-4"><a></a>  <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"E"</span>, <span class="st">"."</span>)</span>
+<span id="cb93-5"><a></a>  )</span>
+<span id="cb93-6"><a></a>  )</span>
+<span id="cb93-7"><a></a></span>
+<span id="cb93-8"><a></a><span class="fu">names</span>(test_na) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Var1"</span>, <span class="st">"Var2"</span>)</span>
+<span id="cb93-9"><a></a></span>
+<span id="cb93-10"><a></a><span class="fu">print</span>(test_na)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Var1 Var2
 1    1    A
@@ -1458,12 +1461,12 @@ NA  &lt;NA&gt;    NA     NA   NA     NA      &lt;NA&gt;   NA    NA     NA</code>
 </div>
 <p>Il faut les recoder en <code>NA</code> avec la fonction <code>fct_recode()</code> :</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb95"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb95-1"><a href="#cb95-1"></a>test_na<span class="sc">$</span>Var1 <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(test_na<span class="sc">$</span>Var1)</span>
-<span id="cb95-2"><a href="#cb95-2"></a></span>
-<span id="cb95-3"><a href="#cb95-3"></a>test_na<span class="sc">$</span>Var1 <span class="ot">&lt;-</span> <span class="fu">fct_recode</span>(test_na<span class="sc">$</span>Var1,</span>
-<span id="cb95-4"><a href="#cb95-4"></a>                           <span class="at">NULL =</span> <span class="st">"."</span>)</span>
-<span id="cb95-5"><a href="#cb95-5"></a></span>
-<span id="cb95-6"><a href="#cb95-6"></a><span class="fu">print</span>(test_na)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb95"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb95-1"><a></a>test_na<span class="sc">$</span>Var1 <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(test_na<span class="sc">$</span>Var1)</span>
+<span id="cb95-2"><a></a></span>
+<span id="cb95-3"><a></a>test_na<span class="sc">$</span>Var1 <span class="ot">&lt;-</span> <span class="fu">fct_recode</span>(test_na<span class="sc">$</span>Var1,</span>
+<span id="cb95-4"><a></a>                           <span class="at">NULL =</span> <span class="st">"."</span>)</span>
+<span id="cb95-5"><a></a></span>
+<span id="cb95-6"><a></a><span class="fu">print</span>(test_na)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Var1 Var2
 1    1    A
@@ -1481,29 +1484,29 @@ NA  &lt;NA&gt;    NA     NA   NA     NA      &lt;NA&gt;   NA    NA     NA</code>
 <div id="tabset-10-1">
 <p>Il est possible de créer une date à partir d’une chaîne de caratère. <em>Le format standard est “AAAA-MM-JJ”</em>, mais il est possible de spécifier un autre format.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb97"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb97-1"><a href="#cb97-1"></a>date_1 <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(<span class="st">"2023-01-24"</span>)</span>
-<span id="cb97-2"><a href="#cb97-2"></a></span>
-<span id="cb97-3"><a href="#cb97-3"></a>date_2 <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(<span class="st">"12/07/2022"</span>, <span class="at">format =</span> <span class="st">"%d/%m/%Y"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb97"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb97-1"><a></a>date_1 <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(<span class="st">"2023-01-24"</span>)</span>
+<span id="cb97-2"><a></a></span>
+<span id="cb97-3"><a></a>date_2 <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(<span class="st">"12/07/2022"</span>, <span class="at">format =</span> <span class="st">"%d/%m/%Y"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="tabset-10-2">
 <p>Le package <code>lubridate</code> permet de traiter les dates. Il n’est pas présenter davantage ici, voici simplement comment il est possible d’accéder aux composants d’une date avec <code>lubridate</code> :</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb98"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a href="#cb98-1"></a><span class="fu">library</span>(lubridate)</span>
-<span id="cb98-2"><a href="#cb98-2"></a></span>
-<span id="cb98-3"><a href="#cb98-3"></a><span class="fu">year</span>(date_1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb98"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb98-2"><a></a></span>
+<span id="cb98-3"><a></a><span class="fu">year</span>(date_1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 2023</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb100"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb100-1"><a href="#cb100-1"></a><span class="fu">month</span>(date_1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb100"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb100-1"><a></a><span class="fu">month</span>(date_1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb102"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1"></a><span class="fu">quarter</span>(date_1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb102"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a></a><span class="fu">quarter</span>(date_1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb104"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb104-1"><a href="#cb104-1"></a><span class="fu">day</span>(date_1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb104"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb104-1"><a></a><span class="fu">day</span>(date_1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 24</code></pre>
 </div>
@@ -1512,18 +1515,18 @@ NA  &lt;NA&gt;    NA     NA   NA     NA      &lt;NA&gt;   NA    NA     NA</code>
 <div id="tabset-10-3">
 <p>Avec le type Date, vient la notion d’intervalle temporel, qui est également un type de données à part entière. La fonction <code>interval()</code> permet de calculer des durées.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb106"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb106-1"><a href="#cb106-1"></a><span class="fu">library</span>(lubridate)</span>
-<span id="cb106-2"><a href="#cb106-2"></a></span>
-<span id="cb106-3"><a href="#cb106-3"></a>date_1 <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(<span class="st">"2023-01-24"</span>)</span>
-<span id="cb106-4"><a href="#cb106-4"></a></span>
-<span id="cb106-5"><a href="#cb106-5"></a>date_2 <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(<span class="st">"12/07/2022"</span>, <span class="at">format =</span> <span class="st">"%d/%m/%Y"</span>)</span>
-<span id="cb106-6"><a href="#cb106-6"></a></span>
-<span id="cb106-7"><a href="#cb106-7"></a>intervalle <span class="ot">&lt;-</span> <span class="fu">interval</span>(date_1, date_2)</span>
-<span id="cb106-8"><a href="#cb106-8"></a>intervalle</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb106"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb106-1"><a></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb106-2"><a></a></span>
+<span id="cb106-3"><a></a>date_1 <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(<span class="st">"2023-01-24"</span>)</span>
+<span id="cb106-4"><a></a></span>
+<span id="cb106-5"><a></a>date_2 <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(<span class="st">"12/07/2022"</span>, <span class="at">format =</span> <span class="st">"%d/%m/%Y"</span>)</span>
+<span id="cb106-6"><a></a></span>
+<span id="cb106-7"><a></a>intervalle <span class="ot">&lt;-</span> <span class="fu">interval</span>(date_1, date_2)</span>
+<span id="cb106-8"><a></a>intervalle</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 2023-01-24 UTC--2022-07-12 UTC</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb108"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb108-1"><a href="#cb108-1"></a><span class="fu">class</span>(intervalle)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb108"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb108-1"><a></a><span class="fu">class</span>(intervalle)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Interval"
 attr(,"package")
@@ -1557,11 +1560,11 @@ attr(,"package")
 <p><br></p>
 <p><strong>Sélectionner</strong> des colonnes par leur nom avec <code>select()</code> :</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb110"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb110-1"><a href="#cb110-1"></a><span class="co">#Les colonnes année et Age3</span></span>
-<span id="cb110-2"><a href="#cb110-2"></a>nouveau_df_1 <span class="ot">&lt;-</span> EEC_ex <span class="sc">%&gt;%</span></span>
-<span id="cb110-3"><a href="#cb110-3"></a>  <span class="fu">select</span>(ANNEE, AGE3)</span>
-<span id="cb110-4"><a href="#cb110-4"></a></span>
-<span id="cb110-5"><a href="#cb110-5"></a><span class="fu">head</span>(nouveau_df_1, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb110"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb110-1"><a></a><span class="co">#Les colonnes année et Age3</span></span>
+<span id="cb110-2"><a></a>nouveau_df_1 <span class="ot">&lt;-</span> EEC_ex <span class="sc">%&gt;%</span></span>
+<span id="cb110-3"><a></a>  <span class="fu">select</span>(ANNEE, AGE3)</span>
+<span id="cb110-4"><a></a></span>
+<span id="cb110-5"><a></a><span class="fu">head</span>(nouveau_df_1, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  ANNEE AGE3
 1  2019   50
@@ -1575,11 +1578,11 @@ attr(,"package")
 <p><br></p>
 <p><strong>Supprimer</strong> une colonne avec le <code>-</code> dans <code>select()</code> :</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb112"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb112-1"><a href="#cb112-1"></a><span class="co">#Toutes les colonnes sauf Age3</span></span>
-<span id="cb112-2"><a href="#cb112-2"></a>nouveau_df_2 <span class="ot">&lt;-</span> EEC_ex <span class="sc">%&gt;%</span></span>
-<span id="cb112-3"><a href="#cb112-3"></a>  <span class="fu">select</span>(<span class="sc">-</span>AGE3)</span>
-<span id="cb112-4"><a href="#cb112-4"></a></span>
-<span id="cb112-5"><a href="#cb112-5"></a><span class="fu">head</span>(nouveau_df_2, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb112"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb112-1"><a></a><span class="co">#Toutes les colonnes sauf Age3</span></span>
+<span id="cb112-2"><a></a>nouveau_df_2 <span class="ot">&lt;-</span> EEC_ex <span class="sc">%&gt;%</span></span>
+<span id="cb112-3"><a></a>  <span class="fu">select</span>(<span class="sc">-</span>AGE3)</span>
+<span id="cb112-4"><a></a></span>
+<span id="cb112-5"><a></a><span class="fu">head</span>(nouveau_df_2, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   SEXE ACTIF COURED AGE5 CSTOTR NAFG004UN ANNEE JOURTR
 1 Femme     2      2   60      8      &lt;NA&gt;  2019     NA
@@ -1596,9 +1599,9 @@ attr(,"package")
 <p><br></p>
 <p>Avant de débuter une analyse, il est utile de <strong>visualiser les premières lignes</strong> du tableau de données. C’est notamment très utile lorsque les données sont volumineuses et que l’affichage du tableau complet prend du temps.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb114"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb114-1"><a href="#cb114-1"></a>EEC_debut <span class="ot">&lt;-</span> EEC_ex <span class="sc">%&gt;%</span></span>
-<span id="cb114-2"><a href="#cb114-2"></a>  <span class="fu">head</span>(<span class="dv">5</span>)</span>
-<span id="cb114-3"><a href="#cb114-3"></a>EEC_debut</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb114"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb114-1"><a></a>EEC_debut <span class="ot">&lt;-</span> EEC_ex <span class="sc">%&gt;%</span></span>
+<span id="cb114-2"><a></a>  <span class="fu">head</span>(<span class="dv">5</span>)</span>
+<span id="cb114-3"><a></a>EEC_debut</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   SEXE ACTIF COURED AGE5 CSTOTR NAFG004UN AGE3 ANNEE JOURTR
 1 Femme     2      2   60      8      &lt;NA&gt;   50  2019     NA
@@ -1618,10 +1621,10 @@ attr(,"package")
 <div class="tab-content">
 <div id="tabset-11-1">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb116"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb116-1"><a href="#cb116-1"></a>EEC_femme <span class="ot">&lt;-</span> EEC_ex <span class="sc">%&gt;%</span></span>
-<span id="cb116-2"><a href="#cb116-2"></a>  <span class="fu">filter</span>(SEXE <span class="sc">==</span> <span class="st">"Femme"</span>)</span>
-<span id="cb116-3"><a href="#cb116-3"></a></span>
-<span id="cb116-4"><a href="#cb116-4"></a><span class="fu">head</span>(EEC_femme, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb116"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb116-1"><a></a>EEC_femme <span class="ot">&lt;-</span> EEC_ex <span class="sc">%&gt;%</span></span>
+<span id="cb116-2"><a></a>  <span class="fu">filter</span>(SEXE <span class="sc">==</span> <span class="st">"Femme"</span>)</span>
+<span id="cb116-3"><a></a></span>
+<span id="cb116-4"><a></a><span class="fu">head</span>(EEC_femme, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   SEXE ACTIF COURED AGE5 CSTOTR NAFG004UN AGE3 ANNEE JOURTR
 1 Femme     2      2   60      8      &lt;NA&gt;   50  2019     NA
@@ -1634,10 +1637,10 @@ attr(,"package")
 </div>
 <div id="tabset-11-2">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb118"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb118-1"><a href="#cb118-1"></a>EEC_moins_30 <span class="ot">&lt;-</span> EEC_ex <span class="sc">%&gt;%</span></span>
-<span id="cb118-2"><a href="#cb118-2"></a>  <span class="fu">filter</span>(AGE5 <span class="sc">&lt;=</span> <span class="dv">30</span>)</span>
-<span id="cb118-3"><a href="#cb118-3"></a></span>
-<span id="cb118-4"><a href="#cb118-4"></a><span class="fu">head</span>(EEC_moins_30, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb118"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb118-1"><a></a>EEC_moins_30 <span class="ot">&lt;-</span> EEC_ex <span class="sc">%&gt;%</span></span>
+<span id="cb118-2"><a></a>  <span class="fu">filter</span>(AGE5 <span class="sc">&lt;=</span> <span class="dv">30</span>)</span>
+<span id="cb118-3"><a></a></span>
+<span id="cb118-4"><a></a><span class="fu">head</span>(EEC_moins_30, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   SEXE ACTIF COURED AGE5 CSTOTR NAFG004UN AGE3 ANNEE JOURTR
 1 Homme     1      2   15      4        EV   15  2019      5
@@ -1650,10 +1653,10 @@ attr(,"package")
 </div>
 <div id="tabset-11-3">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb120"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb120-1"><a href="#cb120-1"></a>EEC_hors_cadres <span class="ot">&lt;-</span> EEC_ex <span class="sc">%&gt;%</span></span>
-<span id="cb120-2"><a href="#cb120-2"></a>  <span class="fu">filter</span>(CSTOTR <span class="sc">!=</span> <span class="dv">3</span>)</span>
-<span id="cb120-3"><a href="#cb120-3"></a></span>
-<span id="cb120-4"><a href="#cb120-4"></a><span class="fu">head</span>(EEC_hors_cadres, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb120"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb120-1"><a></a>EEC_hors_cadres <span class="ot">&lt;-</span> EEC_ex <span class="sc">%&gt;%</span></span>
+<span id="cb120-2"><a></a>  <span class="fu">filter</span>(CSTOTR <span class="sc">!=</span> <span class="dv">3</span>)</span>
+<span id="cb120-3"><a></a></span>
+<span id="cb120-4"><a></a><span class="fu">head</span>(EEC_hors_cadres, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   SEXE ACTIF COURED AGE5 CSTOTR NAFG004UN AGE3 ANNEE JOURTR
 1 Femme     2      2   60      8      &lt;NA&gt;   50  2019     NA
@@ -1666,21 +1669,21 @@ attr(,"package")
 </div>
 <div id="tabset-11-4">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb122"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb122-1"><a href="#cb122-1"></a><span class="co">#Opérateur ET</span></span>
-<span id="cb122-2"><a href="#cb122-2"></a>EEC_femme_moins_30 <span class="ot">&lt;-</span> EEC_ex <span class="sc">%&gt;%</span></span>
-<span id="cb122-3"><a href="#cb122-3"></a>  <span class="fu">filter</span>(SEXE <span class="sc">==</span> <span class="st">"femme"</span> <span class="sc">&amp;</span> AGE5 <span class="sc">&lt;=</span> <span class="dv">30</span>)</span>
-<span id="cb122-4"><a href="#cb122-4"></a></span>
-<span id="cb122-5"><a href="#cb122-5"></a><span class="fu">head</span>(EEC_femme_moins_30, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb122"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb122-1"><a></a><span class="co">#Opérateur ET</span></span>
+<span id="cb122-2"><a></a>EEC_femme_moins_30 <span class="ot">&lt;-</span> EEC_ex <span class="sc">%&gt;%</span></span>
+<span id="cb122-3"><a></a>  <span class="fu">filter</span>(SEXE <span class="sc">==</span> <span class="st">"femme"</span> <span class="sc">&amp;</span> AGE5 <span class="sc">&lt;=</span> <span class="dv">30</span>)</span>
+<span id="cb122-4"><a></a></span>
+<span id="cb122-5"><a></a><span class="fu">head</span>(EEC_femme_moins_30, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] SEXE      ACTIF     COURED    AGE5      CSTOTR    NAFG004UN AGE3     
 [8] ANNEE     JOURTR   
 &lt;0 rows&gt; (or 0-length row.names)</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb124"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb124-1"><a href="#cb124-1"></a><span class="co">#Opérateur OU</span></span>
-<span id="cb124-2"><a href="#cb124-2"></a>EEC_femme_ou_cadre <span class="ot">&lt;-</span> EEC_ex <span class="sc">%&gt;%</span></span>
-<span id="cb124-3"><a href="#cb124-3"></a>  <span class="fu">filter</span>(SEXE <span class="sc">==</span> <span class="st">"femme"</span> <span class="sc">|</span> CSTOTR <span class="sc">==</span> <span class="dv">3</span>)</span>
-<span id="cb124-4"><a href="#cb124-4"></a></span>
-<span id="cb124-5"><a href="#cb124-5"></a><span class="fu">head</span>(EEC_femme_ou_cadre, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb124"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb124-1"><a></a><span class="co">#Opérateur OU</span></span>
+<span id="cb124-2"><a></a>EEC_femme_ou_cadre <span class="ot">&lt;-</span> EEC_ex <span class="sc">%&gt;%</span></span>
+<span id="cb124-3"><a></a>  <span class="fu">filter</span>(SEXE <span class="sc">==</span> <span class="st">"femme"</span> <span class="sc">|</span> CSTOTR <span class="sc">==</span> <span class="dv">3</span>)</span>
+<span id="cb124-4"><a></a></span>
+<span id="cb124-5"><a></a><span class="fu">head</span>(EEC_femme_ou_cadre, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   SEXE ACTIF COURED AGE5 CSTOTR NAFG004UN AGE3 ANNEE JOURTR
 1 Femme     1      2   15      3        EV   15  2019      5
@@ -1702,10 +1705,10 @@ attr(,"package")
 <div class="tab-content">
 <div id="tabset-12-1">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb126"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb126-1"><a href="#cb126-1"></a>EEC_hors_agr <span class="ot">&lt;-</span> EEC_ex <span class="sc">%&gt;%</span></span>
-<span id="cb126-2"><a href="#cb126-2"></a>  <span class="fu">filter</span>(NAFG004UN <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"ET"</span>, <span class="st">"EU"</span>, <span class="st">"EV"</span>))</span>
-<span id="cb126-3"><a href="#cb126-3"></a></span>
-<span id="cb126-4"><a href="#cb126-4"></a><span class="fu">head</span>(EEC_hors_agr, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb126"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb126-1"><a></a>EEC_hors_agr <span class="ot">&lt;-</span> EEC_ex <span class="sc">%&gt;%</span></span>
+<span id="cb126-2"><a></a>  <span class="fu">filter</span>(NAFG004UN <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"ET"</span>, <span class="st">"EU"</span>, <span class="st">"EV"</span>))</span>
+<span id="cb126-3"><a></a></span>
+<span id="cb126-4"><a></a><span class="fu">head</span>(EEC_hors_agr, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   SEXE ACTIF COURED AGE5 CSTOTR NAFG004UN AGE3 ANNEE JOURTR
 1 Homme     1      1   60      6        EU   50  2019      1
@@ -1721,10 +1724,10 @@ attr(,"package")
 <p>Pour tester qu’une valeur est bien présente, c’est la condition <code>!(is.na(variable))</code>. la syntaxe <code>!()</code> signifie “différent de”, c’est-à-dire teste la condition contraire à ce qui est renseigné dans les parenthèses.</p>
 <p>Uniquement les lignes pour lesquelles NAFG004UN est manquante :</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb128"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb128-1"><a href="#cb128-1"></a>EEC_CSP_na <span class="ot">&lt;-</span> EEC_ex <span class="sc">%&gt;%</span></span>
-<span id="cb128-2"><a href="#cb128-2"></a>  <span class="fu">filter</span>(<span class="fu">is.na</span>(NAFG004UN))</span>
-<span id="cb128-3"><a href="#cb128-3"></a></span>
-<span id="cb128-4"><a href="#cb128-4"></a><span class="fu">head</span>(EEC_CSP_na, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb128"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb128-1"><a></a>EEC_CSP_na <span class="ot">&lt;-</span> EEC_ex <span class="sc">%&gt;%</span></span>
+<span id="cb128-2"><a></a>  <span class="fu">filter</span>(<span class="fu">is.na</span>(NAFG004UN))</span>
+<span id="cb128-3"><a></a></span>
+<span id="cb128-4"><a></a><span class="fu">head</span>(EEC_CSP_na, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   SEXE ACTIF COURED AGE5 CSTOTR NAFG004UN AGE3 ANNEE JOURTR
 1 Femme     2      2   60      8      &lt;NA&gt;   50  2019     NA
@@ -1737,10 +1740,10 @@ attr(,"package")
 <p><br></p>
 <p>Uniquement les lignes pour lesquelles NAFG004UN est renseignée :</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb130"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb130-1"><a href="#cb130-1"></a>EEC_CSP_hors_na <span class="ot">&lt;-</span> EEC_ex <span class="sc">%&gt;%</span></span>
-<span id="cb130-2"><a href="#cb130-2"></a>  <span class="fu">filter</span>(<span class="sc">!</span>(<span class="fu">is.na</span>(NAFG004UN)))</span>
-<span id="cb130-3"><a href="#cb130-3"></a></span>
-<span id="cb130-4"><a href="#cb130-4"></a><span class="fu">head</span>(EEC_CSP_hors_na, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb130"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb130-1"><a></a>EEC_CSP_hors_na <span class="ot">&lt;-</span> EEC_ex <span class="sc">%&gt;%</span></span>
+<span id="cb130-2"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span>(<span class="fu">is.na</span>(NAFG004UN)))</span>
+<span id="cb130-3"><a></a></span>
+<span id="cb130-4"><a></a><span class="fu">head</span>(EEC_CSP_hors_na, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   SEXE ACTIF COURED AGE5 CSTOTR NAFG004UN AGE3 ANNEE JOURTR
 1 Homme     1      1   60      6        EU   50  2019      1
@@ -1755,10 +1758,10 @@ attr(,"package")
 <p>La fonction <code>distinct()</code> permet de ne sélectionner qu’une seule occurence de chaque combinaison des variables signalées.</p>
 <p>On ne souhaite qu’une seule occurence de chaque combinaison existant dans les données des variables ANNEE et TRIM :</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb132"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb132-1"><a href="#cb132-1"></a>EEC_periode <span class="ot">&lt;-</span> EEC_2019 <span class="sc">%&gt;%</span></span>
-<span id="cb132-2"><a href="#cb132-2"></a>  <span class="fu">distinct</span>(ANNEE, TRIM)</span>
-<span id="cb132-3"><a href="#cb132-3"></a></span>
-<span id="cb132-4"><a href="#cb132-4"></a><span class="fu">head</span>(EEC_periode, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb132"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb132-1"><a></a>EEC_periode <span class="ot">&lt;-</span> EEC_2019 <span class="sc">%&gt;%</span></span>
+<span id="cb132-2"><a></a>  <span class="fu">distinct</span>(ANNEE, TRIM)</span>
+<span id="cb132-3"><a></a></span>
+<span id="cb132-4"><a></a><span class="fu">head</span>(EEC_periode, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  ANNEE TRIM
 1  2019    1
@@ -1779,13 +1782,13 @@ attr(,"package")
 <div id="tabset-13-1">
 <p><code>if_else</code> est utilisé pour renseigner une valeur si une condition est vérifiée, une autre sinon. La syntaxe est la suivante :</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb134"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb134-1"><a href="#cb134-1"></a><span class="fu">mutate</span>(<span class="at">nouvelle_variable =</span> <span class="fu">if_else</span>(condition, valeur_condition_verifiee, valeur_sinon))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb134"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb134-1"><a></a><span class="fu">mutate</span>(<span class="at">nouvelle_variable =</span> <span class="fu">if_else</span>(condition, valeur_condition_verifiee, valeur_sinon))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb135"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb135-1"><a href="#cb135-1"></a>EEC_agr <span class="ot">&lt;-</span> EEC_2019 <span class="sc">%&gt;%</span></span>
-<span id="cb135-2"><a href="#cb135-2"></a>  <span class="fu">mutate</span>(<span class="at">agriculture =</span> <span class="fu">if_else</span>(NAFG004UN <span class="sc">==</span> <span class="st">"ES"</span>, <span class="dv">1</span>, <span class="dv">0</span>))</span>
-<span id="cb135-3"><a href="#cb135-3"></a></span>
-<span id="cb135-4"><a href="#cb135-4"></a><span class="fu">head</span>(EEC_agr, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb135"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb135-1"><a></a>EEC_agr <span class="ot">&lt;-</span> EEC_2019 <span class="sc">%&gt;%</span></span>
+<span id="cb135-2"><a></a>  <span class="fu">mutate</span>(<span class="at">agriculture =</span> <span class="fu">if_else</span>(NAFG004UN <span class="sc">==</span> <span class="st">"ES"</span>, <span class="dv">1</span>, <span class="dv">0</span>))</span>
+<span id="cb135-3"><a></a></span>
+<span id="cb135-4"><a></a><span class="fu">head</span>(EEC_agr, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  ANNEE TRIM CATAU2010R METRODOM TYPMEN7 AGE3 AGE5 COURED ENFRED NFRRED  SEXE
 1  2019    1          1        1       1   50   60      2      2      1 Femme
@@ -1859,17 +1862,17 @@ attr(,"package")
 <div id="tabset-13-2">
 <p><code>case_when</code> permet de créer une variable qui prend différentes modalités selon plusieurs conditions évaluées successivement, selon la syntaxe suivante :</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb137"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb137-1"><a href="#cb137-1"></a><span class="fu">mutate</span>(<span class="at">nouvelle_variable =</span> <span class="fu">case_when</span>(condition1 <span class="sc">~</span> valeur1,</span>
-<span id="cb137-2"><a href="#cb137-2"></a>                                     condition2 <span class="sc">~</span> valeur2,</span>
-<span id="cb137-3"><a href="#cb137-3"></a>                                     condition3 <span class="sc">~</span> valeur3,</span>
-<span id="cb137-4"><a href="#cb137-4"></a>                                     <span class="cn">TRUE</span> <span class="sc">~</span> valeur_par_défaut))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb137"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb137-1"><a></a><span class="fu">mutate</span>(<span class="at">nouvelle_variable =</span> <span class="fu">case_when</span>(condition1 <span class="sc">~</span> valeur1,</span>
+<span id="cb137-2"><a></a>                                     condition2 <span class="sc">~</span> valeur2,</span>
+<span id="cb137-3"><a></a>                                     condition3 <span class="sc">~</span> valeur3,</span>
+<span id="cb137-4"><a></a>                                     <span class="cn">TRUE</span> <span class="sc">~</span> valeur_par_défaut))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Les conditions sont explorées successivement jusqu’à ce qu’une d’entre elles donne <code>TRUE</code>, elles ne sont donc pas nécessairement exclusives l’une de l’autre. La dernière ligne « voiture balai » (qui n’est pas obligatoire) exploite cette fonctionnalité avec une condition toujours vraie qui piège tous les cas non explorés.</p>
 </div>
 <div id="tabset-13-3">
 <p>ll est également possible de créer directement une variable de type <strong>booléen</strong> en mentionnat uniquement la condition :</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb138"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb138-1"><a href="#cb138-1"></a><span class="fu">mutate</span>(<span class="at">individu_cadre =</span> (CSTOTR <span class="sc">==</span> <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb138"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb138-1"><a></a><span class="fu">mutate</span>(<span class="at">individu_cadre =</span> (CSTOTR <span class="sc">==</span> <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>La nouvelle variable <code>individu_cadre</code> vaut <code>TRUE</code> lorsque CSTOTR vaut 3, <code>FALSE</code> sinon.</p>
 </div>
@@ -1884,14 +1887,14 @@ attr(,"package")
 <div class="tab-content">
 <div id="tabset-14-1">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb139"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb139-1"><a href="#cb139-1"></a><span class="fu">rename</span>(<span class="at">nouveau_nom_var1 =</span> ancien_nom_var1,</span>
-<span id="cb139-2"><a href="#cb139-2"></a>       <span class="at">nouveau_nom_var2 =</span> ancien_nom_var2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb139"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb139-1"><a></a><span class="fu">rename</span>(<span class="at">nouveau_nom_var1 =</span> ancien_nom_var1,</span>
+<span id="cb139-2"><a></a>       <span class="at">nouveau_nom_var2 =</span> ancien_nom_var2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb140"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb140-1"><a href="#cb140-1"></a>EEC_2 <span class="ot">&lt;-</span> EEC_ex <span class="sc">%&gt;%</span></span>
-<span id="cb140-2"><a href="#cb140-2"></a>  <span class="fu">rename</span>(<span class="at">AGE_3_classes =</span> AGE3)</span>
-<span id="cb140-3"><a href="#cb140-3"></a></span>
-<span id="cb140-4"><a href="#cb140-4"></a><span class="fu">head</span>(EEC_2, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb140"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb140-1"><a></a>EEC_2 <span class="ot">&lt;-</span> EEC_ex <span class="sc">%&gt;%</span></span>
+<span id="cb140-2"><a></a>  <span class="fu">rename</span>(<span class="at">AGE_3_classes =</span> AGE3)</span>
+<span id="cb140-3"><a></a></span>
+<span id="cb140-4"><a></a><span class="fu">head</span>(EEC_2, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   SEXE ACTIF COURED AGE5 CSTOTR NAFG004UN AGE_3_classes ANNEE JOURTR
 1 Femme     2      2   60      8      &lt;NA&gt;            50  2019     NA
@@ -1905,10 +1908,10 @@ attr(,"package")
 <div id="tabset-14-2">
 <p>Avec <code>cut()</code>, la borne inférieure est exclue, la borne supérieure est incluse.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb142"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb142-1"><a href="#cb142-1"></a>EEC_3 <span class="ot">&lt;-</span> EEC_ex <span class="sc">%&gt;%</span></span>
-<span id="cb142-2"><a href="#cb142-2"></a>  <span class="fu">mutate</span>(<span class="at">JOURTR_classe =</span> <span class="fu">cut</span>(JOURTR, <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>)))</span>
-<span id="cb142-3"><a href="#cb142-3"></a></span>
-<span id="cb142-4"><a href="#cb142-4"></a><span class="fu">head</span>(EEC_3, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb142"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb142-1"><a></a>EEC_3 <span class="ot">&lt;-</span> EEC_ex <span class="sc">%&gt;%</span></span>
+<span id="cb142-2"><a></a>  <span class="fu">mutate</span>(<span class="at">JOURTR_classe =</span> <span class="fu">cut</span>(JOURTR, <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>)))</span>
+<span id="cb142-3"><a></a></span>
+<span id="cb142-4"><a></a><span class="fu">head</span>(EEC_3, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   SEXE ACTIF COURED AGE5 CSTOTR NAFG004UN AGE3 ANNEE JOURTR JOURTR_classe
 1 Femme     2      2   60      8      &lt;NA&gt;   50  2019     NA          &lt;NA&gt;
@@ -1926,11 +1929,11 @@ attr(,"package")
 <h2>Convertir des variables</h2>
 <p>Les fonctions de conversion peuvent être appliquées aux colonnes d’un data.frame. Il est conseillé d’affecter à chaque variable le type le plus proche de sa nature :</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb144"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb144-1"><a href="#cb144-1"></a><span class="co">#Conversion de la variable ENFRED en facteur et de la variable COURED en caractères :</span></span>
-<span id="cb144-2"><a href="#cb144-2"></a></span>
-<span id="cb144-3"><a href="#cb144-3"></a>EEC_2019 <span class="ot">&lt;-</span> EEC_2019 <span class="sc">%&gt;%</span></span>
-<span id="cb144-4"><a href="#cb144-4"></a>  <span class="fu">mutate</span>(<span class="at">ENFRED =</span> <span class="fu">as.factor</span>(ENFRED),</span>
-<span id="cb144-5"><a href="#cb144-5"></a>         <span class="at">COURED =</span> <span class="fu">as.character</span>(COURED))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb144"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb144-1"><a></a><span class="co">#Conversion de la variable ENFRED en facteur et de la variable COURED en caractères :</span></span>
+<span id="cb144-2"><a></a></span>
+<span id="cb144-3"><a></a>EEC_2019 <span class="ot">&lt;-</span> EEC_2019 <span class="sc">%&gt;%</span></span>
+<span id="cb144-4"><a></a>  <span class="fu">mutate</span>(<span class="at">ENFRED =</span> <span class="fu">as.factor</span>(ENFRED),</span>
+<span id="cb144-5"><a></a>         <span class="at">COURED =</span> <span class="fu">as.character</span>(COURED))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
 <div class="columns">
@@ -1974,11 +1977,11 @@ attr(,"package")
 <div class="fragment">
 <p>Ne pas calculer par exemple le nombre de chômeurs au sens du BIT sans pondération à partir de l’EEC :</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb145"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb145-1"><a href="#cb145-1"></a>chomeurs <span class="ot">&lt;-</span> EEC_2019 <span class="sc">%&gt;%</span> </span>
-<span id="cb145-2"><a href="#cb145-2"></a>  <span class="fu">filter</span>(ACTEU <span class="sc">==</span> <span class="st">"2"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb145-3"><a href="#cb145-3"></a>  <span class="fu">count</span>()</span>
-<span id="cb145-4"><a href="#cb145-4"></a></span>
-<span id="cb145-5"><a href="#cb145-5"></a><span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"Le nombre de chômeurs au sens du BIT N'EST PAS "</span>, <span class="fu">as.character</span>(chomeurs)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb145"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb145-1"><a></a>chomeurs <span class="ot">&lt;-</span> EEC_2019 <span class="sc">%&gt;%</span> </span>
+<span id="cb145-2"><a></a>  <span class="fu">filter</span>(ACTEU <span class="sc">==</span> <span class="st">"2"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb145-3"><a></a>  <span class="fu">count</span>()</span>
+<span id="cb145-4"><a></a></span>
+<span id="cb145-5"><a></a><span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"Le nombre de chômeurs au sens du BIT N'EST PAS "</span>, <span class="fu">as.character</span>(chomeurs)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Le nombre de chômeurs au sens du BIT N'EST PAS 18602"</code></pre>
 </div>
@@ -1990,6 +1993,7 @@ attr(,"package")
 <p><br></p>
 <p>Cette fonction permet d’avoir un ensemble de <strong>statistiques descriptives</strong> : effectif, somme, moyenne, médiane, quantile, min, max…</p>
 <p>Elle est fréquemment utilisée avec l’instruction <code>group_by()</code>, qui permet d’effectuer ces calculs au sein des groupes formés par les modalités d’une variable.</p>
+<div title="Group_by">
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -2000,6 +2004,7 @@ attr(,"package")
 </div>
 <div class="callout-content">
 <p>Pour les habitués de SQL, group_by n’est pas un mot clé mais une <strong>vraie fonction R</strong> avec une entrée et une sortie. Le résultat est une table avec les mêmes données mais un « index » en plus disant où sont les observations de chaque modalité. La présence de cet index change le fonctionnement de plusieurs fonctions de <code>dplyr</code> en les forçant à travailler par morceau.</p>
+</div>
 </div>
 </div>
 </div>
@@ -2014,10 +2019,10 @@ attr(,"package")
 <p>La fonction <code>n()</code> permet d’obtenir les effectifs.</p>
 <p>Calcul du nombre de personnes de 30 ans ou moins :</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb147"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb147-1"><a href="#cb147-1"></a>eff_moins_30 <span class="ot">&lt;-</span> EEC_2019 <span class="sc">%&gt;%</span></span>
-<span id="cb147-2"><a href="#cb147-2"></a>  <span class="fu">filter</span>(AGE3 <span class="sc">&lt;=</span> <span class="dv">30</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb147-3"><a href="#cb147-3"></a>  <span class="fu">summarise</span>(<span class="at">eff_moins_30 =</span> <span class="fu">n</span>())</span>
-<span id="cb147-4"><a href="#cb147-4"></a>eff_moins_30</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb147"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb147-1"><a></a>eff_moins_30 <span class="ot">&lt;-</span> EEC_2019 <span class="sc">%&gt;%</span></span>
+<span id="cb147-2"><a></a>  <span class="fu">filter</span>(AGE3 <span class="sc">&lt;=</span> <span class="dv">30</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb147-3"><a></a>  <span class="fu">summarise</span>(<span class="at">eff_moins_30 =</span> <span class="fu">n</span>())</span>
+<span id="cb147-4"><a></a>eff_moins_30</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  eff_moins_30
 1       195851</code></pre>
@@ -2025,10 +2030,10 @@ attr(,"package")
 </div>
 <p>Calcul du nombre de personnes par classe d’âge en 3 classes :</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb149"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb149-1"><a href="#cb149-1"></a>eff_age_classe <span class="ot">&lt;-</span> EEC_2019 <span class="sc">%&gt;%</span></span>
-<span id="cb149-2"><a href="#cb149-2"></a>  <span class="fu">group_by</span>(AGE3) <span class="sc">%&gt;%</span></span>
-<span id="cb149-3"><a href="#cb149-3"></a>  <span class="fu">summarise</span>(<span class="at">eff_age3 =</span> <span class="fu">n</span>())</span>
-<span id="cb149-4"><a href="#cb149-4"></a>eff_age_classe</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb149"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb149-1"><a></a>eff_age_classe <span class="ot">&lt;-</span> EEC_2019 <span class="sc">%&gt;%</span></span>
+<span id="cb149-2"><a></a>  <span class="fu">group_by</span>(AGE3) <span class="sc">%&gt;%</span></span>
+<span id="cb149-3"><a></a>  <span class="fu">summarise</span>(<span class="at">eff_age3 =</span> <span class="fu">n</span>())</span>
+<span id="cb149-4"><a></a>eff_age_classe</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 2
    AGE3 eff_age3
@@ -2040,10 +2045,10 @@ attr(,"package")
 </div>
 <p>Calcul du nombre de personnes par SEXE :</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb151"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb151-1"><a href="#cb151-1"></a>eff_sexe <span class="ot">&lt;-</span> EEC_2019 <span class="sc">%&gt;%</span></span>
-<span id="cb151-2"><a href="#cb151-2"></a>  <span class="fu">group_by</span>(SEXE) <span class="sc">%&gt;%</span></span>
-<span id="cb151-3"><a href="#cb151-3"></a>  <span class="fu">summarise</span>(<span class="at">eff_sexe =</span> <span class="fu">n</span>())</span>
-<span id="cb151-4"><a href="#cb151-4"></a>eff_sexe</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb151"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb151-1"><a></a>eff_sexe <span class="ot">&lt;-</span> EEC_2019 <span class="sc">%&gt;%</span></span>
+<span id="cb151-2"><a></a>  <span class="fu">group_by</span>(SEXE) <span class="sc">%&gt;%</span></span>
+<span id="cb151-3"><a></a>  <span class="fu">summarise</span>(<span class="at">eff_sexe =</span> <span class="fu">n</span>())</span>
+<span id="cb151-4"><a></a>eff_sexe</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 2
   SEXE  eff_sexe
@@ -2071,10 +2076,10 @@ attr(,"package")
 <p>⚠️ <strong>ATTENTION</strong> ⚠️ Les valeurs manquantes sont le principal point d’incompatibilité avec SAS et leur traitement nécessite de redoubler d’attention quand on convertit un programme car le fonctionnement est radicalement différent en R.</p>
 <p>Calcul de la moyenne du nombre de jours travaillés par semaine par sexe :</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb153"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb153-1"><a href="#cb153-1"></a>EEC_jourtr_sexe <span class="ot">&lt;-</span> EEC_2019 <span class="sc">%&gt;%</span></span>
-<span id="cb153-2"><a href="#cb153-2"></a>  <span class="fu">group_by</span>(SEXE) <span class="sc">%&gt;%</span></span>
-<span id="cb153-3"><a href="#cb153-3"></a>  <span class="fu">summarise</span>(<span class="at">moy_jour_tr =</span> <span class="fu">mean</span>(JOURTR, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb153-4"><a href="#cb153-4"></a>EEC_jourtr_sexe</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb153"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb153-1"><a></a>EEC_jourtr_sexe <span class="ot">&lt;-</span> EEC_2019 <span class="sc">%&gt;%</span></span>
+<span id="cb153-2"><a></a>  <span class="fu">group_by</span>(SEXE) <span class="sc">%&gt;%</span></span>
+<span id="cb153-3"><a></a>  <span class="fu">summarise</span>(<span class="at">moy_jour_tr =</span> <span class="fu">mean</span>(JOURTR, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb153-4"><a></a>EEC_jourtr_sexe</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 2
   SEXE  moy_jour_tr
@@ -2088,14 +2093,14 @@ attr(,"package")
 <p><code>summarise()</code> est également utile pour des statistiques de distribution.</p>
 <p>Calcul de statistiques de distribution du nombre de jours travaillés par semaine par classe d’âge :</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb155"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb155-1"><a href="#cb155-1"></a>EEC_jourtr_age <span class="ot">&lt;-</span> EEC_2019 <span class="sc">%&gt;%</span></span>
-<span id="cb155-2"><a href="#cb155-2"></a>  <span class="fu">group_by</span>(AGE3) <span class="sc">%&gt;%</span></span>
-<span id="cb155-3"><a href="#cb155-3"></a>  <span class="fu">summarise</span>(<span class="at">min_jour_tr =</span> <span class="fu">min</span>(JOURTR, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb155-4"><a href="#cb155-4"></a>            <span class="at">q1_jour_tr =</span> <span class="fu">quantile</span>(JOURTR, <span class="at">na.rm =</span> <span class="cn">TRUE</span>, <span class="at">probs =</span> <span class="fl">0.25</span>),</span>
-<span id="cb155-5"><a href="#cb155-5"></a>            <span class="at">med_jour_tr =</span> <span class="fu">median</span>(JOURTR, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb155-6"><a href="#cb155-6"></a>            <span class="at">q3_jour_tr =</span> <span class="fu">quantile</span>(JOURTR, <span class="at">na.rm =</span> <span class="cn">TRUE</span>, <span class="at">probs =</span> <span class="fl">0.75</span>),</span>
-<span id="cb155-7"><a href="#cb155-7"></a>            <span class="at">max_jour_tr =</span> <span class="fu">max</span>(JOURTR, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb155-8"><a href="#cb155-8"></a>EEC_jourtr_age</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb155"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb155-1"><a></a>EEC_jourtr_age <span class="ot">&lt;-</span> EEC_2019 <span class="sc">%&gt;%</span></span>
+<span id="cb155-2"><a></a>  <span class="fu">group_by</span>(AGE3) <span class="sc">%&gt;%</span></span>
+<span id="cb155-3"><a></a>  <span class="fu">summarise</span>(<span class="at">min_jour_tr =</span> <span class="fu">min</span>(JOURTR, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb155-4"><a></a>            <span class="at">q1_jour_tr =</span> <span class="fu">quantile</span>(JOURTR, <span class="at">na.rm =</span> <span class="cn">TRUE</span>, <span class="at">probs =</span> <span class="fl">0.25</span>),</span>
+<span id="cb155-5"><a></a>            <span class="at">med_jour_tr =</span> <span class="fu">median</span>(JOURTR, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb155-6"><a></a>            <span class="at">q3_jour_tr =</span> <span class="fu">quantile</span>(JOURTR, <span class="at">na.rm =</span> <span class="cn">TRUE</span>, <span class="at">probs =</span> <span class="fl">0.75</span>),</span>
+<span id="cb155-7"><a></a>            <span class="at">max_jour_tr =</span> <span class="fu">max</span>(JOURTR, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb155-8"><a></a>EEC_jourtr_age</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 6
    AGE3 min_jour_tr q1_jour_tr med_jour_tr q3_jour_tr max_jour_tr
@@ -2111,10 +2116,10 @@ attr(,"package")
 <p>⚠️ <strong>ATTENTION</strong> ⚠️ la valeur par défaut de l’argument <code>drop_last</code> de la fonction <code>summarise()</code> est <code>TRUE</code>, ce qui implique que le dernier niveau de regroupement (la dernière variable renseignée dans le <code>group_by()</code>) est supprimé à l’issue de l’application de la fonction <code>summarise()</code>. Un <code>warning</code> le précise dans la console lorsque cette fonction est utilisée avec plusieurs variables de regroupement.</p>
 <p>Calcul de la moyenne de jours travaillés par semaine par groupe de sexe croisé avec l’âge en 3 classes :</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb157"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb157-1"><a href="#cb157-1"></a>EEC_jourtr_sexe_age <span class="ot">&lt;-</span> EEC_2019 <span class="sc">%&gt;%</span></span>
-<span id="cb157-2"><a href="#cb157-2"></a>  <span class="fu">group_by</span>(SEXE, AGE3) <span class="sc">%&gt;%</span></span>
-<span id="cb157-3"><a href="#cb157-3"></a>  <span class="fu">summarise</span>(<span class="at">moy_jour_tr =</span> <span class="fu">mean</span>(JOURTR, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb157-4"><a href="#cb157-4"></a>EEC_jourtr_sexe_age</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb157"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb157-1"><a></a>EEC_jourtr_sexe_age <span class="ot">&lt;-</span> EEC_2019 <span class="sc">%&gt;%</span></span>
+<span id="cb157-2"><a></a>  <span class="fu">group_by</span>(SEXE, AGE3) <span class="sc">%&gt;%</span></span>
+<span id="cb157-3"><a></a>  <span class="fu">summarise</span>(<span class="at">moy_jour_tr =</span> <span class="fu">mean</span>(JOURTR, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb157-4"><a></a>EEC_jourtr_sexe_age</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 3
 # Groups:   SEXE [2]
@@ -2138,15 +2143,15 @@ attr(,"package")
 <p>Il faut faire attention à cet enchaînement lorsqu’on utilise l’instruction <code>group_by</code>. Cette instruction peut être utilisée avec d’autres fonctions de <code>dplyr</code> (<code>filter()</code> et <code>mutate()</code> par exemple), mais elle ne se comporte pas de la même manière avec toutes les fonctions. En effet, le dernier niveau de regroupement (la dernière variable renseignée dans le <code>group_by()</code>) est supprimé à l’issue de l’application de la fonction <code>summarise()</code>, tandis que ce n’est pas le cas avec les fonctions <code>mutate()</code> et <code>filter()</code>.</p>
 <p>Ainsi, il est possible d’utiliser l’instruction <code>ungroup()</code> pour remédier au regroupement des observations dans la suite des opérations sur la table.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb159"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb159-1"><a href="#cb159-1"></a>ex_plusieurs_gpes <span class="ot">&lt;-</span> EEC_2019 <span class="sc">%&gt;%</span></span>
-<span id="cb159-2"><a href="#cb159-2"></a>  <span class="fu">group_by</span>(SEXE, AGE3) <span class="sc">%&gt;%</span></span>
-<span id="cb159-3"><a href="#cb159-3"></a>  <span class="fu">mutate</span>(<span class="at">moy_jour_tr =</span> <span class="fu">mean</span>(JOURTR, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb159-4"><a href="#cb159-4"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb159-5"><a href="#cb159-5"></a>  <span class="fu">distinct</span>(SEXE, moy_jour_tr, AGE3) <span class="sc">%&gt;%</span></span>
-<span id="cb159-6"><a href="#cb159-6"></a>  <span class="fu">group_by</span>(SEXE) <span class="sc">%&gt;%</span></span>
-<span id="cb159-7"><a href="#cb159-7"></a>  <span class="fu">filter</span>(moy_jour_tr <span class="sc">==</span> <span class="fu">min</span>(moy_jour_tr))</span>
-<span id="cb159-8"><a href="#cb159-8"></a></span>
-<span id="cb159-9"><a href="#cb159-9"></a>ex_plusieurs_gpes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb159"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb159-1"><a></a>ex_plusieurs_gpes <span class="ot">&lt;-</span> EEC_2019 <span class="sc">%&gt;%</span></span>
+<span id="cb159-2"><a></a>  <span class="fu">group_by</span>(SEXE, AGE3) <span class="sc">%&gt;%</span></span>
+<span id="cb159-3"><a></a>  <span class="fu">mutate</span>(<span class="at">moy_jour_tr =</span> <span class="fu">mean</span>(JOURTR, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb159-4"><a></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb159-5"><a></a>  <span class="fu">distinct</span>(SEXE, moy_jour_tr, AGE3) <span class="sc">%&gt;%</span></span>
+<span id="cb159-6"><a></a>  <span class="fu">group_by</span>(SEXE) <span class="sc">%&gt;%</span></span>
+<span id="cb159-7"><a></a>  <span class="fu">filter</span>(moy_jour_tr <span class="sc">==</span> <span class="fu">min</span>(moy_jour_tr))</span>
+<span id="cb159-8"><a></a></span>
+<span id="cb159-9"><a></a>ex_plusieurs_gpes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 3
 # Groups:   SEXE [2]
@@ -2162,12 +2167,12 @@ attr(,"package")
 <p>Lorsqu’on utilise un regroupement, le résultat est trié en majeur selon ce regroupement. Si on souhaite effectuer un autre tri, il faut déclencher le tri avec la fonction <code>arrange()</code>. Le mot clé <code>desc</code> (malgré la syntaxe, ce n’est pas une fonction) permet de trier par ordre décroissant. Il est possible d’utiliser plusieurs colonnes pour le tri.</p>
 <p>👁️‍🗨️ <strong>REMARQUE</strong> 👁️‍🗨️ Contrairement à SAS où trier est la procédure la plus utilisée, R se charge de lui même de faire les tris dont il pourrait avoir besoin. Trier n’a généralement un sens que pour organiser la présentation de résultats.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb161"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb161-1"><a href="#cb161-1"></a>ex_arrange <span class="ot">&lt;-</span> EEC_2019 <span class="sc">%&gt;%</span></span>
-<span id="cb161-2"><a href="#cb161-2"></a>  <span class="fu">select</span>(SEXE, AGE3, JOURTR) <span class="sc">%&gt;%</span></span>
-<span id="cb161-3"><a href="#cb161-3"></a>  <span class="fu">group_by</span>(SEXE, AGE3) <span class="sc">%&gt;%</span></span>
-<span id="cb161-4"><a href="#cb161-4"></a>  <span class="fu">summarise</span>(<span class="at">moy_jour_tr =</span> <span class="fu">mean</span>(JOURTR, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb161-5"><a href="#cb161-5"></a>  <span class="fu">arrange</span>(moy_jour_tr)</span>
-<span id="cb161-6"><a href="#cb161-6"></a>ex_arrange</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb161"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb161-1"><a></a>ex_arrange <span class="ot">&lt;-</span> EEC_2019 <span class="sc">%&gt;%</span></span>
+<span id="cb161-2"><a></a>  <span class="fu">select</span>(SEXE, AGE3, JOURTR) <span class="sc">%&gt;%</span></span>
+<span id="cb161-3"><a></a>  <span class="fu">group_by</span>(SEXE, AGE3) <span class="sc">%&gt;%</span></span>
+<span id="cb161-4"><a></a>  <span class="fu">summarise</span>(<span class="at">moy_jour_tr =</span> <span class="fu">mean</span>(JOURTR, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb161-5"><a></a>  <span class="fu">arrange</span>(moy_jour_tr)</span>
+<span id="cb161-6"><a></a>ex_arrange</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 3
 # Groups:   SEXE [2]
@@ -2188,13 +2193,13 @@ attr(,"package")
 <p>La fonction <code>row_number()</code> permet de connaître l’ordre de classement de l’observation dans la table.</p>
 <p>Les fonctions <code>first()</code> et <code>last()</code> permettent de récupérer respectivement la première et la dernière observation d’un groupe.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb163"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb163-1"><a href="#cb163-1"></a>ex_arrange_2 <span class="ot">&lt;-</span> EEC_2019 <span class="sc">%&gt;%</span></span>
-<span id="cb163-2"><a href="#cb163-2"></a>  <span class="fu">select</span>(SEXE, AGE3, JOURTR) <span class="sc">%&gt;%</span></span>
-<span id="cb163-3"><a href="#cb163-3"></a>  <span class="fu">group_by</span>(SEXE, AGE3) <span class="sc">%&gt;%</span></span>
-<span id="cb163-4"><a href="#cb163-4"></a>  <span class="fu">summarise</span>(<span class="at">moy_jour_tr =</span> <span class="fu">mean</span>(JOURTR, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb163-5"><a href="#cb163-5"></a>  <span class="fu">arrange</span>(moy_jour_tr) <span class="sc">%&gt;%</span></span>
-<span id="cb163-6"><a href="#cb163-6"></a>  <span class="fu">mutate</span>(<span class="at">numero =</span> <span class="fu">row_number</span>())</span>
-<span id="cb163-7"><a href="#cb163-7"></a>ex_arrange_2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb163"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb163-1"><a></a>ex_arrange_2 <span class="ot">&lt;-</span> EEC_2019 <span class="sc">%&gt;%</span></span>
+<span id="cb163-2"><a></a>  <span class="fu">select</span>(SEXE, AGE3, JOURTR) <span class="sc">%&gt;%</span></span>
+<span id="cb163-3"><a></a>  <span class="fu">group_by</span>(SEXE, AGE3) <span class="sc">%&gt;%</span></span>
+<span id="cb163-4"><a></a>  <span class="fu">summarise</span>(<span class="at">moy_jour_tr =</span> <span class="fu">mean</span>(JOURTR, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb163-5"><a></a>  <span class="fu">arrange</span>(moy_jour_tr) <span class="sc">%&gt;%</span></span>
+<span id="cb163-6"><a></a>  <span class="fu">mutate</span>(<span class="at">numero =</span> <span class="fu">row_number</span>())</span>
+<span id="cb163-7"><a></a>ex_arrange_2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 4
 # Groups:   SEXE [2]
@@ -2219,14 +2224,14 @@ attr(,"package")
 <li><p><code>wtd.quantile</code> : un quantile, plusieurs algorithmes sont implémentés, mais aucun ne correspond à ce que fait SAS.</p></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb165"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb165-1"><a href="#cb165-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">age =</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>, <span class="dv">60</span>), <span class="at">poids=</span><span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">3</span>))</span>
-<span id="cb165-2"><a href="#cb165-2"></a></span>
-<span id="cb165-3"><a href="#cb165-3"></a><span class="fu">library</span>(Hmisc)</span>
-<span id="cb165-4"><a href="#cb165-4"></a></span>
-<span id="cb165-5"><a href="#cb165-5"></a>new_df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
-<span id="cb165-6"><a href="#cb165-6"></a>  <span class="fu">summarise</span>(<span class="at">quartile1 =</span> <span class="fu">wtd.quantile</span>(age,<span class="at">w=</span>poids,<span class="at">probs=</span>.<span class="dv">25</span>),</span>
-<span id="cb165-7"><a href="#cb165-7"></a>            <span class="at">mediane =</span> <span class="fu">wtd.quantile</span>(age,<span class="at">w=</span>poids,<span class="at">probs=</span>.<span class="dv">5</span>),</span>
-<span id="cb165-8"><a href="#cb165-8"></a>            <span class="at">moyenne =</span> <span class="fu">wtd.mean</span>(age,<span class="at">w=</span>poids))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb165"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb165-1"><a></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">age =</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>, <span class="dv">60</span>), <span class="at">poids=</span><span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">3</span>))</span>
+<span id="cb165-2"><a></a></span>
+<span id="cb165-3"><a></a><span class="fu">library</span>(Hmisc)</span>
+<span id="cb165-4"><a></a></span>
+<span id="cb165-5"><a></a>new_df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
+<span id="cb165-6"><a></a>  <span class="fu">summarise</span>(<span class="at">quartile1 =</span> <span class="fu">wtd.quantile</span>(age,<span class="at">w=</span>poids,<span class="at">probs=</span>.<span class="dv">25</span>),</span>
+<span id="cb165-7"><a></a>            <span class="at">mediane =</span> <span class="fu">wtd.quantile</span>(age,<span class="at">w=</span>poids,<span class="at">probs=</span>.<span class="dv">5</span>),</span>
+<span id="cb165-8"><a></a>            <span class="at">moyenne =</span> <span class="fu">wtd.mean</span>(age,<span class="at">w=</span>poids))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="concaténations" class="slide level2 scrollable smaller">
@@ -2264,9 +2269,9 @@ attr(,"package")
 <div class="columns">
 <div class="column" style="width:70%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb166"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb166-1"><a href="#cb166-1"></a>table_jointe <span class="ot">&lt;-</span> table_1 <span class="sc">%&gt;%</span></span>
-<span id="cb166-2"><a href="#cb166-2"></a>  <span class="fu">left_join</span>(table_2, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"var1_table1"</span> <span class="ot">=</span> <span class="st">"var2_table2"</span>,</span>
-<span id="cb166-3"><a href="#cb166-3"></a>                            <span class="st">"var3_table1"</span> <span class="ot">=</span> <span class="st">"var4_table2"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb166"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb166-1"><a></a>table_jointe <span class="ot">&lt;-</span> table_1 <span class="sc">%&gt;%</span></span>
+<span id="cb166-2"><a></a>  <span class="fu">left_join</span>(table_2, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"var1_table1"</span> <span class="ot">=</span> <span class="st">"var2_table2"</span>,</span>
+<span id="cb166-3"><a></a>                            <span class="st">"var3_table1"</span> <span class="ot">=</span> <span class="st">"var4_table2"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:30%;">
 <p><img data-src="images/left_join.png"></p>
@@ -2278,9 +2283,9 @@ attr(,"package")
 <div class="columns">
 <div class="column" style="width:70%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb167"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb167-1"><a href="#cb167-1"></a>table_jointe <span class="ot">&lt;-</span> table_1 <span class="sc">%&gt;%</span></span>
-<span id="cb167-2"><a href="#cb167-2"></a>  <span class="fu">inner_join</span>(table_2, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"var1_table1"</span> <span class="ot">=</span> <span class="st">"var2_table2"</span>,</span>
-<span id="cb167-3"><a href="#cb167-3"></a>                             <span class="st">"var3_table1"</span> <span class="ot">=</span> <span class="st">"var4_table2"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb167"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb167-1"><a></a>table_jointe <span class="ot">&lt;-</span> table_1 <span class="sc">%&gt;%</span></span>
+<span id="cb167-2"><a></a>  <span class="fu">inner_join</span>(table_2, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"var1_table1"</span> <span class="ot">=</span> <span class="st">"var2_table2"</span>,</span>
+<span id="cb167-3"><a></a>                             <span class="st">"var3_table1"</span> <span class="ot">=</span> <span class="st">"var4_table2"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:30%;">
 <p><img data-src="images/inner_join.png"></p>
@@ -2292,9 +2297,9 @@ attr(,"package")
 <div class="columns">
 <div class="column" style="width:70%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb168"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb168-1"><a href="#cb168-1"></a>table_jointe <span class="ot">&lt;-</span> table_1 <span class="sc">%&gt;%</span></span>
-<span id="cb168-2"><a href="#cb168-2"></a>  <span class="fu">full_join</span>(table_2, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"var1_table1"</span> <span class="ot">=</span> <span class="st">"var2_table2"</span>,</span>
-<span id="cb168-3"><a href="#cb168-3"></a>                            <span class="st">"var3_table1"</span> <span class="ot">=</span> <span class="st">"var4_table2"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb168"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb168-1"><a></a>table_jointe <span class="ot">&lt;-</span> table_1 <span class="sc">%&gt;%</span></span>
+<span id="cb168-2"><a></a>  <span class="fu">full_join</span>(table_2, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"var1_table1"</span> <span class="ot">=</span> <span class="st">"var2_table2"</span>,</span>
+<span id="cb168-3"><a></a>                            <span class="st">"var3_table1"</span> <span class="ot">=</span> <span class="st">"var4_table2"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:30%;">
 <p><img data-src="images/full_join.png"></p>
@@ -2307,9 +2312,9 @@ attr(,"package")
 <div class="columns">
 <div class="column" style="width:70%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb169"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb169-1"><a href="#cb169-1"></a>table_jointe <span class="ot">&lt;-</span> table_1 <span class="sc">%&gt;%</span></span>
-<span id="cb169-2"><a href="#cb169-2"></a>  <span class="fu">anti_join</span>(table_2, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"var1_table1"</span> <span class="ot">=</span> <span class="st">"var2_table2"</span>,</span>
-<span id="cb169-3"><a href="#cb169-3"></a>                            <span class="st">"var3_table1"</span> <span class="ot">=</span> <span class="st">"var4_table2"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb169"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb169-1"><a></a>table_jointe <span class="ot">&lt;-</span> table_1 <span class="sc">%&gt;%</span></span>
+<span id="cb169-2"><a></a>  <span class="fu">anti_join</span>(table_2, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"var1_table1"</span> <span class="ot">=</span> <span class="st">"var2_table2"</span>,</span>
+<span id="cb169-3"><a></a>                            <span class="st">"var3_table1"</span> <span class="ot">=</span> <span class="st">"var4_table2"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:30%;">
 <p><img data-src="images/anti_join.png"></p>
@@ -2325,16 +2330,16 @@ attr(,"package")
 <p>Pour pivoter des données, il est possible d’utiliser les fonctions <code>pivot_longer()</code> et <code>pivot_wider()</code> du package <code>tidyr</code>.</p>
 <p>Par exemple, pour la fonction <code>pivot_longer()</code>, la syntaxe est la suivante : <code>pivot_longer(cols = c("Var_1_pivotee", "Var_2_pivotee"), names_to = c("nom_de_la_nouvelle_colonne"))</code></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb170"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb170-1"><a href="#cb170-1"></a><span class="fu">library</span>(tidyr)</span>
-<span id="cb170-2"><a href="#cb170-2"></a></span>
-<span id="cb170-3"><a href="#cb170-3"></a>ex_pivot <span class="ot">&lt;-</span> EEC_2019 <span class="sc">%&gt;%</span></span>
-<span id="cb170-4"><a href="#cb170-4"></a>  <span class="fu">select</span>(SEXE, AGE3, JOURTR) <span class="sc">%&gt;%</span></span>
-<span id="cb170-5"><a href="#cb170-5"></a>  <span class="fu">group_by</span>(SEXE, AGE3) <span class="sc">%&gt;%</span></span>
-<span id="cb170-6"><a href="#cb170-6"></a>  <span class="fu">summarise</span>(<span class="at">moy_jour_tr =</span> <span class="fu">mean</span>(JOURTR, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb170-7"><a href="#cb170-7"></a>            <span class="at">med_jour_tr =</span> <span class="fu">median</span>(JOURTR, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb170-8"><a href="#cb170-8"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb170-9"><a href="#cb170-9"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="st">"moy_jour_tr"</span>, <span class="st">"med_jour_tr"</span>), <span class="at">names_to =</span> <span class="fu">c</span>(<span class="st">"indicateur"</span>))</span>
-<span id="cb170-10"><a href="#cb170-10"></a>ex_pivot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb170"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb170-1"><a></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb170-2"><a></a></span>
+<span id="cb170-3"><a></a>ex_pivot <span class="ot">&lt;-</span> EEC_2019 <span class="sc">%&gt;%</span></span>
+<span id="cb170-4"><a></a>  <span class="fu">select</span>(SEXE, AGE3, JOURTR) <span class="sc">%&gt;%</span></span>
+<span id="cb170-5"><a></a>  <span class="fu">group_by</span>(SEXE, AGE3) <span class="sc">%&gt;%</span></span>
+<span id="cb170-6"><a></a>  <span class="fu">summarise</span>(<span class="at">moy_jour_tr =</span> <span class="fu">mean</span>(JOURTR, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb170-7"><a></a>            <span class="at">med_jour_tr =</span> <span class="fu">median</span>(JOURTR, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb170-8"><a></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb170-9"><a></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="st">"moy_jour_tr"</span>, <span class="st">"med_jour_tr"</span>), <span class="at">names_to =</span> <span class="fu">c</span>(<span class="st">"indicateur"</span>))</span>
+<span id="cb170-10"><a></a>ex_pivot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 12 × 4
    SEXE   AGE3 indicateur  value
@@ -2363,34 +2368,46 @@ attr(,"package")
 <div class="tab-content">
 <div id="tabset-18-1">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb172"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb172-1"><a href="#cb172-1"></a>ex_barplot <span class="ot">&lt;-</span> EEC_2019 <span class="sc">%&gt;%</span></span>
-<span id="cb172-2"><a href="#cb172-2"></a>  <span class="fu">select</span>(SEXE, JOURTR) <span class="sc">%&gt;%</span></span>
-<span id="cb172-3"><a href="#cb172-3"></a>  <span class="fu">group_by</span>(SEXE) <span class="sc">%&gt;%</span></span>
-<span id="cb172-4"><a href="#cb172-4"></a>  <span class="fu">summarise</span>(<span class="at">moy_jour_tr =</span> <span class="fu">mean</span>(JOURTR, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb172-5"><a href="#cb172-5"></a></span>
-<span id="cb172-6"><a href="#cb172-6"></a><span class="fu">barplot</span>(ex_barplot<span class="sc">$</span>moy_jour_tr, <span class="at">legend.text =</span> ex_barplot<span class="sc">$</span>SEXE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb172"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb172-1"><a></a>ex_barplot <span class="ot">&lt;-</span> EEC_2019 <span class="sc">%&gt;%</span></span>
+<span id="cb172-2"><a></a>  <span class="fu">select</span>(SEXE, JOURTR) <span class="sc">%&gt;%</span></span>
+<span id="cb172-3"><a></a>  <span class="fu">group_by</span>(SEXE) <span class="sc">%&gt;%</span></span>
+<span id="cb172-4"><a></a>  <span class="fu">summarise</span>(<span class="at">moy_jour_tr =</span> <span class="fu">mean</span>(JOURTR, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb172-5"><a></a></span>
+<span id="cb172-6"><a></a><span class="fu">barplot</span>(ex_barplot<span class="sc">$</span>moy_jour_tr, <span class="at">legend.text =</span> ex_barplot<span class="sc">$</span>SEXE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
+<div>
+<figure>
 <p><img data-src="slides_files/figure-revealjs/unnamed-chunk-102-1.png" width="960"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
 <div id="tabset-18-2">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb173"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb173-1"><a href="#cb173-1"></a>ex_hist <span class="ot">&lt;-</span> EEC_2019 <span class="sc">%&gt;%</span></span>
-<span id="cb173-2"><a href="#cb173-2"></a>  <span class="fu">select</span>(JOURTR)</span>
-<span id="cb173-3"><a href="#cb173-3"></a></span>
-<span id="cb173-4"><a href="#cb173-4"></a><span class="fu">hist</span>(ex_hist<span class="sc">$</span>JOURTR)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb173"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb173-1"><a></a>ex_hist <span class="ot">&lt;-</span> EEC_2019 <span class="sc">%&gt;%</span></span>
+<span id="cb173-2"><a></a>  <span class="fu">select</span>(JOURTR)</span>
+<span id="cb173-3"><a></a></span>
+<span id="cb173-4"><a></a><span class="fu">hist</span>(ex_hist<span class="sc">$</span>JOURTR)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
+<div>
+<figure>
 <p><img data-src="slides_files/figure-revealjs/unnamed-chunk-103-1.png" width="960"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
 <div id="tabset-18-3">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb174"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb174-1"><a href="#cb174-1"></a><span class="fu">data</span>(iris)</span>
-<span id="cb174-2"><a href="#cb174-2"></a><span class="fu">plot</span>(<span class="at">x =</span> iris<span class="sc">$</span>Sepal.Length, <span class="at">y =</span> iris<span class="sc">$</span>Sepal.Width)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb174"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb174-1"><a></a><span class="fu">data</span>(iris)</span>
+<span id="cb174-2"><a></a><span class="fu">plot</span>(<span class="at">x =</span> iris<span class="sc">$</span>Sepal.Length, <span class="at">y =</span> iris<span class="sc">$</span>Sepal.Width)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
+<div>
+<figure>
 <p><img data-src="slides_files/figure-revealjs/unnamed-chunk-104-1.png" width="960"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
@@ -2412,12 +2429,12 @@ attr(,"package")
 <p>Pour l’exportation de données au format <strong>xlsx</strong>, le package <code>openxlsx</code> est à privilégier car il présente de multiples options très pratiques pour personnaliser les exports.</p>
 <p>Les <a href="https://ycphs.github.io/openxlsx/articles/Introduction.html">deux vignettes</a> du package sur ce sujet apportent quelques exemples des potentialités d’écriture de classeurs xlsx. La première présente notamment l’utilisation de la fonction <code>write.xlsx()</code> et la seconde illustre quelques possibilités autour de la fonction <code>writeData()</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb175"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb175-1"><a href="#cb175-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb175-2"><a href="#cb175-2"></a></span>
-<span id="cb175-3"><a href="#cb175-3"></a>eff_par_age <span class="ot">&lt;-</span> EEC_2019 <span class="sc">%&gt;%</span></span>
-<span id="cb175-4"><a href="#cb175-4"></a>  <span class="fu">group_by</span>(AGE3) <span class="sc">%&gt;%</span></span>
-<span id="cb175-5"><a href="#cb175-5"></a>  <span class="fu">summarise</span>(<span class="at">eff_par_age =</span> <span class="fu">n</span>())</span>
-<span id="cb175-6"><a href="#cb175-6"></a>eff_par_age</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb175"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb175-1"><a></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb175-2"><a></a></span>
+<span id="cb175-3"><a></a>eff_par_age <span class="ot">&lt;-</span> EEC_2019 <span class="sc">%&gt;%</span></span>
+<span id="cb175-4"><a></a>  <span class="fu">group_by</span>(AGE3) <span class="sc">%&gt;%</span></span>
+<span id="cb175-5"><a></a>  <span class="fu">summarise</span>(<span class="at">eff_par_age =</span> <span class="fu">n</span>())</span>
+<span id="cb175-6"><a></a>eff_par_age</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 2
    AGE3 eff_par_age
@@ -2426,18 +2443,18 @@ attr(,"package")
 2    30      117025
 3    50      220447</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb177"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb177-1"><a href="#cb177-1"></a><span class="fu">library</span>(openxlsx)</span>
-<span id="cb177-2"><a href="#cb177-2"></a></span>
-<span id="cb177-3"><a href="#cb177-3"></a><span class="fu">write.xlsx</span>(eff_par_age, <span class="at">file =</span> <span class="st">"mon_export.xlsx"</span>, <span class="at">asTable =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb177"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb177-1"><a></a><span class="fu">library</span>(openxlsx)</span>
+<span id="cb177-2"><a></a></span>
+<span id="cb177-3"><a></a><span class="fu">write.xlsx</span>(eff_par_age, <span class="at">file =</span> <span class="st">"mon_export.xlsx"</span>, <span class="at">asTable =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="tabset-19-2">
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb178"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb178-1"><a href="#cb178-1"></a>eff_par_age <span class="ot">&lt;-</span> EEC_2019 <span class="sc">%&gt;%</span></span>
-<span id="cb178-2"><a href="#cb178-2"></a>  <span class="fu">group_by</span>(AGE3) <span class="sc">%&gt;%</span></span>
-<span id="cb178-3"><a href="#cb178-3"></a>  <span class="fu">summarise</span>(<span class="at">eff_par_age =</span> <span class="fu">n</span>())</span>
-<span id="cb178-4"><a href="#cb178-4"></a>eff_par_age</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb178"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb178-1"><a></a>eff_par_age <span class="ot">&lt;-</span> EEC_2019 <span class="sc">%&gt;%</span></span>
+<span id="cb178-2"><a></a>  <span class="fu">group_by</span>(AGE3) <span class="sc">%&gt;%</span></span>
+<span id="cb178-3"><a></a>  <span class="fu">summarise</span>(<span class="at">eff_par_age =</span> <span class="fu">n</span>())</span>
+<span id="cb178-4"><a></a>eff_par_age</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 2
    AGE3 eff_par_age
@@ -2446,16 +2463,16 @@ attr(,"package")
 2    30      117025
 3    50      220447</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb180"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb180-1"><a href="#cb180-1"></a><span class="fu">write.csv</span>(<span class="at">x =</span> eff_par_age, <span class="at">file =</span> <span class="st">"monFichier.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb180"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb180-1"><a></a><span class="fu">write.csv</span>(<span class="at">x =</span> eff_par_age, <span class="at">file =</span> <span class="st">"monFichier.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="tabset-19-3">
 <p><br></p>
 <p>Pour exporter un graphique :</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb181"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb181-1"><a href="#cb181-1"></a><span class="fu">png</span>(<span class="at">filename =</span> <span class="st">"mon_graphique.png"</span>, <span class="at">width =</span> <span class="dv">500</span>, <span class="at">height =</span> <span class="dv">300</span>)</span>
-<span id="cb181-2"><a href="#cb181-2"></a><span class="fu">hist</span>(EEC_2019<span class="sc">$</span>JOURTR)</span>
-<span id="cb181-3"><a href="#cb181-3"></a><span class="fu">dev.off</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb181"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb181-1"><a></a><span class="fu">png</span>(<span class="at">filename =</span> <span class="st">"mon_graphique.png"</span>, <span class="at">width =</span> <span class="dv">500</span>, <span class="at">height =</span> <span class="dv">300</span>)</span>
+<span id="cb181-2"><a></a><span class="fu">hist</span>(EEC_2019<span class="sc">$</span>JOURTR)</span>
+<span id="cb181-3"><a></a><span class="fu">dev.off</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>png 
   2 </code></pre>
@@ -2479,8 +2496,10 @@ attr(,"package")
 <li><p>des ateliers thématiques</p></li>
 </ul>
 
+<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 <p>Formation R - Dares</p>
+</div>
 </div>
 </section>
     </div>
@@ -2509,7 +2528,6 @@ attr(,"package")
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
-'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -2808,10 +2826,9 @@ attr(,"package")
         // clear code selection
         e.clearSelection();
       });
-      function tippyHover(el, contentFn) {
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -2821,8 +2838,17 @@ attr(,"package")
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start'
+          placement: 'bottom-start',
         };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
